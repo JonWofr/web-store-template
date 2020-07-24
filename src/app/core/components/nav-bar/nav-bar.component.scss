@@ -1,0 +1,24 @@
+img.icon {
+  height: 30px;
+}
+
+nav.navbar {
+  padding-top: 20px;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  transition: 1s;
+  box-shadow: rgba(0, 0, 0, 0.47) 3px 3px 15px 3px;
+
+  a {
+    color: white !important;
+  }
+}
+
+.nav-transparent {
+  padding-top: 8px !important;
+  background-color: #2b2d42 !important;
+}
+
+a.nav-link {
+  color: #edf2f4 !important;
+}
