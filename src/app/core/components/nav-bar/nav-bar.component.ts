@@ -31,7 +31,7 @@ export class NavBarComponent implements OnInit {
       },
       options
     );
-    document.querySelectorAll('.banner-max').forEach((value) => {
+    document.querySelectorAll('.main-banner').forEach((value) => {
       observer.observe(value);
     });
   }

@@ -1,0 +1,11 @@
+div.category {
+  background-color: red;
+  height: 50vh;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  div.category {
+    height: 70vh;
+  }
+}

@@ -1,10 +1,45 @@
 <div class="banner banner-max">
-  <div class="product-summary animate__animated animate__zoomIn">
-    <h2>Look at our awesome Product!</h2>
-    <p>
-      You can do so many cool things with it. I like to sing, dance, pretend
-      and... kazoooooou!!!
-    </p>
-    <a class="button">Show me More!</a>
+  <div class="main-banner">
+    <div class="product-summary">
+      <h1>Look at our awesome Product!</h1>
+      <h4>
+        Trust Us. It#s nice.
+      </h4>
+      <a class="animate__animated animate__tada button">Show me More!</a>
+    </div>
+  </div>
+
+  <div
+    id="wave"
+    class="wave"
+    data-from='{"scaleY": "1"}'
+    data-to='{"scaleY": "0"}'
+    data-dur=".95"
+    data-mobile-dur=".72"
+    [style.transform]="transform"
+  >
+    <svg
+      preserveAspectRatio="xMaxYMin slice"
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 1440 270"
+      style="enable-background: new 0 0 1440 270;"
+      xml:space="preserve"
+    >
+      <style type="text/css">
+        .hero-wave {
+          fill: #edf2f4;
+        }
+      </style>
+      <path
+        vector-effect="non-scaling-stroke"
+        class="hero-wave"
+        d="M860.8,73.7C1110.2-1,1303.3-18.9,1440,19.9v249.5H0V89.3C324.5,153.6,611.4,148.4,860.8,73.7z"
+      ></path>
+    </svg>
   </div>
 </div>

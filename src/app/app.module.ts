@@ -9,6 +9,7 @@ import { AdvantageComponent } from './core/components/advantage/advantage.compon
 import { AdvantagesComponent } from './core/components/advantages/advantages.component';
 import { BannerMaxComponent } from './core/components/banner-max/banner-max.component';
 import { ProductInfoBigComponent } from './core/components/product-info-big/product-info-big.component';
+import { ProductCategoryBigComponent } from './core/components/product-category-big/product-category-big.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductInfoBigComponent } from './core/components/product-info-big/prod
     AdvantageComponent,
     AdvantagesComponent,
     BannerMaxComponent,
-    ProductInfoBigComponent
+    ProductInfoBigComponent,
+    ProductCategoryBigComponent
   ],
   imports: [
     BrowserModule,
