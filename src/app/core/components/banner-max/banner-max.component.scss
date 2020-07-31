@@ -3,7 +3,7 @@ div.banner {
   display: flex;
   height: 140%;
   width: 100%;
-  background-image: url("/assets/images/compass_background.jpg");
+  background-image: url("/assets/images/sea.jpg");
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -18,11 +18,16 @@ div.main-banner {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 div.product-summary {
+  background-image: url("/assets/icons/svg/blob.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 50%;
-  min-height: 50%;
+  min-height: 100%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -47,16 +52,18 @@ div.wave {
   transform-origin: 50% 100%;
   position: absolute;
   width: 100%;
-  bottom: -1px;
+  bottom: -2px;
   z-index: 2;
 }
 
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
-  div.banner {
-    background-position: right;
+  div.product-summary {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-size: 140vw;
   }
-
   h2,
   p {
     width: 75%;
@@ -65,12 +72,19 @@ div.wave {
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
-  div.product-summary {
-    width: 90%;
+  div.banner {
+    height: 120vh;
   }
 
-  h2,
-  p {
+  div.product-summary {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-size: 140vw;
+  }
+
+  h1,
+  h4 {
     width: 95%;
   }
 }
