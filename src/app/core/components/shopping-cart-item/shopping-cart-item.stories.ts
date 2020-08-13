@@ -19,7 +19,7 @@ export const defaultProps = () => ({
       id: '1',
       name: 'shirt-1',
       title: 'Wunderbares T-Shirt',
-      subTitle: 'Da kann man sich nur drin wohlfühlen',
+      subtitle: 'Da kann man sich nur drin wohlfühlen',
       shortDescription: 'lorem ipsum dolor sit amet constitutor',
       description:
         'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',

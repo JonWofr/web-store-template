@@ -1,22 +1,23 @@
-<div class="left-side">
-  <img class="thumbnail" [src]="product?.thumbnailImageUrl" alt="" />
-  <div class="text-information">
+<img class="thumbnail" [src]="product?.thumbnailImageUrl" alt="" />
+<div class="additional-information">
+  <div class="left-side">
     <div>
-      <div class="title">
+      <h2 class="title">
         {{ product?.title }}
-      </div>
-      <div class="subtitle">
+      </h2>
+      <h3 class="subtitle">
         {{ product?.subtitle }}
-      </div>
+      </h3>
     </div>
-    <button>
-      Entfernen
+    <button class="remove">
+      <img src="assets/icons/svg/trash-can.svg" alt="" />
+      <div>
+        Entfernen
+      </div>
     </button>
   </div>
-</div>
-<div class="right-side">
-  <app-item-quantity-input-stepper> </app-item-quantity-input-stepper>
-  <div class="price">
-    {{ product?.price }}
+  <div class="right-side">
+    <app-item-quantity-input-stepper> </app-item-quantity-input-stepper>
+    <div class="price">{{ product?.price }}€</div>
   </div>
 </div>

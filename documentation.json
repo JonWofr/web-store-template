@@ -1,7 +1,329 @@
 {
     "pipes": [],
-    "interfaces": [],
-    "injectables": [],
+    "interfaces": [
+        {
+            "name": "Product",
+            "id": "interface-Product-7c5a9fb95092ea8aaa5215c39771aa91",
+            "file": "src/app/core/models/product.model.ts",
+            "type": "interface",
+            "sourceCode": "export interface Product {\r\n  id: string;\r\n  name: string;\r\n  title: string;\r\n  subtitle: string;\r\n  shortDescription: string;\r\n  description: string;\r\n  amountOnStock: number;\r\n  price: number;\r\n  reviews: [];\r\n  keyFacts: [];\r\n  inStockSinceInMs: number;\r\n  thumbnailImageUrl: string;\r\n  previewImagesUrls: string[];\r\n  brand?: string;\r\n  discountedPrice?: number;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "amountOnStock",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "brand",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "discountedPrice",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "inStockSinceInMs",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "keyFacts",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "previewImagesUrls",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "price",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "reviews",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "shortDescription",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "subtitle",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "thumbnailImageUrl",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "HttpService",
+            "id": "injectable-HttpService-0da51701c6237e32646f4bd5912c26ab",
+            "file": "src/app/core/services/http/http.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getManyAsObservable",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<T>",
+                    "typeParameters": [
+                        "T"
+                    ],
+                    "line": 34,
+                    "description": "<p>Fetch an array of documents via a GET request</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 895,
+                                "end": 898,
+                                "flags": 0,
+                                "escapedText": "url"
+                            },
+                            "type": "string",
+                            "tagName": {
+                                "pos": 889,
+                                "end": 894,
+                                "flags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>the url of the GET request</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 933,
+                                "end": 940,
+                                "flags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>the observable which will serve the array of requested documents</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "getManyAsPromise",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<T>",
+                    "typeParameters": [
+                        "T"
+                    ],
+                    "line": 43,
+                    "description": "<p>Fetch an array of documents via a GET request</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 1189,
+                                "end": 1192,
+                                "flags": 0,
+                                "escapedText": "url"
+                            },
+                            "type": "string",
+                            "tagName": {
+                                "pos": 1183,
+                                "end": 1188,
+                                "flags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>the url of the GET request</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 1227,
+                                "end": 1234,
+                                "flags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>the promise which once fullfilled will serve the array of requested documents</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "getOneAsObservable",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<T>",
+                    "typeParameters": [
+                        "T"
+                    ],
+                    "line": 16,
+                    "description": "<p>Fetch one document via a GET request</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 319,
+                                "end": 322,
+                                "flags": 0,
+                                "escapedText": "url"
+                            },
+                            "type": "string",
+                            "tagName": {
+                                "pos": 313,
+                                "end": 318,
+                                "flags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>the url of the GET request</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 357,
+                                "end": 364,
+                                "flags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>the observable which will serve the requested document</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "getOneAsPromise",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<T>",
+                    "typeParameters": [
+                        "T"
+                    ],
+                    "line": 25,
+                    "description": "<p>Fetch one document via a GET request</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 593,
+                                "end": 596,
+                                "flags": 0,
+                                "escapedText": "url"
+                            },
+                            "type": "string",
+                            "tagName": {
+                                "pos": 587,
+                                "end": 592,
+                                "flags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>the url of the GET request</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 631,
+                                "end": 638,
+                                "flags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>the promise which once fullfilled will serve the requested document</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class HttpService {\r\n  constructor(private httpClient: HttpClient) {}\r\n\r\n  /**\r\n   * Fetch one document via a GET request\r\n   * @param url the url of the GET request\r\n   * @returns the observable which will serve the requested document\r\n   */\r\n  getOneAsObservable<T>(url: string): Observable<T> {\r\n    return this.httpClient.get<T>(url);\r\n  }\r\n\r\n  /**\r\n   * Fetch one document via a GET request\r\n   * @param url the url of the GET request\r\n   * @returns the promise which once fullfilled will serve the requested document\r\n   */\r\n  getOneAsPromise<T>(url: string): Promise<T> {\r\n    return this.httpClient.get<T>(url).toPromise();\r\n  }\r\n\r\n  /**\r\n   * Fetch an array of documents via a GET request\r\n   * @param url the url of the GET request\r\n   * @returns the observable which will serve the array of requested documents\r\n   */\r\n  getManyAsObservable<T>(url: string): Observable<T> {\r\n    return this.httpClient.get<T>(url);\r\n  }\r\n\r\n  /**\r\n   * Fetch an array of documents via a GET request\r\n   * @param url the url of the GET request\r\n   * @returns the promise which once fullfilled will serve the array of requested documents\r\n   */\r\n  getManyAsPromise<T>(url: string): Promise<T> {\r\n    return this.httpClient.get<T>(url).toPromise();\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpClient",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "httpClient",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
     "classes": [
         {
             "name": "AppPage",
@@ -366,7 +688,7 @@
         },
         {
             "name": "DetailComponent",
-            "id": "component-DetailComponent-55a149f4ec0ef66fcf2c6486dc9a78bc",
+            "id": "component-DetailComponent-ec4654f59802911dc51f834ecf3e21e4",
             "file": "src/app/core/views/detail/detail.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -384,7 +706,15 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "product",
+                    "type": "Product",
+                    "optional": true,
+                    "description": "",
+                    "line": 12
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -392,7 +722,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12
+                    "line": 19
                 }
             ],
             "hostBindings": [],
@@ -400,7 +730,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-detail',\r\n  templateUrl: './detail.component.html',\r\n  styleUrls: ['./detail.component.scss']\r\n})\r\nexport class DetailComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { ActivatedRoute } from '@angular/router';\r\nimport { HttpService } from '../../services/http/http.service';\r\nimport { Product } from '../../models/product.model';\r\n\r\n@Component({\r\n  selector: 'app-detail',\r\n  templateUrl: './detail.component.html',\r\n  styleUrls: ['./detail.component.scss'],\r\n})\r\nexport class DetailComponent implements OnInit {\r\n  product?: Product;\r\n\r\n  constructor(\r\n    private activatedRoute: ActivatedRoute,\r\n    private httpService: HttpService\r\n  ) {}\r\n\r\n  ngOnInit(): void {\r\n    const productId = this.activatedRoute.snapshot.paramMap.get('id');\r\n    this.httpService\r\n      .getManyAsPromise<Product[]>('/assets/data/products.json')\r\n      .then((products) => {\r\n        this.product = products.find((product) => product.id === productId);\r\n      });\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -412,13 +742,38 @@
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
-                "args": [],
-                "line": 8
+                "args": [
+                    {
+                        "name": "activatedRoute",
+                        "type": "ActivatedRoute"
+                    },
+                    {
+                        "name": "httpService",
+                        "type": "HttpService"
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "activatedRoute",
+                        "type": "ActivatedRoute",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "httpService",
+                        "type": "HttpService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\r\n  <p>detail works!</p>\r\n</app-view-container>\r\n"
+            "templateData": "<app-view-container>\r\n  <div *ngIf=\"product\">\r\n    {{ product.name }}\r\n  </div>\r\n</app-view-container>\r\n"
         },
         {
             "name": "HomeComponent",
@@ -475,6 +830,120 @@
                 "OnInit"
             ],
             "templateData": "<app-view-container>\r\n  <app-banner-max></app-banner-max>\r\n  <app-advantages></app-advantages>\r\n  <app-product-info-big></app-product-info-big>\r\n</app-view-container>\r\n"
+        },
+        {
+            "name": "ItemQuantityInputStepperComponent",
+            "id": "component-ItemQuantityInputStepperComponent-2bacf50fb53a7b290b4fde2f8258f6fc",
+            "file": "src/app/core/components/item-quantity-input-stepper/item-quantity-input-stepper.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-item-quantity-input-stepper",
+            "styleUrls": [
+                "./item-quantity-input-stepper.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./item-quantity-input-stepper.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "quantity",
+                    "defaultValue": "1",
+                    "line": 9,
+                    "type": "number"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "changeQuantity",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "line": 10,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                },
+                {
+                    "name": "onClickMinusButton",
+                    "args": [
+                        {
+                            "name": "mouseEvent",
+                            "type": "MouseEvent"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "jsdoctags": [
+                        {
+                            "name": "mouseEvent",
+                            "type": "MouseEvent",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onClickPlusButton",
+                    "args": [
+                        {
+                            "name": "mouseEvent",
+                            "type": "MouseEvent"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "jsdoctags": [
+                        {
+                            "name": "mouseEvent",
+                            "type": "MouseEvent",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'app-item-quantity-input-stepper',\n  templateUrl: './item-quantity-input-stepper.component.html',\n  styleUrls: ['./item-quantity-input-stepper.component.scss'],\n})\nexport class ItemQuantityInputStepperComponent implements OnInit {\n  @Input() quantity: number = 1;\n  @Output() changeQuantity = new EventEmitter<number>();\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  onClickMinusButton(mouseEvent: MouseEvent) {\n    mouseEvent.stopPropagation();\n    mouseEvent.preventDefault();\n\n    this.quantity--;\n\n    this.changeQuantity.emit(this.quantity);\n  }\n\n  onClickPlusButton(mouseEvent: MouseEvent) {\n    mouseEvent.stopPropagation();\n    mouseEvent.preventDefault();\n\n    this.quantity++;\n\n    this.changeQuantity.emit(this.quantity);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  & > * {\r\n    margin: 0 0.25rem;\r\n\r\n    &:first-child {\r\n      margin-left: 0;\r\n    }\r\n    &:last-child {\r\n      margin-right: 0;\r\n    }\r\n  }\r\n\r\n  & > button.plus,\r\n  & > button.minus {\r\n    padding: 0.25rem;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 50%;\r\n\r\n    & > img {\r\n      display: block;\r\n\r\n      width: 24px;\r\n      height: 24px;\r\n    }\r\n  }\r\n\r\n  & > div.quantity {\r\n  }\r\n}\r\n",
+                    "styleUrl": "./item-quantity-input-stepper.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button (click)=\"onClickMinusButton($event)\" class=\"minus\">\n  <img src=\"assets/icons/svg/minus.svg\" alt=\"\" />\n</button>\n<div class=\"quantity\">\n  {{ quantity }}\n</div>\n<button (click)=\"onClickPlusButton($event)\" class=\"plus\">\n  <img src=\"assets/icons/svg/plus.svg\" alt=\"\" />\n</button>\n"
         },
         {
             "name": "NavBarComponent",
@@ -765,6 +1234,84 @@
             "templateData": "<app-view-container>\r\n  <p>shopping-cart works!</p>\r\n</app-view-container>\r\n"
         },
         {
+            "name": "ShoppingCartItemComponent",
+            "id": "component-ShoppingCartItemComponent-d27d854fd45072632209bd82288ad086",
+            "file": "src/app/core/components/shopping-cart-item/shopping-cart-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-shopping-cart-item",
+            "styleUrls": [
+                "./shopping-cart-item.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./shopping-cart-item.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "product",
+                    "line": 10,
+                    "type": "Product"
+                },
+                {
+                    "name": "quantity",
+                    "defaultValue": "1",
+                    "line": 11,
+                    "type": "number"
+                },
+                {
+                    "name": "size",
+                    "line": 12,
+                    "type": "number"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\nimport { Product } from '../../models/product.model';\n\n@Component({\n  selector: 'app-shopping-cart-item',\n  templateUrl: './shopping-cart-item.component.html',\n  styleUrls: ['./shopping-cart-item.component.scss'],\n})\nexport class ShoppingCartItemComponent implements OnInit {\n  @Input() product?: Product;\n  @Input() quantity: number = 1;\n  @Input() size?: number;\n  @Input() color?: string;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  width: 100%;\r\n  height: 100px;\r\n\r\n  display: flex;\r\n  align-items: stretch;\r\n\r\n  & > * {\r\n    margin: 0.25rem;\r\n\r\n    &:first-child {\r\n      margin-left: 0;\r\n    }\r\n    &:last-child {\r\n      margin-right: 0;\r\n    }\r\n  }\r\n\r\n  & > img.thumbnail {\r\n    width: 100px;\r\n\r\n    object-fit: cover;\r\n  }\r\n\r\n  & > div.additional-information {\r\n    flex: 1;\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: stretch;\r\n\r\n    & > div.left-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-start;\r\n\r\n      & > div {\r\n        & > h2.title {\r\n          font-size: 1.25rem;\r\n        }\r\n\r\n        & > h3.subtitle {\r\n          font-size: 1.125rem;\r\n        }\r\n      }\r\n\r\n      & > button.remove {\r\n        display: flex;\r\n        align-items: center;\r\n\r\n        & > * {\r\n          margin: 0.125rem;\r\n\r\n          &:first-child {\r\n            margin-left: 0;\r\n          }\r\n          &:last-child {\r\n            margin-right: 0;\r\n          }\r\n        }\r\n\r\n        & > img {\r\n          display: block;\r\n\r\n          width: 20px;\r\n          height: 20px;\r\n        }\r\n      }\r\n    }\r\n\r\n    & > div.right-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-end;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./shopping-cart-item.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<img class=\"thumbnail\" [src]=\"product?.thumbnailImageUrl\" alt=\"\" />\n<div class=\"additional-information\">\n  <div class=\"left-side\">\n    <div>\n      <h2 class=\"title\">\n        {{ product?.title }}\n      </h2>\n      <h3 class=\"subtitle\">\n        {{ product?.subtitle }}\n      </h3>\n    </div>\n    <button class=\"remove\">\n      <img src=\"assets/icons/svg/trash-can.svg\" alt=\"\" />\n      <div>\n        Entfernen\n      </div>\n    </button>\n  </div>\n  <div class=\"right-side\">\n    <app-item-quantity-input-stepper> </app-item-quantity-input-stepper>\n    <div class=\"price\">{{ product?.price }}€</div>\n  </div>\n</div>\n"
+        },
+        {
             "name": "ViewContainerComponent",
             "id": "component-ViewContainerComponent-a4170b1fec93d02f42066e4ff6a88b89",
             "file": "src/app/core/components/view-container/view-container.component.ts",
@@ -857,6 +1404,9 @@
                             "name": "HomeComponent"
                         },
                         {
+                            "name": "ItemQuantityInputStepperComponent"
+                        },
+                        {
                             "name": "NavBarComponent"
                         },
                         {
@@ -870,6 +1420,9 @@
                         },
                         {
                             "name": "ShoppingCartComponent"
+                        },
+                        {
+                            "name": "ShoppingCartItemComponent"
                         },
                         {
                             "name": "ViewContainerComponent"
@@ -951,6 +1504,14 @@
                 "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
             },
             {
+                "name": "defaultProps",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: ShoppingCartItemComponent,\r\n  props: {\r\n    product: {\r\n      id: '1',\r\n      name: 'shirt-1',\r\n      title: 'Wunderbares T-Shirt',\r\n      subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n      shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n      description:\r\n        'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n      amountOnStock: 40,\r\n      price: 24.99,\r\n      reviews: [],\r\n      keyFacts: [],\r\n      inStockSinceInMs: 0,\r\n      thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n      previewImagesUrls: [\r\n        'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n        'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n      ],\r\n      discountedPrice: 19.99,\r\n    },\r\n    quantity: 2,\r\n  },\r\n})"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -965,6 +1526,14 @@
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "inititallyThree",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/components/item-quantity-input-stepper/item-quantity-input-stepper.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: ItemQuantityInputStepperComponent,\r\n  props: {\r\n    quantity: 3,\r\n    changeQuantity: action('Change Quantity'),\r\n  },\r\n})"
             },
             {
                 "name": "require",
@@ -1035,6 +1604,16 @@
                     "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
                 }
             ],
+            "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts": [
+                {
+                    "name": "defaultProps",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ShoppingCartItemComponent,\r\n  props: {\r\n    product: {\r\n      id: '1',\r\n      name: 'shirt-1',\r\n      title: 'Wunderbares T-Shirt',\r\n      subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n      shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n      description:\r\n        'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n      amountOnStock: 40,\r\n      price: 24.99,\r\n      reviews: [],\r\n      keyFacts: [],\r\n      inStockSinceInMs: 0,\r\n      thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n      previewImagesUrls: [\r\n        'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n        'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n      ],\r\n      discountedPrice: 19.99,\r\n    },\r\n    quantity: 2,\r\n  },\r\n})"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1053,6 +1632,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/app/core/components/item-quantity-input-stepper/item-quantity-input-stepper.stories.ts": [
+                {
+                    "name": "inititallyThree",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/components/item-quantity-input-stepper/item-quantity-input-stepper.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ItemQuantityInputStepperComponent,\r\n  props: {\r\n    quantity: 3,\r\n    changeQuantity: action('Change Quantity'),\r\n  },\r\n})"
                 }
             ]
         },
@@ -1136,7 +1725,7 @@
         ]
     },
     "coverage": {
-        "count": 0,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -1185,6 +1774,25 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/core/components/item-quantity-input-stepper/item-quantity-input-stepper.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ItemQuantityInputStepperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/item-quantity-input-stepper/item-quantity-input-stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "inititallyThree",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/core/components/nav-bar/nav-bar.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1213,6 +1821,25 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/core/components/shopping-cart-item/shopping-cart-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ShoppingCartItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "defaultProps",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/core/components/view-container/view-container.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1220,6 +1847,24 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
+            },
+            {
+                "filePath": "src/app/core/models/product.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Product",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/services/http/http.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HttpService",
+                "coveragePercent": 66,
+                "coverageCount": "4/6",
+                "status": "good"
             },
             {
                 "filePath": "src/app/core/views/about/about.component.ts",
@@ -1245,7 +1890,7 @@
                 "linktype": "component",
                 "name": "DetailComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
