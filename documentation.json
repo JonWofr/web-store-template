@@ -1,0 +1,1338 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "classes": [
+        {
+            "name": "AppPage",
+            "id": "class-AppPage-b0dda38f970a6690b77b35dfb293b3ac",
+            "file": "e2e/src/app.po.ts",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from 'protractor';\r\n\r\nexport class AppPage {\r\n  navigateTo(): Promise<unknown> {\r\n    return browser.get(browser.baseUrl) as Promise<unknown>;\r\n  }\r\n\r\n  getTitleText(): Promise<string> {\r\n    return element(by.css('app-root .content span')).getText() as Promise<string>;\r\n  }\r\n}\r\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTitleText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<string>",
+                    "typeParameters": [],
+                    "line": 8
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<unknown>",
+                    "typeParameters": [],
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AboutComponent",
+            "id": "component-AboutComponent-6cdf8cc2ebc32a5ad9a8cd25ce5f9e84",
+            "file": "src/app/core/views/about/about.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-about",
+            "styleUrls": [
+                "./about.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./about.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-about',\r\n  templateUrl: './about.component.html',\r\n  styleUrls: ['./about.component.scss']\r\n})\r\nexport class AboutComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./about.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-view-container>\r\n  <p>about works!</p>\r\n</app-view-container>\r\n"
+        },
+        {
+            "name": "AdvantageComponent",
+            "id": "component-AdvantageComponent-cbc0b140970226a75bf7cd14977ace16",
+            "file": "src/app/core/components/advantage/advantage.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-advantage",
+            "styleUrls": [
+                "./advantage.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./advantage.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-advantage',\r\n  templateUrl: './advantage.component.html',\r\n  styleUrls: ['./advantage.component.scss'],\r\n})\r\nexport class AdvantageComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "div.wrapper {\r\n  background-color: red;\r\n  opacity: 0;\r\n}\r\n",
+                    "styleUrl": "./advantage.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"wrapper advantage\">\r\n  <img src=\"/assets/icons/png/compass_logo.png\" alt=\"\" />\r\n  fhsafjsa jfklasjfdlak ös fjasklöfjas\r\n</div>\r\n"
+        },
+        {
+            "name": "AdvantagesComponent",
+            "id": "component-AdvantagesComponent-9c340aba6e5076f4bff16cf73e6f6a3f",
+            "file": "src/app/core/components/advantages/advantages.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-advantages",
+            "styleUrls": [
+                "./advantages.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./advantages.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-advantages',\r\n  templateUrl: './advantages.component.html',\r\n  styleUrls: ['./advantages.component.scss'],\r\n})\r\nexport class AdvantagesComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "div.wrapper {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n",
+                    "styleUrl": "./advantages.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container\">\r\n  <div class=\"row wrapper\">\r\n    <app-advantage class=\"col-md-4\"></app-advantage>\r\n    <app-advantage class=\"col-md-4\"></app-advantage>\r\n    <app-advantage class=\"col-md-4\"></app-advantage>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-d4c10cb4e1a3c9c83207b5f5356c2466",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'web-store-template'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'web-store-template';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>\r\n"
+        },
+        {
+            "name": "BannerMaxComponent",
+            "id": "component-BannerMaxComponent-acaccc8b2caa6226ce91eae0ad105040",
+            "file": "src/app/core/components/banner-max/banner-max.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-banner-max",
+            "styleUrls": [
+                "./banner-max.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./banner-max.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-banner-max',\r\n  templateUrl: './banner-max.component.html',\r\n  styleUrls: ['./banner-max.component.scss'],\r\n})\r\nexport class BannerMaxComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"src/values.scss\";\r\ndiv.banner {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100%;\r\n  width: 100%;\r\n  background-image: url(\"/assets/images/compass_background.jpg\");\r\n  background-size: cover;\r\n  background-position: center;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\ndiv.product-summary {\r\n  width: 50%;\r\n  height: 50%;\r\n  background-color: $alice-blue;\r\n  border-radius: 10px;\r\n  box-shadow: rgba(0, 0, 0, 0.47) 3px 3px 15px 3px;\r\n}\r\n\r\n// Medium devices (tablets, 768px and up)\r\n@media (max-width: 768px) {\r\n  div.banner {\r\n    background-position: right;\r\n  }\r\n\r\n  div.product-summary {\r\n    margin-left: 0;\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n// Small devices (landscape phones, 576px and up)\r\n@media (max-width: 576px) {\r\n  div.product-summary {\r\n    width: 90%;\r\n  }\r\n}\r\n\r\n.button {\r\n  display: inline-block;\r\n  cursor: pointer;\r\n  padding: 0.75rem 1.25rem;\r\n  border-radius: 10rem;\r\n  color: #fff;\r\n  text-transform: uppercase;\r\n  font-size: 1rem;\r\n  letter-spacing: 0.15rem;\r\n  transition: all 0.3s;\r\n  position: relative;\r\n  overflow: hidden;\r\n  z-index: 1;\r\n  box-shadow: rgba(0, 0, 0, 0.5) 5px 2.5px 10px 0px;\r\n  &:after {\r\n    content: \"\";\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: $secondary-color;\r\n    border-radius: 10rem;\r\n    z-index: -2;\r\n  }\r\n  &:before {\r\n    content: \"\";\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    width: 0%;\r\n    height: 100%;\r\n    background-color: $secondary-color-dark;\r\n    transition: all 0.3s;\r\n    border-radius: 10rem;\r\n    z-index: -1;\r\n  }\r\n  &:hover {\r\n    color: #fff;\r\n    &:before {\r\n      width: 100%;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./banner-max.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"banner banner-max\">\r\n  <div class=\"product-summary animate__animated animate__zoomIn\">\r\n    <h2>Look at our awesome Product!</h2>\r\n    <p>\r\n      You can do so many cool things with it. I like to sing, dance, pretend\r\n      and... kazoooooou!!!\r\n    </p>\r\n    <a class=\"button\">Show me More!</a>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "ContactComponent",
+            "id": "component-ContactComponent-efea838da33661f02f6e3bcd4abc145a",
+            "file": "src/app/core/views/contact/contact.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-contact",
+            "styleUrls": [
+                "./contact.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./contact.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-contact',\r\n  templateUrl: './contact.component.html',\r\n  styleUrls: ['./contact.component.scss']\r\n})\r\nexport class ContactComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./contact.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-view-container><p>contact works!</p> </app-view-container>\r\n"
+        },
+        {
+            "name": "DetailComponent",
+            "id": "component-DetailComponent-55a149f4ec0ef66fcf2c6486dc9a78bc",
+            "file": "src/app/core/views/detail/detail.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-detail",
+            "styleUrls": [
+                "./detail.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./detail.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-detail',\r\n  templateUrl: './detail.component.html',\r\n  styleUrls: ['./detail.component.scss']\r\n})\r\nexport class DetailComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./detail.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-view-container>\r\n  <p>detail works!</p>\r\n</app-view-container>\r\n"
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-fa91c23bb2079703e3b5a596fb40d1f7",
+            "file": "src/app/core/views/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [
+                "./home.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { animateOnScroll } from 'src/app/shared/animations';\r\n\r\n@Component({\r\n  selector: 'app-home',\r\n  templateUrl: './home.component.html',\r\n  styleUrls: ['./home.component.scss'],\r\n})\r\nexport class HomeComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    animateOnScroll('animate__fadeInLeft', '.wrapper.advantage');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./home.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-view-container>\r\n  <app-banner-max></app-banner-max>\r\n  <app-advantages></app-advantages>\r\n  <app-product-info-big></app-product-info-big>\r\n</app-view-container>\r\n"
+        },
+        {
+            "name": "NavBarComponent",
+            "id": "component-NavBarComponent-52b2b2598a3fa6f56e9474f2ed971f74",
+            "file": "src/app/core/components/nav-bar/nav-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-nav-bar",
+            "styleUrls": [
+                "./nav-bar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./nav-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "animateOnScroll",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { animateOnScroll } from 'src/app/shared/animations';\r\n\r\n@Component({\r\n  selector: 'app-nav-bar',\r\n  templateUrl: './nav-bar.component.html',\r\n  styleUrls: ['./nav-bar.component.scss'],\r\n})\r\nexport class NavBarComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit() {\r\n    this.animateOnScroll();\r\n  }\r\n\r\n  animateOnScroll() {\r\n    const options = {\r\n      rootMargin: '0px',\r\n      threshold: 0.9,\r\n    };\r\n\r\n    const observer = new IntersectionObserver(\r\n      (entries: IntersectionObserverEntry[]) => {\r\n        entries.forEach((entry) => {\r\n          if (!entry.isIntersecting) {\r\n            document.querySelector('#nav')?.classList.add('nav-transparent');\r\n          } else {\r\n            document.querySelector('#nav')?.classList.remove('nav-transparent');\r\n          }\r\n        });\r\n      },\r\n      options\r\n    );\r\n    document.querySelectorAll('.banner-max').forEach((value) => {\r\n      observer.observe(value);\r\n    });\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "img.icon {\r\n  height: 30px;\r\n}\r\n\r\nnav.navbar {\r\n  padding-top: 20px;\r\n  background-color: transparent;\r\n  backdrop-filter: blur(4px);\r\n  transition: 1s;\r\n  box-shadow: rgba(0, 0, 0, 0.47) 3px 3px 15px 3px;\r\n\r\n  a {\r\n    color: white !important;\r\n  }\r\n}\r\n\r\n.nav-transparent {\r\n  padding-top: 8px !important;\r\n  background-color: #2b2d42 !important;\r\n}\r\n\r\na.nav-link {\r\n  color: #edf2f4 !important;\r\n}\r\n",
+                    "styleUrl": "./nav-bar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<nav\r\n  class=\"animate__animated animate__fadeIn navbar-light navbar navbar-expand-md fixed-top\"\r\n  id=\"nav\"\r\n>\r\n  <div\r\n    class=\"animate__animated animate__fadeInLeft navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\"\r\n  >\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\">Service</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/products\">Products</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/about\">About Us</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"order-0\">\r\n    <a\r\n      class=\"navbar-brand mx-auto\"\r\n      style=\"font-family: p-regular;\"\r\n      routerLink=\"/\"\r\n      >CompassWorld</a\r\n    >\r\n  </div>\r\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\r\n    <ul class=\"navbar-nav ml-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/shopping-cart\">\r\n          <img class=\"icon\" src=\"/assets/icons/svg/shopping-bag.svg\" alt=\"\" />\r\n        </a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/profile\">\r\n          <img class=\"icon\" src=\"/assets/icons/svg/user.svg\" alt=\"\" />\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <button\r\n    class=\"navbar-toggler\"\r\n    type=\"button\"\r\n    data-toggle=\"collapse\"\r\n    data-target=\".dual-collapse2\"\r\n  >\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n</nav>\r\n"
+        },
+        {
+            "name": "ProductInfoBigComponent",
+            "id": "component-ProductInfoBigComponent-8662bb71b72f5b8ffbf4cce5d0b553a5",
+            "file": "src/app/core/components/product-info-big/product-info-big.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-product-info-big",
+            "styleUrls": [
+                "./product-info-big.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./product-info-big.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-product-info-big',\r\n  templateUrl: './product-info-big.component.html',\r\n  styleUrls: ['./product-info-big.component.scss']\r\n})\r\nexport class ProductInfoBigComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "div.wrapper {\r\n  background-color: green;\r\n}\r\n\r\nimg {\r\n  max-width: 100%;\r\n}\r\n",
+                    "styleUrl": "./product-info-big.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"wrapper container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-6\">hello world</div>\r\n    <div class=\"col-md-6 img-container\">\r\n      <img src=\"/assets/images/placeholder.jpg\" alt=\"\" />\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-6\">hello world</div>\r\n    <div class=\"col-md-6 img-container\">\r\n      <img src=\"/assets/images/placeholder.jpg\" alt=\"\" />\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "ProductsComponent",
+            "id": "component-ProductsComponent-54224be72e27d778f351d04b54ecfca1",
+            "file": "src/app/core/views/products/products.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-products",
+            "styleUrls": [
+                "./products.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./products.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-products',\r\n  templateUrl: './products.component.html',\r\n  styleUrls: ['./products.component.scss']\r\n})\r\nexport class ProductsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./products.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-view-container>\r\n  <p>products works!</p>\r\n</app-view-container>\r\n"
+        },
+        {
+            "name": "ProfileComponent",
+            "id": "component-ProfileComponent-2fe6cc627b40eb9ccfa72399ddf73973",
+            "file": "src/app/core/views/profile/profile.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-profile",
+            "styleUrls": [
+                "./profile.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./profile.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-profile',\r\n  templateUrl: './profile.component.html',\r\n  styleUrls: ['./profile.component.scss']\r\n})\r\nexport class ProfileComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./profile.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-view-container>\r\n  <p>profile works!</p>\r\n</app-view-container>\r\n"
+        },
+        {
+            "name": "ShoppingCartComponent",
+            "id": "component-ShoppingCartComponent-c36b60ad4d23b969a09e67464527f077",
+            "file": "src/app/core/views/shopping-cart/shopping-cart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-shopping-cart",
+            "styleUrls": [
+                "./shopping-cart.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./shopping-cart.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-shopping-cart',\r\n  templateUrl: './shopping-cart.component.html',\r\n  styleUrls: ['./shopping-cart.component.scss']\r\n})\r\nexport class ShoppingCartComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./shopping-cart.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-view-container>\r\n  <p>shopping-cart works!</p>\r\n</app-view-container>\r\n"
+        },
+        {
+            "name": "ViewContainerComponent",
+            "id": "component-ViewContainerComponent-a4170b1fec93d02f42066e4ff6a88b89",
+            "file": "src/app/core/components/view-container/view-container.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-view-container",
+            "styleUrls": [
+                "./view-container.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./view-container.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-view-container',\r\n  templateUrl: './view-container.component.html',\r\n  styleUrls: ['./view-container.component.scss']\r\n})\r\nexport class ViewContainerComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  height: 100%;\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  & > main {\r\n    flex: 1;\r\n\r\n    overflow: auto;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./view-container.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-nav-bar></app-nav-bar>\r\n<main>\r\n  <ng-content></ng-content>\r\n</main>\r\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AboutComponent"
+                        },
+                        {
+                            "name": "AdvantageComponent"
+                        },
+                        {
+                            "name": "AdvantagesComponent"
+                        },
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "BannerMaxComponent"
+                        },
+                        {
+                            "name": "ContactComponent"
+                        },
+                        {
+                            "name": "DetailComponent"
+                        },
+                        {
+                            "name": "HomeComponent"
+                        },
+                        {
+                            "name": "NavBarComponent"
+                        },
+                        {
+                            "name": "ProductInfoBigComponent"
+                        },
+                        {
+                            "name": "ProductsComponent"
+                        },
+                        {
+                            "name": "ProfileComponent"
+                        },
+                        {
+                            "name": "ShoppingCartComponent"
+                        },
+                        {
+                            "name": "ViewContainerComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "exampleStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/components/nav-bar/nav-bar.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "literal type"
+            }
+        ],
+        "functions": [
+            {
+                "name": "animateOnScroll",
+                "file": "src/app/shared/animations.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": [
+                    {
+                        "name": "animationClass"
+                    },
+                    {
+                        "name": "querySelector"
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "animationClass",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "querySelector",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/app/core/components/nav-bar/nav-bar.stories.ts": [
+                {
+                    "name": "exampleStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/components/nav-bar/nav-bar.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/app/shared/animations.ts": [
+                {
+                    "name": "animateOnScroll",
+                    "file": "src/app/shared/animations.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "animationClass"
+                        },
+                        {
+                            "name": "querySelector"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "animationClass",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "querySelector",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "",
+                        "component": "HomeComponent"
+                    },
+                    {
+                        "path": "products/:id",
+                        "component": "DetailComponent"
+                    },
+                    {
+                        "path": "products",
+                        "component": "ProductsComponent"
+                    },
+                    {
+                        "path": "contact",
+                        "component": "ContactComponent"
+                    },
+                    {
+                        "path": "about",
+                        "component": "AboutComponent"
+                    },
+                    {
+                        "path": "shopping-cart",
+                        "component": "ShoppingCartComponent"
+                    },
+                    {
+                        "path": "profile",
+                        "component": "ProfileComponent"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/advantage/advantage.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AdvantageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/advantages/advantages.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AdvantagesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/banner-max/banner-max.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BannerMaxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/nav-bar/nav-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/nav-bar/nav-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "exampleStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/product-info-big/product-info-big.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProductInfoBigComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/view-container/view-container.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ViewContainerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/views/about/about.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AboutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/views/contact/contact.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContactComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/views/detail/detail.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DetailComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/views/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/views/products/products.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProductsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/views/profile/profile.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/views/shopping-cart/shopping-cart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ShoppingCartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/animations.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "animateOnScroll",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
