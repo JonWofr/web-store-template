@@ -21,6 +21,9 @@ import { ViewContainerComponent } from './core/components/view-container/view-co
 import { ProductsComponent } from './core/views/products/products.component';
 import { ShoppingCartComponent } from './core/views/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from './core/views/profile/profile.component';
+import { ShoppingCartItemComponent } from './core/components/shopping-cart-item/shopping-cart-item.component';
+import { ItemQuantityInputStepperComponent } from './core/components/item-quantity-input-stepper/item-quantity-input-stepper.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,9 +41,11 @@ import { ProfileComponent } from './core/views/profile/profile.component';
     ProductsComponent,
     ShoppingCartComponent,
     ProfileComponent,
+    ShoppingCartItemComponent,
+    ItemQuantityInputStepperComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

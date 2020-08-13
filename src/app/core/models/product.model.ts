@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   title: string;
-  subTitle: string;
+  subtitle: string;
   shortDescription: string;
   description: string;
   amountOnStock: number;
@@ -10,6 +10,8 @@ export interface Product {
   reviews: [];
   keyFacts: [];
   inStockSinceInMs: number;
+  thumbnailImageUrl: string;
+  previewImagesUrls: string[];
   brand?: string;
   discountedPrice?: number;
 }

@@ -943,12 +943,12 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "environment",
+                "name": "defaultProps",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "file": "src/app/core/components/nav-bar/nav-bar.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
             },
             {
                 "name": "environment",
@@ -959,12 +959,12 @@
                 "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
-                "name": "exampleStory",
+                "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/core/components/nav-bar/nav-bar.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "require",
@@ -1025,14 +1025,14 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
+            "src/app/core/components/nav-bar/nav-bar.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "defaultProps",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
+                    "file": "src/app/core/components/nav-bar/nav-bar.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -1045,14 +1045,14 @@
                     "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
-            "src/app/core/components/nav-bar/nav-bar.stories.ts": [
+            "src/environments/environment.ts": [
                 {
-                    "name": "exampleStory",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/core/components/nav-bar/nav-bar.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ]
         },
@@ -1198,7 +1198,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "exampleStory",
+                "name": "defaultProps",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

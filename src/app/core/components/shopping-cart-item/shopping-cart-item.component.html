@@ -1,0 +1,22 @@
+<div class="left-side">
+  <img class="thumbnail" [src]="product?.thumbnailImageUrl" alt="" />
+  <div class="text-information">
+    <div>
+      <div class="title">
+        {{ product?.title }}
+      </div>
+      <div class="subtitle">
+        {{ product?.subtitle }}
+      </div>
+    </div>
+    <button>
+      Entfernen
+    </button>
+  </div>
+</div>
+<div class="right-side">
+  <app-item-quantity-input-stepper> </app-item-quantity-input-stepper>
+  <div class="price">
+    {{ product?.price }}
+  </div>
+</div>
