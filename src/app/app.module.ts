@@ -24,6 +24,7 @@ import { ProfileComponent } from './core/views/profile/profile.component';
 import { ShoppingCartItemComponent } from './core/components/shopping-cart-item/shopping-cart-item.component';
 import { ItemQuantityInputStepperComponent } from './core/components/item-quantity-input-stepper/item-quantity-input-stepper.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { ShoppingCartItemsListComponent } from './core/components/shopping-cart-items-list/shopping-cart-items-list.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { APP_BASE_HREF } from '@angular/common';
     ProfileComponent,
     ShoppingCartItemComponent,
     ItemQuantityInputStepperComponent,
+    ShoppingCartItemsListComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product.model';
+import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 
 @Component({
   selector: 'app-shopping-cart-item',
@@ -7,12 +8,20 @@ import { Product } from '../../models/product.model';
   styleUrls: ['./shopping-cart-item.component.scss'],
 })
 export class ShoppingCartItemComponent implements OnInit {
-  @Input() product?: Product;
-  @Input() quantity: number = 1;
-  @Input() size?: number;
-  @Input() color?: string;
+  @Input() shoppingCartItem?: ShoppingCartItem;
+  @Output() clickRemove = new EventEmitter<void>();
+  @Output() changeShoppingCartItem = new EventEmitter<ShoppingCartItem>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onChangeQuantity(quantity: number): void {
+    if (this.shoppingCartItem) {
+      this.shoppingCartItem.quantity = quantity;
+      this.shoppingCartItem.price =
+        this.shoppingCartItem.product.price * this.shoppingCartItem.quantity;
+      this.changeShoppingCartItem.emit(this.shoppingCartItem);
+    }
+  }
 }

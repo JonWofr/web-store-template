@@ -117,12 +117,52 @@
             "indexSignatures": [],
             "kind": 150,
             "methods": []
+        },
+        {
+            "name": "ShoppingCartItem",
+            "id": "interface-ShoppingCartItem-264407b637a4e91ec3e8e77b23a8396e",
+            "file": "src/app/core/models/shopping-cart-item.model.ts",
+            "type": "interface",
+            "sourceCode": "import { Product } from './product.model';\r\n\r\nexport interface ShoppingCartItem {\r\n  product: Product;\r\n  quantity: number;\r\n  size?: number;\r\n  color?: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "color",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "product",
+                    "type": "Product",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "quantity",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "size",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
         }
     ],
     "injectables": [
         {
             "name": "HttpService",
-            "id": "injectable-HttpService-0da51701c6237e32646f4bd5912c26ab",
+            "id": "injectable-HttpService-3ad4add5ae0c55bce686997cd69432c4",
             "file": "src/app/core/services/http/http.service.ts",
             "properties": [],
             "methods": [
@@ -144,15 +184,15 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 895,
-                                "end": 898,
+                                "pos": 865,
+                                "end": 868,
                                 "flags": 0,
                                 "escapedText": "url"
                             },
                             "type": "string",
                             "tagName": {
-                                "pos": 889,
-                                "end": 894,
+                                "pos": 859,
+                                "end": 864,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -160,8 +200,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 933,
-                                "end": 940,
+                                "pos": 902,
+                                "end": 909,
                                 "flags": 0,
                                 "escapedText": "returns"
                             },
@@ -187,15 +227,15 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 1189,
-                                "end": 1192,
+                                "pos": 1150,
+                                "end": 1153,
                                 "flags": 0,
                                 "escapedText": "url"
                             },
                             "type": "string",
                             "tagName": {
-                                "pos": 1183,
-                                "end": 1188,
+                                "pos": 1144,
+                                "end": 1149,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -203,8 +243,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 1227,
-                                "end": 1234,
+                                "pos": 1187,
+                                "end": 1194,
                                 "flags": 0,
                                 "escapedText": "returns"
                             },
@@ -230,15 +270,15 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 319,
-                                "end": 322,
+                                "pos": 307,
+                                "end": 310,
                                 "flags": 0,
                                 "escapedText": "url"
                             },
                             "type": "string",
                             "tagName": {
-                                "pos": 313,
-                                "end": 318,
+                                "pos": 301,
+                                "end": 306,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -246,8 +286,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 357,
-                                "end": 364,
+                                "pos": 344,
+                                "end": 351,
                                 "flags": 0,
                                 "escapedText": "returns"
                             },
@@ -273,15 +313,15 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 593,
-                                "end": 596,
+                                "pos": 572,
+                                "end": 575,
                                 "flags": 0,
                                 "escapedText": "url"
                             },
                             "type": "string",
                             "tagName": {
-                                "pos": 587,
-                                "end": 592,
+                                "pos": 566,
+                                "end": 571,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -289,8 +329,8 @@
                         },
                         {
                             "tagName": {
-                                "pos": 631,
-                                "end": 638,
+                                "pos": 609,
+                                "end": 616,
                                 "flags": 0,
                                 "escapedText": "returns"
                             },
@@ -300,7 +340,7 @@
                 }
             ],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class HttpService {\r\n  constructor(private httpClient: HttpClient) {}\r\n\r\n  /**\r\n   * Fetch one document via a GET request\r\n   * @param url the url of the GET request\r\n   * @returns the observable which will serve the requested document\r\n   */\r\n  getOneAsObservable<T>(url: string): Observable<T> {\r\n    return this.httpClient.get<T>(url);\r\n  }\r\n\r\n  /**\r\n   * Fetch one document via a GET request\r\n   * @param url the url of the GET request\r\n   * @returns the promise which once fullfilled will serve the requested document\r\n   */\r\n  getOneAsPromise<T>(url: string): Promise<T> {\r\n    return this.httpClient.get<T>(url).toPromise();\r\n  }\r\n\r\n  /**\r\n   * Fetch an array of documents via a GET request\r\n   * @param url the url of the GET request\r\n   * @returns the observable which will serve the array of requested documents\r\n   */\r\n  getManyAsObservable<T>(url: string): Observable<T> {\r\n    return this.httpClient.get<T>(url);\r\n  }\r\n\r\n  /**\r\n   * Fetch an array of documents via a GET request\r\n   * @param url the url of the GET request\r\n   * @returns the promise which once fullfilled will serve the array of requested documents\r\n   */\r\n  getManyAsPromise<T>(url: string): Promise<T> {\r\n    return this.httpClient.get<T>(url).toPromise();\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class HttpService {\n  constructor(private httpClient: HttpClient) {}\n\n  /**\n   * Fetch one document via a GET request\n   * @param url the url of the GET request\n   * @returns the observable which will serve the requested document\n   */\n  getOneAsObservable<T>(url: string): Observable<T> {\n    return this.httpClient.get<T>(url);\n  }\n\n  /**\n   * Fetch one document via a GET request\n   * @param url the url of the GET request\n   * @returns the promise which once fullfilled will serve the requested document\n   */\n  getOneAsPromise<T>(url: string): Promise<T> {\n    return this.httpClient.get<T>(url).toPromise();\n  }\n\n  /**\n   * Fetch an array of documents via a GET request\n   * @param url the url of the GET request\n   * @returns the observable which will serve the array of requested documents\n   */\n  getManyAsObservable<T>(url: string): Observable<T> {\n    return this.httpClient.get<T>(url);\n  }\n\n  /**\n   * Fetch an array of documents via a GET request\n   * @param url the url of the GET request\n   * @returns the promise which once fullfilled will serve the array of requested documents\n   */\n  getManyAsPromise<T>(url: string): Promise<T> {\n    return this.httpClient.get<T>(url).toPromise();\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -361,7 +401,7 @@
     "components": [
         {
             "name": "AboutComponent",
-            "id": "component-AboutComponent-6cdf8cc2ebc32a5ad9a8cd25ce5f9e84",
+            "id": "component-AboutComponent-419d2ccd9147b188afb8d0d9a75e227c",
             "file": "src/app/core/views/about/about.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -395,7 +435,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-about',\r\n  templateUrl: './about.component.html',\r\n  styleUrls: ['./about.component.scss']\r\n})\r\nexport class AboutComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.scss']\n})\nexport class AboutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -413,7 +453,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\r\n  <p>about works!</p>\r\n</app-view-container>\r\n"
+            "templateData": "<app-view-container>\n  <p>about works!</p>\n</app-view-container>\n"
         },
         {
             "name": "AdvantageComponent",
@@ -632,7 +672,7 @@
         },
         {
             "name": "ContactComponent",
-            "id": "component-ContactComponent-efea838da33661f02f6e3bcd4abc145a",
+            "id": "component-ContactComponent-3f2ddaab0348a92a3c4b84b5b86c6ca7",
             "file": "src/app/core/views/contact/contact.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -666,7 +706,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-contact',\r\n  templateUrl: './contact.component.html',\r\n  styleUrls: ['./contact.component.scss']\r\n})\r\nexport class ContactComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-contact',\n  templateUrl: './contact.component.html',\n  styleUrls: ['./contact.component.scss']\n})\nexport class ContactComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -684,11 +724,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container><p>contact works!</p> </app-view-container>\r\n"
+            "templateData": "<app-view-container><p>contact works!</p> </app-view-container>\n"
         },
         {
             "name": "DetailComponent",
-            "id": "component-DetailComponent-ec4654f59802911dc51f834ecf3e21e4",
+            "id": "component-DetailComponent-6b7a5d4e239668c7fae792687b135043",
             "file": "src/app/core/views/detail/detail.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -730,7 +770,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { ActivatedRoute } from '@angular/router';\r\nimport { HttpService } from '../../services/http/http.service';\r\nimport { Product } from '../../models/product.model';\r\n\r\n@Component({\r\n  selector: 'app-detail',\r\n  templateUrl: './detail.component.html',\r\n  styleUrls: ['./detail.component.scss'],\r\n})\r\nexport class DetailComponent implements OnInit {\r\n  product?: Product;\r\n\r\n  constructor(\r\n    private activatedRoute: ActivatedRoute,\r\n    private httpService: HttpService\r\n  ) {}\r\n\r\n  ngOnInit(): void {\r\n    const productId = this.activatedRoute.snapshot.paramMap.get('id');\r\n    this.httpService\r\n      .getManyAsPromise<Product[]>('/assets/data/products.json')\r\n      .then((products) => {\r\n        this.product = products.find((product) => product.id === productId);\r\n      });\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\nimport { HttpService } from '../../services/http/http.service';\nimport { Product } from '../../models/product.model';\n\n@Component({\n  selector: 'app-detail',\n  templateUrl: './detail.component.html',\n  styleUrls: ['./detail.component.scss'],\n})\nexport class DetailComponent implements OnInit {\n  product?: Product;\n\n  constructor(\n    private activatedRoute: ActivatedRoute,\n    private httpService: HttpService\n  ) {}\n\n  ngOnInit(): void {\n    const productId = this.activatedRoute.snapshot.paramMap.get('id');\n    this.httpService\n      .getManyAsPromise<Product[]>('/assets/data/products.json')\n      .then((products) => {\n        this.product = products.find((product) => product.id === productId);\n      });\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -773,7 +813,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\r\n  <div *ngIf=\"product\">\r\n    {{ product.name }}\r\n  </div>\r\n</app-view-container>\r\n"
+            "templateData": "<app-view-container>\n  <div *ngIf=\"product\">\n    {{ product.name }}\n  </div>\n</app-view-container>\n"
         },
         {
             "name": "HomeComponent",
@@ -833,7 +873,7 @@
         },
         {
             "name": "ItemQuantityInputStepperComponent",
-            "id": "component-ItemQuantityInputStepperComponent-2bacf50fb53a7b290b4fde2f8258f6fc",
+            "id": "component-ItemQuantityInputStepperComponent-942d05910d0c209f61b0ba0ff918dd82",
             "file": "src/app/core/components/item-quantity-input-stepper/item-quantity-input-stepper.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -925,11 +965,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'app-item-quantity-input-stepper',\n  templateUrl: './item-quantity-input-stepper.component.html',\n  styleUrls: ['./item-quantity-input-stepper.component.scss'],\n})\nexport class ItemQuantityInputStepperComponent implements OnInit {\n  @Input() quantity: number = 1;\n  @Output() changeQuantity = new EventEmitter<number>();\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  onClickMinusButton(mouseEvent: MouseEvent) {\n    mouseEvent.stopPropagation();\n    mouseEvent.preventDefault();\n\n    this.quantity--;\n\n    this.changeQuantity.emit(this.quantity);\n  }\n\n  onClickPlusButton(mouseEvent: MouseEvent) {\n    mouseEvent.stopPropagation();\n    mouseEvent.preventDefault();\n\n    this.quantity++;\n\n    this.changeQuantity.emit(this.quantity);\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-item-quantity-input-stepper',\r\n  templateUrl: './item-quantity-input-stepper.component.html',\r\n  styleUrls: ['./item-quantity-input-stepper.component.scss'],\r\n})\r\nexport class ItemQuantityInputStepperComponent implements OnInit {\r\n  @Input() quantity: number = 1;\r\n  @Output() changeQuantity = new EventEmitter<number>();\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  onClickMinusButton(mouseEvent: MouseEvent) {\r\n    mouseEvent.stopPropagation();\r\n    mouseEvent.preventDefault();\r\n\r\n    this.quantity--;\r\n\r\n    this.changeQuantity.emit(this.quantity);\r\n  }\r\n\r\n  onClickPlusButton(mouseEvent: MouseEvent) {\r\n    mouseEvent.stopPropagation();\r\n    mouseEvent.preventDefault();\r\n\r\n    this.quantity++;\r\n\r\n    this.changeQuantity.emit(this.quantity);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  & > * {\r\n    margin: 0 0.25rem;\r\n\r\n    &:first-child {\r\n      margin-left: 0;\r\n    }\r\n    &:last-child {\r\n      margin-right: 0;\r\n    }\r\n  }\r\n\r\n  & > button.plus,\r\n  & > button.minus {\r\n    padding: 0.25rem;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 50%;\r\n\r\n    & > img {\r\n      display: block;\r\n\r\n      width: 24px;\r\n      height: 24px;\r\n    }\r\n  }\r\n\r\n  & > div.quantity {\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../../../values.scss\";\r\n\r\n:host {\r\n  display: flex;\r\n  align-items: center;\r\n\r\n  & > * {\r\n    margin: 0 0.25rem;\r\n\r\n    &:first-child {\r\n      margin-left: 0;\r\n    }\r\n    &:last-child {\r\n      margin-right: 0;\r\n    }\r\n  }\r\n\r\n  & > button.plus,\r\n  & > button.minus {\r\n    padding: 0.25rem;\r\n\r\n    border: 1px solid black;\r\n    border-radius: 50%;\r\n\r\n    transition: border-color 0.25s ease-in-out;\r\n\r\n    & > svg > path {\r\n      transition: fill 0.25s ease-in-out;\r\n    }\r\n\r\n    &:disabled {\r\n      border-color: $disabled-color;\r\n\r\n      & > svg > path {\r\n        fill: $disabled-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  & > div.quantity {\r\n  }\r\n}\r\n",
                     "styleUrl": "./item-quantity-input-stepper.component.scss"
                 }
             ],
@@ -943,7 +983,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button (click)=\"onClickMinusButton($event)\" class=\"minus\">\n  <img src=\"assets/icons/svg/minus.svg\" alt=\"\" />\n</button>\n<div class=\"quantity\">\n  {{ quantity }}\n</div>\n<button (click)=\"onClickPlusButton($event)\" class=\"plus\">\n  <img src=\"assets/icons/svg/plus.svg\" alt=\"\" />\n</button>\n"
+            "templateData": "<button\r\n  [disabled]=\"quantity === 1\"\r\n  (click)=\"onClickMinusButton($event)\"\r\n  class=\"minus\"\r\n>\r\n  <svg\r\n    width=\"24\"\r\n    height=\"24\"\r\n    xmlns=\"http://www.w3.org/2000/svg\"\r\n    fill-rule=\"evenodd\"\r\n    clip-rule=\"evenodd\"\r\n  >\r\n    <path d=\"M0 12v1h23v-1h-23z\" />\r\n  </svg>\r\n</button>\r\n<div class=\"quantity\">\r\n  {{ quantity }}\r\n</div>\r\n<button (click)=\"onClickPlusButton($event)\" class=\"plus\">\r\n  <svg\r\n    width=\"24\"\r\n    height=\"24\"\r\n    xmlns=\"http://www.w3.org/2000/svg\"\r\n    fill-rule=\"evenodd\"\r\n    clip-rule=\"evenodd\"\r\n  >\r\n    <path d=\"M11 11v-11h1v11h11v1h-11v11h-1v-11h-11v-1h11z\" />\r\n  </svg>\r\n</button>\r\n"
         },
         {
             "name": "NavBarComponent",
@@ -1067,7 +1107,7 @@
         },
         {
             "name": "ProductsComponent",
-            "id": "component-ProductsComponent-54224be72e27d778f351d04b54ecfca1",
+            "id": "component-ProductsComponent-bce36937861986418be936f0c10759fc",
             "file": "src/app/core/views/products/products.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1101,7 +1141,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-products',\r\n  templateUrl: './products.component.html',\r\n  styleUrls: ['./products.component.scss']\r\n})\r\nexport class ProductsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-products',\n  templateUrl: './products.component.html',\n  styleUrls: ['./products.component.scss']\n})\nexport class ProductsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1119,11 +1159,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\r\n  <p>products works!</p>\r\n</app-view-container>\r\n"
+            "templateData": "<app-view-container>\n  <p>products works!</p>\n</app-view-container>\n"
         },
         {
             "name": "ProfileComponent",
-            "id": "component-ProfileComponent-2fe6cc627b40eb9ccfa72399ddf73973",
+            "id": "component-ProfileComponent-e4854427590efc9cdba084524147e2bd",
             "file": "src/app/core/views/profile/profile.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1157,7 +1197,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-profile',\r\n  templateUrl: './profile.component.html',\r\n  styleUrls: ['./profile.component.scss']\r\n})\r\nexport class ProfileComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-profile',\n  templateUrl: './profile.component.html',\n  styleUrls: ['./profile.component.scss']\n})\nexport class ProfileComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1175,11 +1215,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\r\n  <p>profile works!</p>\r\n</app-view-container>\r\n"
+            "templateData": "<app-view-container>\n  <p>profile works!</p>\n</app-view-container>\n"
         },
         {
             "name": "ShoppingCartComponent",
-            "id": "component-ShoppingCartComponent-c36b60ad4d23b969a09e67464527f077",
+            "id": "component-ShoppingCartComponent-e0035b5af9eeac0a6ae580f96dd08f06",
             "file": "src/app/core/views/shopping-cart/shopping-cart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1213,7 +1253,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-shopping-cart',\r\n  templateUrl: './shopping-cart.component.html',\r\n  styleUrls: ['./shopping-cart.component.scss']\r\n})\r\nexport class ShoppingCartComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-shopping-cart',\n  templateUrl: './shopping-cart.component.html',\n  styleUrls: ['./shopping-cart.component.scss']\n})\nexport class ShoppingCartComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1231,11 +1271,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\r\n  <p>shopping-cart works!</p>\r\n</app-view-container>\r\n"
+            "templateData": "<app-view-container>\n  <p>shopping-cart works!</p>\n</app-view-container>\n"
         },
         {
             "name": "ShoppingCartItemComponent",
-            "id": "component-ShoppingCartItemComponent-d27d854fd45072632209bd82288ad086",
+            "id": "component-ShoppingCartItemComponent-ac69882ce7b45c740573138edb933d67",
             "file": "src/app/core/components/shopping-cart-item/shopping-cart-item.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1253,28 +1293,25 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "color",
-                    "line": 13,
-                    "type": "string"
-                },
-                {
-                    "name": "product",
-                    "line": 10,
-                    "type": "Product"
-                },
-                {
-                    "name": "quantity",
-                    "defaultValue": "1",
+                    "name": "shoppingCartItem",
                     "line": 11,
-                    "type": "number"
-                },
-                {
-                    "name": "size",
-                    "line": 12,
-                    "type": "number"
+                    "type": "ShoppingCartItem"
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "changeQuantity",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "line": 13,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "clickRemove",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "line": 12,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [],
             "methodsClass": [
                 {
@@ -1291,11 +1328,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\nimport { Product } from '../../models/product.model';\n\n@Component({\n  selector: 'app-shopping-cart-item',\n  templateUrl: './shopping-cart-item.component.html',\n  styleUrls: ['./shopping-cart-item.component.scss'],\n})\nexport class ShoppingCartItemComponent implements OnInit {\n  @Input() product?: Product;\n  @Input() quantity: number = 1;\n  @Input() size?: number;\n  @Input() color?: string;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Product } from '../../models/product.model';\r\nimport { ShoppingCartItem } from '../../models/shopping-cart-item.model';\r\n\r\n@Component({\r\n  selector: 'app-shopping-cart-item',\r\n  templateUrl: './shopping-cart-item.component.html',\r\n  styleUrls: ['./shopping-cart-item.component.scss'],\r\n})\r\nexport class ShoppingCartItemComponent implements OnInit {\r\n  @Input() shoppingCartItem?: ShoppingCartItem;\r\n  @Output() clickRemove = new EventEmitter<void>();\r\n  @Output() changeQuantity = new EventEmitter<number>();\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  width: 100%;\r\n  height: 100px;\r\n\r\n  display: flex;\r\n  align-items: stretch;\r\n\r\n  & > * {\r\n    margin: 0.25rem;\r\n\r\n    &:first-child {\r\n      margin-left: 0;\r\n    }\r\n    &:last-child {\r\n      margin-right: 0;\r\n    }\r\n  }\r\n\r\n  & > img.thumbnail {\r\n    width: 100px;\r\n\r\n    object-fit: cover;\r\n  }\r\n\r\n  & > div.additional-information {\r\n    flex: 1;\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: stretch;\r\n\r\n    & > div.left-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-start;\r\n\r\n      & > div {\r\n        & > h2.title {\r\n          font-size: 1.25rem;\r\n        }\r\n\r\n        & > h3.subtitle {\r\n          font-size: 1.125rem;\r\n        }\r\n      }\r\n\r\n      & > button.remove {\r\n        display: flex;\r\n        align-items: center;\r\n\r\n        & > * {\r\n          margin: 0.125rem;\r\n\r\n          &:first-child {\r\n            margin-left: 0;\r\n          }\r\n          &:last-child {\r\n            margin-right: 0;\r\n          }\r\n        }\r\n\r\n        & > img {\r\n          display: block;\r\n\r\n          width: 20px;\r\n          height: 20px;\r\n        }\r\n      }\r\n    }\r\n\r\n    & > div.right-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-end;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../../../values.scss\";\r\n\r\n:host {\r\n  width: 100%;\r\n  height: 100px;\r\n\r\n  display: flex;\r\n  align-items: stretch;\r\n\r\n  box-shadow: $default-box-shadow;\r\n\r\n  & > img.thumbnail {\r\n    width: 100px;\r\n\r\n    object-fit: cover;\r\n  }\r\n\r\n  & > div.additional-information {\r\n    flex: 1;\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: stretch;\r\n\r\n    padding: 0.75rem;\r\n\r\n    & > div.left-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-start;\r\n\r\n      & > div {\r\n        & > h2.title {\r\n          font-size: 1.8rem;\r\n        }\r\n\r\n        & > h3.subtitle {\r\n          font-size: 1.6rem;\r\n        }\r\n      }\r\n\r\n      & > button.remove {\r\n        display: flex;\r\n        align-items: center;\r\n\r\n        & > * {\r\n          margin: 0 0.125rem;\r\n\r\n          &:first-child {\r\n            margin-left: 0;\r\n          }\r\n          &:last-child {\r\n            margin-right: 0;\r\n          }\r\n        }\r\n\r\n        & > img {\r\n          display: block;\r\n\r\n          width: 20px;\r\n          height: 20px;\r\n        }\r\n      }\r\n    }\r\n\r\n    & > div.right-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-end;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./shopping-cart-item.component.scss"
                 }
             ],
@@ -1309,11 +1346,67 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<img class=\"thumbnail\" [src]=\"product?.thumbnailImageUrl\" alt=\"\" />\n<div class=\"additional-information\">\n  <div class=\"left-side\">\n    <div>\n      <h2 class=\"title\">\n        {{ product?.title }}\n      </h2>\n      <h3 class=\"subtitle\">\n        {{ product?.subtitle }}\n      </h3>\n    </div>\n    <button class=\"remove\">\n      <img src=\"assets/icons/svg/trash-can.svg\" alt=\"\" />\n      <div>\n        Entfernen\n      </div>\n    </button>\n  </div>\n  <div class=\"right-side\">\n    <app-item-quantity-input-stepper> </app-item-quantity-input-stepper>\n    <div class=\"price\">{{ product?.price }}€</div>\n  </div>\n</div>\n"
+            "templateData": "<img class=\"thumbnail\" [src]=\"product?.thumbnailImageUrl\" alt=\"\" />\r\n<div class=\"additional-information\">\r\n  <div class=\"left-side\">\r\n    <div>\r\n      <h2 class=\"title\">\r\n        {{ shoppingCartItem?.product.title }}\r\n      </h2>\r\n      <h3 class=\"subtitle\">\r\n        {{ shoppingCartItem?.product.subtitle }}\r\n      </h3>\r\n    </div>\r\n    <button class=\"remove\" (click)=\"clickRemove.emit()\">\r\n      <img src=\"assets/icons/svg/trash-can.svg\" alt=\"\" />\r\n      <div>\r\n        Entfernen\r\n      </div>\r\n    </button>\r\n  </div>\r\n  <div class=\"right-side\">\r\n    <app-item-quantity-input-stepper\r\n      (changeQuantity)=\"changeQuantity.emit($event)\"\r\n    ></app-item-quantity-input-stepper>\r\n    <div class=\"price\">{{ shoppingCartItem?.product.price }}€</div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "ShoppingCartItemsListComponent",
+            "id": "component-ShoppingCartItemsListComponent-7cb2d2c39ed8aff7584b70115ecc8001",
+            "file": "src/app/core/components/shopping-cart-items-list/shopping-cart-items-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-shopping-cart-items-list",
+            "styleUrls": [
+                "./shopping-cart-items-list.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./shopping-cart-items-list.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-shopping-cart-items-list',\n  templateUrl: './shopping-cart-items-list.component.html',\n  styleUrls: ['./shopping-cart-items-list.component.scss']\n})\nexport class ShoppingCartItemsListComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./shopping-cart-items-list.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": ""
         },
         {
             "name": "ViewContainerComponent",
-            "id": "component-ViewContainerComponent-a4170b1fec93d02f42066e4ff6a88b89",
+            "id": "component-ViewContainerComponent-5efe1a380e34cd146ca00d1f171ae74d",
             "file": "src/app/core/components/view-container/view-container.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1347,7 +1440,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-view-container',\r\n  templateUrl: './view-container.component.html',\r\n  styleUrls: ['./view-container.component.scss']\r\n})\r\nexport class ViewContainerComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-view-container',\n  templateUrl: './view-container.component.html',\n  styleUrls: ['./view-container.component.scss']\n})\nexport class ViewContainerComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1365,7 +1458,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-nav-bar></app-nav-bar>\r\n<main>\r\n  <ng-content></ng-content>\r\n</main>\r\n"
+            "templateData": "<app-nav-bar></app-nav-bar>\n<main>\n  <ng-content></ng-content>\n</main>\n"
         }
     ],
     "modules": [
@@ -1423,6 +1516,9 @@
                         },
                         {
                             "name": "ShoppingCartItemComponent"
+                        },
+                        {
+                            "name": "ShoppingCartItemsListComponent"
                         },
                         {
                             "name": "ViewContainerComponent"
@@ -1504,14 +1600,6 @@
                 "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
             },
             {
-                "name": "defaultProps",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: ShoppingCartItemComponent,\r\n  props: {\r\n    product: {\r\n      id: '1',\r\n      name: 'shirt-1',\r\n      title: 'Wunderbares T-Shirt',\r\n      subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n      shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n      description:\r\n        'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n      amountOnStock: 40,\r\n      price: 24.99,\r\n      reviews: [],\r\n      keyFacts: [],\r\n      inStockSinceInMs: 0,\r\n      thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n      previewImagesUrls: [\r\n        'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n        'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n      ],\r\n      discountedPrice: 19.99,\r\n    },\r\n    quantity: 2,\r\n  },\r\n})"
-            },
-            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1541,6 +1629,22 @@
                 "subtype": "variable",
                 "file": "src/test.ts",
                 "type": "literal type"
+            },
+            {
+                "name": "threeItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/components/shopping-cart-items-list/shopping-cart-items-list.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: ShoppingCartItemsListComponent,\r\n  props: {},\r\n})"
+            },
+            {
+                "name": "wonderfulTShirt",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: ShoppingCartItemComponent,\r\n  props: {\r\n    shoppingCartItem: {\r\n      product: {\r\n        id: '1',\r\n        name: 'shirt-1',\r\n        title: 'Wunderbares T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 2,\r\n    },\r\n    clickRemove: action('Clicked the remove button'),\r\n    changeQuantity: action('Changed quantity'),\r\n  },\r\n})"
             }
         ],
         "functions": [
@@ -1604,16 +1708,6 @@
                     "defaultValue": "() => ({\r\n  component: NavBarComponent,\r\n})"
                 }
             ],
-            "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts": [
-                {
-                    "name": "defaultProps",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ShoppingCartItemComponent,\r\n  props: {\r\n    product: {\r\n      id: '1',\r\n      name: 'shirt-1',\r\n      title: 'Wunderbares T-Shirt',\r\n      subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n      shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n      description:\r\n        'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n      amountOnStock: 40,\r\n      price: 24.99,\r\n      reviews: [],\r\n      keyFacts: [],\r\n      inStockSinceInMs: 0,\r\n      thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n      previewImagesUrls: [\r\n        'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n        'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n      ],\r\n      discountedPrice: 19.99,\r\n    },\r\n    quantity: 2,\r\n  },\r\n})"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1642,6 +1736,26 @@
                     "file": "src/app/core/components/item-quantity-input-stepper/item-quantity-input-stepper.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n  component: ItemQuantityInputStepperComponent,\r\n  props: {\r\n    quantity: 3,\r\n    changeQuantity: action('Change Quantity'),\r\n  },\r\n})"
+                }
+            ],
+            "src/app/core/components/shopping-cart-items-list/shopping-cart-items-list.stories.ts": [
+                {
+                    "name": "threeItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/components/shopping-cart-items-list/shopping-cart-items-list.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ShoppingCartItemsListComponent,\r\n  props: {},\r\n})"
+                }
+            ],
+            "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts": [
+                {
+                    "name": "wonderfulTShirt",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/components/shopping-cart-item/shopping-cart-item.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ShoppingCartItemComponent,\r\n  props: {\r\n    shoppingCartItem: {\r\n      product: {\r\n        id: '1',\r\n        name: 'shirt-1',\r\n        title: 'Wunderbares T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 2,\r\n    },\r\n    clickRemove: action('Clicked the remove button'),\r\n    changeQuantity: action('Changed quantity'),\r\n  },\r\n})"
                 }
             ]
         },
@@ -1826,7 +1940,7 @@
                 "linktype": "component",
                 "name": "ShoppingCartItemComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -1834,7 +1948,26 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "defaultProps",
+                "name": "wonderfulTShirt",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/shopping-cart-items-list/shopping-cart-items-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ShoppingCartItemsListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/components/shopping-cart-items-list/shopping-cart-items-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "threeItems",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1855,6 +1988,15 @@
                 "name": "Product",
                 "coveragePercent": 0,
                 "coverageCount": "0/16",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/models/shopping-cart-item.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ShoppingCartItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
