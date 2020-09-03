@@ -7,12 +7,18 @@
   display: flex;
   align-items: stretch;
 
-  box-shadow: $default-box-shadow;
+  box-shadow: $default-card-box-shadow;
+  border-radius: $default-card-border-radius;
+
+  background-color: $default-card-background-color;
 
   & > img.thumbnail {
     width: 100px;
 
     object-fit: cover;
+
+    border-top-left-radius: $default-card-border-radius;
+    border-bottom-left-radius: $default-card-border-radius;
   }
 
   & > div.additional-information {
@@ -31,11 +37,11 @@
       align-items: flex-start;
 
       & > div {
-        & > h2.title {
+        & > h3.title {
           font-size: 1.8rem;
         }
 
-        & > h3.subtitle {
+        & > h4.subtitle {
           font-size: 1.6rem;
         }
       }

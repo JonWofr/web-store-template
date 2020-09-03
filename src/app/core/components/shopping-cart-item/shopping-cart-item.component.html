@@ -6,12 +6,12 @@
 <div class="additional-information">
   <div class="left-side">
     <div>
-      <h2 class="title">
+      <h3 class="title">
         {{ shoppingCartItem?.product.title }}
-      </h2>
-      <h3 class="subtitle">
-        {{ shoppingCartItem?.product.subtitle }}
       </h3>
+      <h4 class="subtitle">
+        {{ shoppingCartItem?.product.subtitle }}
+      </h4>
     </div>
     <button class="remove" (click)="clickRemove.emit()">
       <img src="assets/icons/svg/trash-can.svg" alt="" />

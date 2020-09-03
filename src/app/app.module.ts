@@ -25,6 +25,9 @@ import { ShoppingCartItemComponent } from './core/components/shopping-cart-item/
 import { ItemQuantityInputStepperComponent } from './core/components/item-quantity-input-stepper/item-quantity-input-stepper.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { ShoppingCartItemsListComponent } from './core/components/shopping-cart-items-list/shopping-cart-items-list.component';
+import { PriceOverviewCardComponent } from './core/components/price-overview-card/price-overview-card.component';
+import { ShoppingCartItemsListCardComponent } from './core/components/shopping-cart-items-list-card/shopping-cart-items-list-card.component';
+import { ButtonComponent } from './core/components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +48,33 @@ import { ShoppingCartItemsListComponent } from './core/components/shopping-cart-
     ShoppingCartItemComponent,
     ItemQuantityInputStepperComponent,
     ShoppingCartItemsListComponent,
+    PriceOverviewCardComponent,
+    ShoppingCartItemsListCardComponent,
+    ButtonComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  exports: [
+    AppComponent,
+    NavBarComponent,
+    HomeComponent,
+    AdvantageComponent,
+    AdvantagesComponent,
+    BannerMaxComponent,
+    ProductInfoBigComponent,
+    DetailComponent,
+    AboutComponent,
+    ContactComponent,
+    ViewContainerComponent,
+    ProductsComponent,
+    ShoppingCartComponent,
+    ProfileComponent,
+    ShoppingCartItemComponent,
+    ItemQuantityInputStepperComponent,
+    ShoppingCartItemsListComponent,
+    PriceOverviewCardComponent,
+    ShoppingCartItemsListCardComponent,
+    ButtonComponent,
+  ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
 })
