@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-item-quantity-input-stepper',
-  templateUrl: './item-quantity-input-stepper.component.html',
-  styleUrls: ['./item-quantity-input-stepper.component.scss'],
+  selector: 'shared-input-stepper',
+  templateUrl: './input-stepper.component.html',
+  styleUrls: ['./input-stepper.component.scss'],
 })
-export class ItemQuantityInputStepperComponent implements OnInit {
+export class InputStepperComponent implements OnInit {
   @Input() quantity: number = 1;
   @Output() changeQuantity = new EventEmitter<number>();
 
@@ -13,7 +13,7 @@ export class ItemQuantityInputStepperComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onClickMinusButton(mouseEvent: MouseEvent) {
+  onClickMinusButton(mouseEvent: MouseEvent): void {
     mouseEvent.stopPropagation();
     mouseEvent.preventDefault();
 
@@ -22,7 +22,7 @@ export class ItemQuantityInputStepperComponent implements OnInit {
     this.changeQuantity.emit(this.quantity);
   }
 
-  onClickPlusButton(mouseEvent: MouseEvent) {
+  onClickPlusButton(mouseEvent: MouseEvent): void {
     mouseEvent.stopPropagation();
     mouseEvent.preventDefault();
 

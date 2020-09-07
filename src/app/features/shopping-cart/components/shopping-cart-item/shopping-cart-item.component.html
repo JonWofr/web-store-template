@@ -14,17 +14,17 @@
       </h4>
     </div>
     <button class="remove" (click)="clickRemove.emit()">
-      <img src="assets/icons/svg/trash-can.svg" alt="" />
+      <img src="assets/icons/trash-can.svg" alt="" />
       <div>
         Entfernen
       </div>
     </button>
   </div>
   <div class="right-side">
-    <app-item-quantity-input-stepper
+    <shared-input-stepper
       [quantity]="shoppingCartItem?.quantity"
       (changeQuantity)="onChangeQuantity($event)"
-    ></app-item-quantity-input-stepper>
+    ></shared-input-stepper>
     <div class="price">{{ shoppingCartItem?.price }}€</div>
   </div>
 </div>

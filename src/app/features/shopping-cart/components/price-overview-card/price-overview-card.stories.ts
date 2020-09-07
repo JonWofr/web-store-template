@@ -1,14 +1,12 @@
 import { moduleMetadata } from '@storybook/angular';
-import { action } from '@storybook/addon-actions';
-import { RouterModule } from '@angular/router';
 import { PriceOverviewCardComponent } from './price-overview-card.component';
-import { AppModule } from '../../../app.module';
+import { ShoppingCartModule } from '../../shopping-cart.module';
 
 export default {
-  title: 'Price Overview Card',
+  title: 'shopping-cart/price-overview-card',
   decorators: [
     moduleMetadata({
-      imports: [AppModule, RouterModule.forRoot([], { useHash: true })],
+      imports: [ShoppingCartModule],
     }),
   ],
 };

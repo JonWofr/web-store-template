@@ -1,5 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
-@import "values.scss";
+@import "./styles/colors.scss";
+@import "./styles/variables.scss";
 
 @font-face {
   font-family: "p-regular";
@@ -75,17 +76,17 @@ button {
 
   padding: 0;
 
+  &.btn-primary {
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: $secondary-color-dark;
+    }
+  }
+
   &:focus {
     outline: none;
   }
-}
-
-button.btn-primary {
-  background-color: $secondary-color;
-}
-
-button.btn-primary:hover {
-  background-color: $secondary-color-dark;
 }
 
 ul {

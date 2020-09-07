@@ -21,6 +21,9 @@
     <div>{{ priceOfAllItems + shippingCosts }} €</div>
   </li>
 </ul>
-<app-button [size]="ButtonSize.Fluid" (clickButton)="onClickCheckoutButton()">
+<shared-button
+  [size]="ButtonSize.Fluid"
+  (clickButton)="onClickCheckoutButton()"
+>
   Zur Kasse
-</app-button>
+</shared-button>

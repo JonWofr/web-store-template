@@ -1,14 +1,14 @@
 import { moduleMetadata } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { RouterModule } from '@angular/router';
-import { AppModule } from '../../../app.module';
+import { SharedModule } from '../../shared.module';
 import { ButtonComponent, ButtonSize } from './button.component';
 
 export default {
   title: 'Button',
   decorators: [
     moduleMetadata({
-      imports: [AppModule, RouterModule.forRoot([], { useHash: true })],
+      imports: [SharedModule],
     }),
   ],
 };
@@ -16,9 +16,9 @@ export default {
 export const small = () => ({
   component: ButtonComponent,
   template: `
-    <app-button [size]="size">
+    <shared-button [size]="size">
       Klick
-    </app-button>
+    </shared-button>
   `,
   props: {
     size: ButtonSize.Small,
@@ -28,9 +28,9 @@ export const small = () => ({
 export const medium = () => ({
   component: ButtonComponent,
   template: `
-    <app-button [size]="size">
+    <shared-button [size]="size">
       Klick
-    </app-button>
+    </shared-button>
   `,
   props: {
     size: ButtonSize.Medium,
@@ -40,9 +40,9 @@ export const medium = () => ({
 export const large = () => ({
   component: ButtonComponent,
   template: `
-    <app-button [size]="size">
+    <shared-button [size]="size">
       Klick
-    </app-button>
+    </shared-button>
   `,
   props: {
     size: ButtonSize.Large,
@@ -52,9 +52,9 @@ export const large = () => ({
 export const fluid = () => ({
   component: ButtonComponent,
   template: `
-    <app-button [size]="size">
+    <shared-button [size]="size">
       Klick
-    </app-button>
+    </shared-button>
   `,
   props: {
     size: ButtonSize.Fluid,
