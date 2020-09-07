@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.animateOnScroll();
   }
 
-  animateOnScroll() {
+  animateOnScroll(): void {
     const options = {
       rootMargin: '0px',
       threshold: 0.9,
