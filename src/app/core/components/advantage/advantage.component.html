@@ -1,4 +1,15 @@
+<div class="adv-content">
+  <ng-container [ngSwitch]="type">
+    <h3>Free Return</h3>
+    <img
+      *ngSwitchCase="advantage.Return"
+      src="/assets/icons/return-arrow.svg"
+      alt=""
+    />
+  </ng-container>
+</div>
 <svg
+  #blob
   width="100%"
   height="100%"
   viewBox="0 0 200 200"
