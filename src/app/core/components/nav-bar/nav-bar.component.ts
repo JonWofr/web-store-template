@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { animateOnScroll } from 'src/app/shared/animations';
 
 @Component({
   selector: 'app-nav-bar',

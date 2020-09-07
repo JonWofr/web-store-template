@@ -47,3 +47,10 @@ a.nav-link {
     text-shadow: 3px 3px 4px black;
   }
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  nav.navbar {
+    padding-top: 8px;
+  }
+}
