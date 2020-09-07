@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { animateOnScroll } from 'src/app/shared/animations';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,11 +8,11 @@ import { animateOnScroll } from 'src/app/shared/animations';
 export class NavBarComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.animateOnScroll();
   }
 
-  animateOnScroll() {
+  animateOnScroll(): void {
     const options = {
       rootMargin: '0px',
       threshold: 0.9,
@@ -31,7 +30,7 @@ export class NavBarComponent implements OnInit {
       },
       options
     );
-    document.querySelectorAll('.banner-max').forEach((value) => {
+    document.querySelectorAll('.main-banner').forEach((value) => {
       observer.observe(value);
     });
   }

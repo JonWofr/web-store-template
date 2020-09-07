@@ -13,7 +13,6 @@ import { HomeComponent } from './core/views/home/home.component';
 import { AdvantageComponent } from './core/components/advantage/advantage.component';
 import { AdvantagesComponent } from './core/components/advantages/advantages.component';
 import { BannerMaxComponent } from './core/components/banner-max/banner-max.component';
-import { ProductInfoBigComponent } from './core/components/product-info-big/product-info-big.component';
 import { DetailComponent } from './core/views/detail/detail.component';
 import { AboutComponent } from './core/views/about/about.component';
 import { ContactComponent } from './core/views/contact/contact.component';
@@ -37,7 +36,6 @@ import { ButtonComponent } from './core/components/button/button.component';
     AdvantageComponent,
     AdvantagesComponent,
     BannerMaxComponent,
-    ProductInfoBigComponent,
     DetailComponent,
     AboutComponent,
     ContactComponent,
@@ -60,7 +58,6 @@ import { ButtonComponent } from './core/components/button/button.component';
     AdvantageComponent,
     AdvantagesComponent,
     BannerMaxComponent,
-    ProductInfoBigComponent,
     DetailComponent,
     AboutComponent,
     ContactComponent,

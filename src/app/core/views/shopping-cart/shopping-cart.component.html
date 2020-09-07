@@ -1,4 +1,13 @@
 <app-view-container>
-  <app-shopping-cart-items-list-card> </app-shopping-cart-items-list-card>
-  <app-price-overview-card> </app-price-overview-card>
+  <div class="row">
+    <div class="col-md-8">
+      <app-shopping-cart-items-list-card
+        [shoppingCartItems]="shoppingCartItems"
+      >
+      </app-shopping-cart-items-list-card>
+    </div>
+    <div class="col-md-4">
+      <app-price-overview-card> </app-price-overview-card>
+    </div>
+  </div>
 </app-view-container>

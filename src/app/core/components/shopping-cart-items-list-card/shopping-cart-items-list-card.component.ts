@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 
 @Component({
   selector: 'app-shopping-cart-items-list-card',
   templateUrl: './shopping-cart-items-list-card.component.html',
-  styleUrls: ['./shopping-cart-items-list-card.component.scss']
+  styleUrls: ['./shopping-cart-items-list-card.component.scss'],
 })
 export class ShoppingCartItemsListCardComponent implements OnInit {
+  @Input() shoppingCartItems: ShoppingCartItem[] = [];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
