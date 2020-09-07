@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { animateOnScroll } from 'src/app/shared/animations';
+import { animateOnScroll } from 'src/shared/animations/animations';
 
 @Component({
   selector: 'app-home',

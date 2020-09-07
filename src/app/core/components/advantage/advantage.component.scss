@@ -1,4 +1,22 @@
-div.wrapper {
-  background-color: red;
-  opacity: 0;
+@import "src/values.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+svg {
+  width: inherit;
+}
+
+.blob {
+  cursor: pointer;
+  fill: $secondary-color;
+  transition: 0.4s;
+  &:hover {
+    fill: $manatee-grey;
+  }
 }
