@@ -1,0 +1,35 @@
+@import "src/styles/colors.scss";
+
+:host > button {
+  box-sizing: border-box;
+  padding: 0.75rem;
+
+  display: inline-block;
+
+  background-color: $secondary-color;
+
+  color: $light-font-color;
+
+  transition: background-color 0.25s ease-in-out;
+
+  font-size: 1.6rem;
+
+  border-radius: 0.5rem;
+
+  &.small {
+    width: 100px;
+  }
+  &.medium {
+    width: 200px;
+  }
+  &.large {
+    width: 300px;
+  }
+  &.fluid {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: $secondary-color-dark;
+  }
+}

@@ -1,0 +1,42 @@
+@import "src/styles/colors.scss";
+
+:host {
+  display: flex;
+  align-items: center;
+
+  & > * {
+    margin: 0 0.25rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  & > button.plus,
+  & > button.minus {
+    padding: 0.25rem;
+
+    border: 1px solid black;
+    border-radius: 50%;
+
+    transition: border-color 0.25s ease-in-out;
+
+    & > svg > path {
+      transition: fill 0.25s ease-in-out;
+    }
+
+    &:disabled {
+      border-color: $disabled-color;
+
+      & > svg > path {
+        fill: $disabled-color;
+      }
+    }
+  }
+
+  & > div.quantity {
+  }
+}

@@ -1,3 +1,5 @@
 <app-view-container>
-  <p>detail works!</p>
+  <div *ngIf="product">
+    {{ product.name }}
+  </div>
 </app-view-container>

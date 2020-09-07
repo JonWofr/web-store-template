@@ -1,0 +1,81 @@
+@import "src/styles/colors.scss";
+@import "src/styles/variables.scss";
+
+:host {
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  align-items: stretch;
+
+  box-shadow: $default-card-box-shadow;
+  border-radius: $default-card-border-radius;
+
+  background-color: $default-card-background-color;
+
+  & > img.thumbnail {
+    width: 100px;
+
+    object-fit: cover;
+
+    border-top-left-radius: $default-card-border-radius;
+    border-bottom-left-radius: $default-card-border-radius;
+  }
+
+  & > div.additional-information {
+    flex: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    padding: 0.75rem;
+
+    & > div.left-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      & > div {
+        & > h3.title {
+          font-size: 1.8rem;
+        }
+
+        & > h4.subtitle {
+          font-size: 1.6rem;
+        }
+      }
+
+      & > button.remove {
+        display: flex;
+        align-items: center;
+
+        & > * {
+          margin: 0 0.125rem;
+
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        & > img {
+          display: block;
+
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    & > div.right-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+}

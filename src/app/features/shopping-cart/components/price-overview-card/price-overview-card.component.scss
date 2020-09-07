@@ -1,0 +1,43 @@
+@import "src/styles/colors.scss";
+@import "src/styles/variables.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: $default-card-border-radius;
+
+  box-shadow: $default-card-box-shadow;
+
+  background-color: $default-card-background-color;
+
+  padding: $default-card-padding;
+
+  & > * {
+    margin: 0.5rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & > ul {
+    & > * {
+      margin: 0.75rem 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    & > li {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<h2>
+  Gesamtsumme
+</h2>
+<ul>
+  <li>
+    <div>
+      Zwischensumme
+    </div>
+    <div>{{ priceOfAllItems }} €</div>
+  </li>
+  <li>
+    <div>
+      Versand
+    </div>
+    <div>{{ shippingCosts }} €</div>
+  </li>
+  <li>
+    <div>
+      Gesamtsumme (inkl. MwSt.)
+    </div>
+    <div>{{ priceOfAllItems + shippingCosts }} €</div>
+  </li>
+</ul>
+<shared-button
+  [size]="ButtonSize.Fluid"
+  (clickButton)="onClickCheckoutButton()"
+>
+  Zur Kasse
+</shared-button>
