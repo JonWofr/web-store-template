@@ -8,18 +8,10 @@
   display: flex;
   align-items: stretch;
 
-  box-shadow: $default-card-box-shadow;
-  border-radius: $default-card-border-radius;
-
-  background-color: $default-card-background-color;
-
   & > img.thumbnail {
     width: 100px;
 
     object-fit: cover;
-
-    border-top-left-radius: $default-card-border-radius;
-    border-bottom-left-radius: $default-card-border-radius;
   }
 
   & > div.additional-information {
@@ -29,7 +21,7 @@
     justify-content: space-between;
     align-items: stretch;
 
-    padding: 0.75rem;
+    padding: 0.5rem;
 
     & > div.left-side {
       display: flex;
@@ -38,12 +30,22 @@
       align-items: flex-start;
 
       & > div {
+        & > * {
+          margin: 0.125rem 0;
+
+          :first-child {
+            margin-top: 0;
+          }
+          :last-child {
+            margin-bottom: 0;
+          }
+        }
         & > h3.title {
-          font-size: 1.8rem;
+          font-size: 1.4rem;
         }
 
         & > h4.subtitle {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
         }
       }
 

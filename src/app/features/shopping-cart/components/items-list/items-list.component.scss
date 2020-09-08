@@ -1,0 +1,17 @@
+@import "src/styles/colors.scss";
+@import "src/styles/variables.scss";
+
+:host {
+  & > div.shopping-cart-item-container {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid $default-border-color;
+
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+}

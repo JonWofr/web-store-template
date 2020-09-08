@@ -8,6 +8,7 @@ import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 })
 export class ShoppingCartComponent implements OnInit {
   shoppingCartItems: ShoppingCartItem[] = [];
+  priceOfAllItems = 0;
 
   constructor() {}
 
@@ -16,6 +17,22 @@ export class ShoppingCartComponent implements OnInit {
       this.shoppingCartItems = JSON.parse(
         localStorage.getItem('shoppingCartItems') || ''
       );
+      this.priceOfAllItems = this.calculateSumOfAllItems(
+        this.shoppingCartItems
+      );
     }
+  }
+
+  calculateSumOfAllItems(shoppingCartItems: ShoppingCartItem[]): number {
+    let priceOfAllItems = 0;
+    shoppingCartItems.forEach(
+      (shoppingCartItem) => (priceOfAllItems += shoppingCartItem.price)
+    );
+    return priceOfAllItems;
+  }
+
+  onChangeShoppingCartItems(shoppingCartItems: ShoppingCartItem[]): void {
+    this.shoppingCartItems = shoppingCartItems;
+    this.priceOfAllItems = this.calculateSumOfAllItems(this.shoppingCartItems);
   }
 }

@@ -34,41 +34,6 @@ body {
   background-color: $alice-blue;
 }
 
-html {
-  font-size: 62.5%; // => 1 rem is now 10px (and not 16px) https://www.sitepoint.com/understanding-and-using-rem-units-in-css/
-}
-
-h1 {
-  font-size: 3.2rem; //32px
-}
-
-h2 {
-  font-size: 2.4rem; //24px
-}
-
-h3 {
-  font-size: 1.872rem; //18.72px
-}
-
-h4 {
-  font-size: 1.4rem; //14px
-}
-
-h5 {
-  font-size: 1.328rem; //13.28px
-}
-
-h6 {
-  font-size: 1.072rem; //10.72px
-}
-
-p,
-li,
-div,
-span {
-  font-size: 1.4rem; //14px
-}
-
 button {
   border: none;
 

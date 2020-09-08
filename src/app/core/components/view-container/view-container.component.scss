@@ -1,5 +1,5 @@
 :host {
-  height: 100%;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -7,15 +7,23 @@
   & > main {
     flex: 1;
 
-    overflow: auto;
-
     &.with-margin {
       margin-top: 65px;
+
+      & > div {
+        height: calc(100vh - 65px);
+      }
     }
 
-    & > div.container {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+    & > div {
+      height: 100vh;
+
+      overflow: auto;
+
+      &.container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
     }
   }
 }

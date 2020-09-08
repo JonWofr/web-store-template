@@ -1,5 +1,9 @@
 :host {
-  div.container {
-    margin-top: 65px;
+  div.row {
+    height: 100%;
+
+    & > div.shopping-cart-items-list-card-container {
+      height: 50%;
+    }
   }
 }

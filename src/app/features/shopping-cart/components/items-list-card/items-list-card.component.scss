@@ -1,0 +1,62 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/colors.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  border-radius: $default-card-border-radius;
+
+  box-shadow: $default-card-box-shadow;
+
+  background-color: $default-card-background-color;
+
+  padding: $default-card-padding;
+
+  & > div.content {
+    flex: 1;
+
+    overflow: auto;
+
+    position: relative;
+
+    & > div.empty-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      & > * {
+        margin: 0.25rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      & > svg.emoji {
+        width: 100px;
+        height: 100px;
+
+        & > path {
+          fill: $default-border-color;
+        }
+      }
+
+      & > div.description {
+        color: $default-border-color;
+
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,13 +1,15 @@
 <app-view-container>
   <div class="row">
-    <div class="col-md-8">
-      <app-shopping-cart-items-list-card
+    <div class="col-md-8 shopping-cart-items-list-card-container">
+      <shopping-cart-items-list-card
         [shoppingCartItems]="shoppingCartItems"
+        (changeShoppingCartItems)="onChangeShoppingCartItems($event)"
       >
-      </app-shopping-cart-items-list-card>
+      </shopping-cart-items-list-card>
     </div>
     <div class="col-md-4">
-      <app-price-overview-card> </app-price-overview-card>
+      <shopping-cart-price-overview-card [priceOfAllItems]="priceOfAllItems">
+      </shopping-cart-price-overview-card>
     </div>
   </div>
 </app-view-container>

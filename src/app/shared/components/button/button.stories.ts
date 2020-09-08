@@ -5,7 +5,7 @@ import { SharedModule } from '../../shared.module';
 import { ButtonComponent, ButtonSize } from './button.component';
 
 export default {
-  title: 'Button',
+  title: 'shared/button',
   decorators: [
     moduleMetadata({
       imports: [SharedModule],
