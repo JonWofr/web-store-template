@@ -7,6 +7,8 @@
   & > main {
     flex: 1;
 
+    overflow: auto;
+
     &.with-margin {
       margin-top: 65px;
 
@@ -17,8 +19,6 @@
 
     & > div {
       height: 100vh;
-
-      overflow: auto;
 
       &.container {
         padding-top: 3rem;
