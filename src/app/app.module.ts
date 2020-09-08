@@ -40,6 +40,7 @@ import { ProfileComponent } from './core/views/profile/profile.component';
     AppRoutingModule,
     ShoppingCartModule,
     HomeModule,
+    ProductsComponent,
   ],
   exports: [
     AppComponent,
