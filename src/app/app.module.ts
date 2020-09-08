@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ShoppingCartModule } from './features/shopping-cart/shopping-cart.module';
 import { HomeModule } from './features/home/home.module';
+import { ProductModule } from './features/products/products.module';
 import { SharedModule } from './shared/shared.module';
 
 // Components
@@ -40,6 +41,7 @@ import { ProfileComponent } from './core/views/profile/profile.component';
     AppRoutingModule,
     ShoppingCartModule,
     HomeModule,
+    ProductModule,
   ],
   exports: [
     AppComponent,
