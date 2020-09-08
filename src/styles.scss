@@ -31,7 +31,23 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: $alice-blue;
+}
+
+body {
+  background-color: $lightest-background-color;
+  color: $dark-font-color;
+}
+
+h1,
+h2 {
+  color: $darkest-font-color;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: $darker-font-color;
 }
 
 button {
