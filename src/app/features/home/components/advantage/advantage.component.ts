@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-advantage',
@@ -8,5 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class AdvantageComponent implements OnInit {
   constructor() {}
 
+  @Input() type?: Advantage = Advantage.Price;
+  advantage = Advantage;
+
   ngOnInit(): void {}
+}
+
+enum Advantage {
+  Return = 'Return',
+  Price = 'Price',
+  PlaceHolder = 'Placeholder',
 }

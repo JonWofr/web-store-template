@@ -6,15 +6,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ShoppingCartModule } from './features/shopping-cart/shopping-cart.module';
+import { HomeModule } from './features/home/home.module';
 import { SharedModule } from './shared/shared.module';
 
 // Components
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
 import { HomeComponent } from './core/views/home/home.component';
-import { AdvantageComponent } from './core/components/advantage/advantage.component';
-import { AdvantagesComponent } from './core/components/advantages/advantages.component';
-import { BannerMaxComponent } from './core/components/banner-max/banner-max.component';
 import { DetailComponent } from './core/views/detail/detail.component';
 import { AboutComponent } from './core/views/about/about.component';
 import { ContactComponent } from './core/views/contact/contact.component';
@@ -28,9 +26,6 @@ import { ProfileComponent } from './core/views/profile/profile.component';
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    AdvantageComponent,
-    AdvantagesComponent,
-    BannerMaxComponent,
     DetailComponent,
     AboutComponent,
     ContactComponent,
@@ -44,14 +39,12 @@ import { ProfileComponent } from './core/views/profile/profile.component';
     HttpClientModule,
     AppRoutingModule,
     ShoppingCartModule,
+    HomeModule,
   ],
   exports: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    AdvantageComponent,
-    AdvantagesComponent,
-    BannerMaxComponent,
     DetailComponent,
     AboutComponent,
     ContactComponent,

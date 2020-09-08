@@ -1,4 +1,7 @@
-export function animateOnScroll(animationClass: string, querySelector: string) {
+export function animateOnScroll(
+  animationClass: string,
+  querySelector: string
+): void {
   const options = {
     rootMargin: '0px',
     threshold: 0.1,
@@ -16,5 +19,6 @@ export function animateOnScroll(animationClass: string, querySelector: string) {
   );
   document.querySelectorAll(querySelector).forEach((value) => {
     observer.observe(value);
+    (value as HTMLElement).style.opacity = '0';
   });
 }
