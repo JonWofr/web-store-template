@@ -6,6 +6,10 @@ div.row {
   align-items: center;
 }
 
+.advantage {
+  animation-duration: 1s;
+}
+
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
   div.category {
