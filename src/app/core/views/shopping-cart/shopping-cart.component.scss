@@ -1,6 +1,10 @@
 :host {
   div.row {
-    & > div.shopping-cart-items-list-card-container {
+    align-items: flex-start;
+
+    & > div.shopping-cart-price-overview-card-container {
+      position: sticky;
+      top: 1rem;
     }
   }
 }

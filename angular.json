@@ -22,6 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "localize": false,
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
@@ -116,6 +117,12 @@
               "devServerTarget": "web-store-template:serve:production"
             }
           }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "de",
+        "locales": {
+          "en": "src/locale/messages.en.xlf"
         }
       }
     }

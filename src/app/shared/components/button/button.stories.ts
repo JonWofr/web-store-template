@@ -60,3 +60,15 @@ export const fluid = () => ({
     size: ButtonSize.Fluid,
   },
 });
+
+export const disabled = () => ({
+  component: ButtonComponent,
+  template: `
+    <shared-button [isDisabled]="isDisabled">
+      Klick
+    </shared-button>
+  `,
+  props: {
+    isDisabled: true,
+  },
+});

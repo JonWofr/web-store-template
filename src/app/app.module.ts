@@ -1,8 +1,9 @@
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
 
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ShoppingCartModule } from './features/shopping-cart/shopping-cart.module';
@@ -21,6 +22,10 @@ import { ViewContainerComponent } from './core/components/view-container/view-co
 import { ProductsComponent } from './core/views/products/products.component';
 import { ShoppingCartComponent } from './core/views/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from './core/views/profile/profile.component';
+
+// Angular has by default the necessary data to format values in en-US (e.g. with the help of pipes).
+// In order to be able to use german formatting we manually have to register corresponding data.
+registerLocaleData(localeDe);
 
 @NgModule({
   declarations: [
@@ -55,7 +60,10 @@ import { ProfileComponent } from './core/views/profile/profile.component';
     ShoppingCartComponent,
     ProfileComponent,
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: LOCALE_ID, useValue: 'de' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

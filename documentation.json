@@ -471,8 +471,8 @@
         },
         {
             "name": "AdvantageComponent",
-            "id": "component-AdvantageComponent-cbc0b140970226a75bf7cd14977ace16",
-            "file": "src/app/core/components/advantage/advantage.component.ts",
+            "id": "component-AdvantageComponent-9d429b76cbee4400134b370deb1b7940",
+            "file": "src/app/features/home/components/advantage/advantage.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -487,9 +487,25 @@
                 "./advantage.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "type",
+                    "defaultValue": "Advantage.Price",
+                    "line": 11,
+                    "type": "Advantage"
+                }
+            ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "advantage",
+                    "defaultValue": "Advantage",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -497,7 +513,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 11
+                    "line": 14
                 }
             ],
             "hostBindings": [],
@@ -505,11 +521,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-advantage',\r\n  templateUrl: './advantage.component.html',\r\n  styleUrls: ['./advantage.component.scss'],\r\n})\r\nexport class AdvantageComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-advantage',\r\n  templateUrl: './advantage.component.html',\r\n  styleUrls: ['./advantage.component.scss'],\r\n})\r\nexport class AdvantageComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  @Input() type?: Advantage = Advantage.Price;\r\n  advantage = Advantage;\r\n\r\n  ngOnInit(): void {}\r\n}\r\n\r\nenum Advantage {\r\n  Return = 'Return',\r\n  Price = 'Price',\r\n  PlaceHolder = 'Placeholder',\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"src/styles/colors.scss\";\r\n\r\n:host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin-bottom: 50px;\r\n}\r\n\r\nsvg {\r\n  width: inherit;\r\n}\r\n\r\n.blob {\r\n  cursor: pointer;\r\n  fill: $secondary-color;\r\n  transition: 0.4s;\r\n  &:hover {\r\n    fill: $manatee-grey;\r\n  }\r\n}\r\n",
+                    "data": "@import \"src/styles/colors.scss\";\r\n\r\n:host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin-bottom: 50px;\r\n  position: relative;\r\n}\r\n\r\nsvg {\r\n  width: inherit;\r\n}\r\n\r\n.blob {\r\n  fill: $secondary-color;\r\n}\r\n\r\ndiv.adv-content {\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n  position: absolute;\r\n  height: 100%;\r\n  width: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  h3 {\r\n    margin-bottom: 10%;\r\n  }\r\n  img {\r\n    width: 30%;\r\n  }\r\n}\r\n",
                     "styleUrl": "./advantage.component.scss"
                 }
             ],
@@ -523,12 +539,12 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<svg\r\n  width=\"100%\"\r\n  height=\"100%\"\r\n  viewBox=\"0 0 200 200\"\r\n  version=\"1.1\"\r\n  xmlns=\"http://www.w3.org/2000/svg\"\r\n  xmlns:xlink=\"http://www.w3.org/1999/xlink\"\r\n  xml:space=\"preserve\"\r\n  xmlns:serif=\"http://www.serif.com/\"\r\n  style=\"\r\n    fill-rule: evenodd;\r\n    clip-rule: evenodd;\r\n    stroke-linejoin: round;\r\n    stroke-miterlimit: 2;\r\n  \"\r\n>\r\n  <g transform=\"matrix(1.64042,0,0,1.8852,104.906,78.2374)\">\r\n    <path\r\n      class=\"blob\"\r\n      d=\"M56,-15.1C62.8,2.5 51.5,29 29.6,46.2C7.7,63.3 -24.8,71.2 -44,57.9C-63.2,44.6 -69,10.1 -59.4,-11.4C-49.8,-32.9 -24.9,-41.6 -0.1,-41.5C24.7,-41.5 49.3,-32.8 56,-15.1Z\"\r\n      style=\"fill-rule: nonzero\"\r\n    />\r\n  </g>\r\n</svg>\r\n"
+            "templateData": "<div class=\"adv-content\">\r\n  <ng-container [ngSwitch]=\"type\">\r\n    <h3>Free Return</h3>\r\n    <img\r\n      *ngSwitchCase=\"advantage.Return\"\r\n      src=\"/assets/icons/return-arrow.svg\"\r\n      alt=\"\"\r\n    />\r\n  </ng-container>\r\n</div>\r\n<svg\r\n  #blob\r\n  width=\"100%\"\r\n  height=\"100%\"\r\n  viewBox=\"0 0 200 200\"\r\n  version=\"1.1\"\r\n  xmlns=\"http://www.w3.org/2000/svg\"\r\n  xmlns:xlink=\"http://www.w3.org/1999/xlink\"\r\n  xml:space=\"preserve\"\r\n  xmlns:serif=\"http://www.serif.com/\"\r\n  style=\"\r\n    fill-rule: evenodd;\r\n    clip-rule: evenodd;\r\n    stroke-linejoin: round;\r\n    stroke-miterlimit: 2;\r\n  \"\r\n>\r\n  <g transform=\"matrix(1.64042,0,0,1.8852,104.906,78.2374)\">\r\n    <path\r\n      class=\"blob\"\r\n      d=\"M56,-15.1C62.8,2.5 51.5,29 29.6,46.2C7.7,63.3 -24.8,71.2 -44,57.9C-63.2,44.6 -69,10.1 -59.4,-11.4C-49.8,-32.9 -24.9,-41.6 -0.1,-41.5C24.7,-41.5 49.3,-32.8 56,-15.1Z\"\r\n      style=\"fill-rule: nonzero\"\r\n    />\r\n  </g>\r\n</svg>\r\n"
         },
         {
             "name": "AdvantagesComponent",
-            "id": "component-AdvantagesComponent-9c340aba6e5076f4bff16cf73e6f6a3f",
-            "file": "src/app/core/components/advantages/advantages.component.ts",
+            "id": "component-AdvantagesComponent-1249e46ac7306641cb781367bacdcc48",
+            "file": "src/app/features/home/components/advantages/advantages.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -553,7 +569,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 11
+                    "line": 12
                 }
             ],
             "hostBindings": [],
@@ -561,11 +577,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-advantages',\r\n  templateUrl: './advantages.component.html',\r\n  styleUrls: ['./advantages.component.scss'],\r\n})\r\nexport class AdvantagesComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { animateOnScroll } from 'src/app/shared/animations/animations';\r\n\r\n@Component({\r\n  selector: 'app-advantages',\r\n  templateUrl: './advantages.component.html',\r\n  styleUrls: ['./advantages.component.scss'],\r\n})\r\nexport class AdvantagesComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    animateOnScroll('animate__jackInTheBox', '.advantage');\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"src/styles/colors.scss\";\r\n\r\ndiv.row {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n// Medium devices (tablets, 768px and up)\r\n@media (max-width: 768px) {\r\n  div.category {\r\n    margin-left: 5%;\r\n    margin-right: 5%;\r\n  }\r\n}\r\n",
+                    "data": "@import \"src/styles/colors.scss\";\r\n\r\ndiv.row {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n}\r\n\r\n.advantage {\r\n  animation-duration: 1s;\r\n}\r\n\r\n// Medium devices (tablets, 768px and up)\r\n@media (max-width: 768px) {\r\n  div.category {\r\n    margin-left: 5%;\r\n    margin-right: 5%;\r\n  }\r\n}\r\n",
                     "styleUrl": "./advantages.component.scss"
                 }
             ],
@@ -574,12 +590,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 9
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <app-advantage class=\"col-lg-4\"></app-advantage>\r\n    <app-advantage class=\"col-lg-4\"></app-advantage>\r\n    <app-advantage class=\"col-lg-4\"></app-advantage>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <app-advantage type=\"Return\" class=\"col-lg-4 advantage\"></app-advantage>\r\n    <app-advantage type=\"Return\" class=\"col-lg-4 advantage\"></app-advantage>\r\n    <app-advantage type=\"Return\" class=\"col-lg-4 advantage\"></app-advantage>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "AppComponent",
@@ -631,7 +647,7 @@
         {
             "name": "BannerMaxComponent",
             "id": "component-BannerMaxComponent-3e0369508013edd2f994aab76f8536f5",
-            "file": "src/app/core/components/banner-max/banner-max.component.ts",
+            "file": "src/app/features/home/components/banner-max/banner-max.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -693,7 +709,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"src/styles/colors.scss\";\r\n\r\ndiv.banner {\r\n  display: flex;\r\n  height: 140%;\r\n  width: 100%;\r\n  background-image: url(\"/assets/images/t-shirt.jpg\");\r\n  background-size: cover;\r\n  background-position: center;\r\n  margin: 0;\r\n  padding: 0;\r\n  margin-bottom: 5px;\r\n  position: relative;\r\n\r\n  div.banner-blur {\r\n    position: absolute;\r\n    backdrop-filter: blur(3px);\r\n    height: 100%;\r\n    width: 100%;\r\n  }\r\n}\r\n\r\ndiv.main-banner {\r\n  width: 100%;\r\n  height: 100vh;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: relative;\r\n\r\n  h1 {\r\n    font-family: m-bold;\r\n    text-align: left;\r\n    font-size: 10rem;\r\n    width: max-content;\r\n  }\r\n}\r\n\r\ndiv.product-summary {\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: cover;\r\n  width: 50%;\r\n  min-height: 100%;\r\n  border-radius: 10px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  position: relative;\r\n\r\n  .button {\r\n    margin-top: 5%;\r\n  }\r\n}\r\n\r\ndiv.landing-slogan {\r\n  position: relative;\r\n  img {\r\n    position: absolute;\r\n    right: 10%;\r\n    transform: rotate(-9deg);\r\n    bottom: -70px;\r\n  }\r\n}\r\n\r\nh1,\r\nh4 {\r\n  color: white;\r\n  font-weight: 700;\r\n  width: 75%;\r\n  text-align: center;\r\n}\r\n\r\ndiv.wave {\r\n  margin-top: calc((var(--vh, 1vh) * 100));\r\n  transform-origin: 50% 100%;\r\n  position: absolute;\r\n  width: 100%;\r\n  bottom: -2px;\r\n  z-index: 2;\r\n}\r\n\r\n// Medium devices (tablets, 768px and up)\r\n@media (max-width: 1080px) {\r\n  div.landing-slogan {\r\n    h1 {\r\n      font-size: 8rem;\r\n    }\r\n    img {\r\n      height: 80px;\r\n      bottom: -50px;\r\n    }\r\n  }\r\n}\r\n\r\n// Medium devices (tablets, 768px and up)\r\n@media (max-width: 768px) {\r\n  div.product-summary {\r\n    width: 100%;\r\n    padding-left: 5%;\r\n    padding-right: 5%;\r\n    background-size: 140vw;\r\n  }\r\n  h2,\r\n  p {\r\n    width: 75%;\r\n  }\r\n  div.landing-slogan {\r\n    h1 {\r\n      font-size: 6rem;\r\n    }\r\n    img {\r\n      height: 80px;\r\n      bottom: -70px;\r\n    }\r\n  }\r\n}\r\n\r\n// Small devices (landscape phones, 576px and up)\r\n@media (max-width: 576px) {\r\n  div.banner {\r\n    height: 120vh;\r\n  }\r\n\r\n  div.product-summary {\r\n    width: 100%;\r\n    padding-left: 5%;\r\n    padding-right: 5%;\r\n    background-size: 140vw;\r\n  }\r\n\r\n  h1,\r\n  h4 {\r\n    width: 95%;\r\n  }\r\n\r\n  div.landing-slogan {\r\n    h1 {\r\n      font-size: 3.5rem;\r\n    }\r\n    img {\r\n      height: 60px;\r\n      bottom: -50px;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"src/styles/colors.scss\";\r\n\r\ndiv.banner {\r\n  display: flex;\r\n  height: 140vh;\r\n  width: 100%;\r\n  background-image: url(\"/assets/images/t-shirt.jpg\");\r\n  background-size: cover;\r\n  background-position: center;\r\n  margin: 0;\r\n  padding: 0;\r\n  margin-bottom: 5px;\r\n  position: relative;\r\n\r\n  div.banner-blur {\r\n    position: absolute;\r\n    backdrop-filter: blur(3px);\r\n    height: 100%;\r\n    width: 100%;\r\n  }\r\n}\r\n\r\ndiv.main-banner {\r\n  width: 100%;\r\n  height: 100vh;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: relative;\r\n\r\n  h1 {\r\n    font-family: m-bold;\r\n    text-align: left;\r\n    font-size: 10rem;\r\n    width: max-content;\r\n  }\r\n}\r\n\r\ndiv.product-summary {\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: cover;\r\n  width: 50%;\r\n  min-height: 100%;\r\n  border-radius: 10px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  position: relative;\r\n\r\n  .button {\r\n    margin-top: 5%;\r\n  }\r\n}\r\n\r\ndiv.landing-slogan {\r\n  position: relative;\r\n  img {\r\n    position: absolute;\r\n    right: 10%;\r\n    transform: rotate(-9deg);\r\n    bottom: -70px;\r\n  }\r\n}\r\n\r\nh1,\r\nh4 {\r\n  color: white;\r\n  font-weight: 700;\r\n  width: 75%;\r\n  text-align: center;\r\n}\r\n\r\ndiv.wave {\r\n  margin-top: calc((var(--vh, 1vh) * 100));\r\n  transform-origin: 50% 100%;\r\n  position: absolute;\r\n  width: 100%;\r\n  bottom: -2px;\r\n  z-index: 2;\r\n}\r\n\r\n// Medium devices (tablets, 768px and up)\r\n@media (max-width: 1080px) {\r\n  div.landing-slogan {\r\n    h1 {\r\n      font-size: 8rem;\r\n    }\r\n    img {\r\n      height: 80px;\r\n      bottom: -50px;\r\n    }\r\n  }\r\n}\r\n\r\n// Medium devices (tablets, 768px and up)\r\n@media (max-width: 768px) {\r\n  div.product-summary {\r\n    width: 100%;\r\n    padding-left: 5%;\r\n    padding-right: 5%;\r\n    background-size: 140vw;\r\n  }\r\n  h2,\r\n  p {\r\n    width: 75%;\r\n  }\r\n  div.landing-slogan {\r\n    h1 {\r\n      font-size: 6rem;\r\n    }\r\n    img {\r\n      height: 80px;\r\n      bottom: -70px;\r\n    }\r\n  }\r\n}\r\n\r\n// Small devices (landscape phones, 576px and up)\r\n@media (max-width: 576px) {\r\n  div.banner {\r\n    height: 120vh;\r\n  }\r\n\r\n  div.product-summary {\r\n    width: 100%;\r\n    padding-left: 5%;\r\n    padding-right: 5%;\r\n    background-size: 140vw;\r\n  }\r\n\r\n  h1,\r\n  h4 {\r\n    width: 95%;\r\n  }\r\n\r\n  div.landing-slogan {\r\n    h1 {\r\n      font-size: 3.5rem;\r\n    }\r\n    img {\r\n      height: 60px;\r\n      bottom: -50px;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./banner-max.component.scss"
                 }
             ],
@@ -711,7 +727,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-7035da8b2d91713a30a551e91f3abf4e",
+            "id": "component-ButtonComponent-8eaf8e7636bec7465e7a72aec139fd97",
             "file": "src/app/shared/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -729,6 +745,11 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "isDisabled",
+                    "defaultValue": "false",
+                    "line": 17
+                },
+                {
                     "name": "size",
                     "defaultValue": "ButtonSize.Medium",
                     "line": 16,
@@ -739,7 +760,7 @@
                 {
                     "name": "clickButton",
                     "defaultValue": "new EventEmitter<void>()",
-                    "line": 17,
+                    "line": 18,
                     "type": "EventEmitter"
                 }
             ],
@@ -751,7 +772,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21
+                    "line": 22
                 }
             ],
             "hostBindings": [],
@@ -759,11 +780,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';\n\nexport enum ButtonSize {\n  Small = 'small',\n  Medium = 'medium',\n  Large = 'large',\n  Fluid = 'fluid',\n}\n\n@Component({\n  selector: 'shared-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input() size: ButtonSize = ButtonSize.Medium;\n  @Output() clickButton = new EventEmitter<void>();\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';\n\nexport enum ButtonSize {\n  Small = 'small',\n  Medium = 'medium',\n  Large = 'large',\n  Fluid = 'fluid',\n}\n\n@Component({\n  selector: 'shared-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input() size: ButtonSize = ButtonSize.Medium;\n  @Input() isDisabled = false;\n  @Output() clickButton = new EventEmitter<void>();\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"src/styles/colors.scss\";\r\n\r\n:host > button {\r\n  box-sizing: border-box;\r\n  padding: 0.5rem;\r\n\r\n  display: inline-block;\r\n\r\n  background-color: $secondary-color;\r\n\r\n  color: $light-font-color;\r\n\r\n  transition: background-color 0.25s ease-in-out;\r\n\r\n  font-size: 1rem;\r\n\r\n  border-radius: 0.25rem;\r\n\r\n  &.small {\r\n    width: 100px;\r\n  }\r\n  &.medium {\r\n    width: 200px;\r\n  }\r\n  &.large {\r\n    width: 300px;\r\n  }\r\n  &.fluid {\r\n    width: 100%;\r\n  }\r\n\r\n  &:hover {\r\n    background-color: $secondary-color-dark;\r\n  }\r\n}\r\n",
+                    "data": "@import \"src/styles/colors.scss\";\r\n\r\n:host > button {\r\n  box-sizing: border-box;\r\n  padding: 0.5rem;\r\n\r\n  display: inline-block;\r\n\r\n  background-color: $secondary-color;\r\n\r\n  color: $lightest-font-color;\r\n\r\n  transition: background-color 0.25s ease-in-out;\r\n\r\n  font-size: 1rem;\r\n\r\n  border-radius: 0.25rem;\r\n\r\n  &.small {\r\n    width: 100px;\r\n  }\r\n  &.medium {\r\n    width: 200px;\r\n  }\r\n  &.large {\r\n    width: 300px;\r\n  }\r\n  &.fluid {\r\n    width: 100%;\r\n  }\r\n\r\n  &:hover {\r\n    background-color: $secondary-color-dark;\r\n  }\r\n\r\n  &:disabled {\r\n    filter: grayscale(1);\r\n  }\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -772,12 +793,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 17
+                "line": 18
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button [ngClass]=\"size\" (click)=\"clickButton.emit()\">\n  <ng-content></ng-content>\n</button>\n"
+            "templateData": "<button [ngClass]=\"size\" [disabled]=\"isDisabled\" (click)=\"clickButton.emit()\">\n  <ng-content></ng-content>\n</button>\n"
         },
         {
             "name": "ContactComponent",
@@ -922,7 +943,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\n  <div *ngIf=\"product\">\n    {{ product?.name }}\n  </div>\n</app-view-container>\n"
+            "templateData": "<app-view-container>\r\n  <div *ngIf=\"product\">\r\n    {{ product?.name }}\r\n  </div>\r\n</app-view-container>\r\n"
         },
         {
             "name": "HomeComponent",
@@ -1175,7 +1196,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"src/styles/colors.scss\";\r\n@import \"src/styles/variables.scss\";\r\n\r\n:host {\r\n  width: 100%;\r\n  height: 100px;\r\n\r\n  display: flex;\r\n  align-items: stretch;\r\n\r\n  & > img.thumbnail {\r\n    width: 100px;\r\n\r\n    object-fit: cover;\r\n  }\r\n\r\n  & > div.additional-information {\r\n    flex: 1;\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: stretch;\r\n\r\n    padding: 0.5rem;\r\n\r\n    & > div.left-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-start;\r\n\r\n      & > div {\r\n        & > * {\r\n          margin: 0.125rem 0;\r\n\r\n          :first-child {\r\n            margin-top: 0;\r\n          }\r\n          :last-child {\r\n            margin-bottom: 0;\r\n          }\r\n        }\r\n        & > h3.title {\r\n          font-size: 1.4rem;\r\n        }\r\n\r\n        & > h4.subtitle {\r\n          font-size: 1.2rem;\r\n        }\r\n      }\r\n\r\n      & > button.remove {\r\n        display: flex;\r\n        align-items: center;\r\n\r\n        & > * {\r\n          margin: 0 0.125rem;\r\n\r\n          &:first-child {\r\n            margin-left: 0;\r\n          }\r\n          &:last-child {\r\n            margin-right: 0;\r\n          }\r\n        }\r\n\r\n        & > img {\r\n          display: block;\r\n\r\n          width: 20px;\r\n          height: 20px;\r\n        }\r\n      }\r\n    }\r\n\r\n    & > div.right-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-end;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"src/styles/colors.scss\";\r\n@import \"src/styles/variables.scss\";\r\n\r\n:host {\r\n  width: 100%;\r\n  height: 100px;\r\n\r\n  display: flex;\r\n  align-items: stretch;\r\n\r\n  & > img.thumbnail {\r\n    width: 100px;\r\n\r\n    object-fit: cover;\r\n  }\r\n\r\n  & > div.additional-information {\r\n    flex: 1;\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: stretch;\r\n\r\n    padding: 0.5rem;\r\n\r\n    & > div.left-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-start;\r\n\r\n      & > div {\r\n        & > * {\r\n          margin: 0.125rem 0;\r\n\r\n          :first-child {\r\n            margin-top: 0;\r\n          }\r\n          :last-child {\r\n            margin-bottom: 0;\r\n          }\r\n        }\r\n        & > h3.title {\r\n          font-size: 1.2rem;\r\n        }\r\n      }\r\n\r\n      & > button.remove {\r\n        display: flex;\r\n        align-items: center;\r\n\r\n        & > * {\r\n          margin: 0 0.125rem;\r\n\r\n          &:first-child {\r\n            margin-left: 0;\r\n          }\r\n          &:last-child {\r\n            margin-right: 0;\r\n          }\r\n        }\r\n\r\n        & > img {\r\n          display: block;\r\n\r\n          width: 20px;\r\n          height: 20px;\r\n        }\r\n\r\n        & > p {\r\n          font-family: m-light;\r\n        }\r\n      }\r\n    }\r\n\r\n    & > div.right-side {\r\n      display: flex;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      align-items: flex-end;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./item.component.scss"
                 }
             ],
@@ -1189,11 +1210,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<img\r\n  class=\"thumbnail\"\r\n  [src]=\"shoppingCartItem?.product.thumbnailImageUrl\"\r\n  alt=\"\"\r\n/>\r\n<div class=\"additional-information\">\r\n  <div class=\"left-side\">\r\n    <div>\r\n      <h3 class=\"title\">\r\n        {{ shoppingCartItem?.product.title }}\r\n      </h3>\r\n      <h4 class=\"subtitle\">\r\n        {{ shoppingCartItem?.product.subtitle }}\r\n      </h4>\r\n    </div>\r\n    <button class=\"remove\" (click)=\"clickRemove.emit()\">\r\n      <img src=\"assets/icons/trash-can.svg\" alt=\"\" />\r\n      <div>\r\n        Entfernen\r\n      </div>\r\n    </button>\r\n  </div>\r\n  <div class=\"right-side\">\r\n    <shared-input-stepper\r\n      [quantity]=\"shoppingCartItem?.quantity\"\r\n      (changeQuantity)=\"onChangeQuantity($event)\"\r\n    ></shared-input-stepper>\r\n    <div class=\"price\">{{ shoppingCartItem?.price }}€</div>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<img\r\n  class=\"thumbnail\"\r\n  [src]=\"shoppingCartItem?.product.thumbnailImageUrl\"\r\n  alt=\"\"\r\n/>\r\n<div class=\"additional-information\">\r\n  <div class=\"left-side\">\r\n    <div>\r\n      <h3 class=\"title\">\r\n        {{ shoppingCartItem?.product.title }}\r\n      </h3>\r\n      <p>\r\n        {{ shoppingCartItem?.product.subtitle }}\r\n      </p>\r\n    </div>\r\n    <button class=\"remove\" (click)=\"clickRemove.emit()\">\r\n      <img src=\"assets/icons/trash-can.svg\" alt=\"\" />\r\n      <p>\r\n        Entfernen\r\n      </p>\r\n    </button>\r\n  </div>\r\n  <div class=\"right-side\">\r\n    <shared-input-stepper\r\n      [quantity]=\"shoppingCartItem?.quantity\"\r\n      (changeQuantity)=\"onChangeQuantity($event)\"\r\n    ></shared-input-stepper>\r\n    <p>{{ shoppingCartItem?.price | currency: \"EUR\" }}</p>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ItemsListCardComponent",
-            "id": "component-ItemsListCardComponent-b3e6dce5fbfc061b15cbab6919074351",
+            "id": "component-ItemsListCardComponent-503f14415b9c8a4f851f1e417691b637",
             "file": "src/app/features/shopping-cart/components/items-list-card/items-list-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1241,11 +1262,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\nimport { ShoppingCartItem } from '../../../../core/models/shopping-cart-item.model';\n\n@Component({\n  selector: 'shopping-cart-items-list-card',\n  templateUrl: './items-list-card.component.html',\n  styleUrls: ['./items-list-card.component.scss'],\n})\nexport class ItemsListCardComponent implements OnInit {\n  @Input() shoppingCartItems: ShoppingCartItem[] = [];\n  @Output() changeShoppingCartItems = new EventEmitter<ShoppingCartItem[]>();\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\nimport { ShoppingCartItem } from '../../../../core/models/shopping-cart-item.model';\r\n\r\n@Component({\r\n  selector: 'shopping-cart-items-list-card',\r\n  templateUrl: './items-list-card.component.html',\r\n  styleUrls: ['./items-list-card.component.scss'],\r\n})\r\nexport class ItemsListCardComponent implements OnInit {\r\n  @Input() shoppingCartItems: ShoppingCartItem[] = [];\r\n  @Output() changeShoppingCartItems = new EventEmitter<ShoppingCartItem[]>();\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../../../styles/variables.scss\";\r\n@import \"../../../../../styles/colors.scss\";\r\n\r\n:host {\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  height: 100%;\r\n\r\n  border-radius: $default-card-border-radius;\r\n\r\n  box-shadow: $default-card-box-shadow;\r\n\r\n  background-color: $default-card-background-color;\r\n\r\n  padding: $default-card-padding;\r\n\r\n  & > div.shopping-cart-items-list-container {\r\n    flex: 1;\r\n\r\n    overflow: auto;\r\n  }\r\n}\r\n",
+                    "data": "@import \"../../../../../styles/variables.scss\";\r\n@import \"../../../../../styles/colors.scss\";\r\n\r\n:host {\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  border-radius: $default-card-border-radius;\r\n\r\n  box-shadow: $default-card-box-shadow;\r\n\r\n  background-color: $default-card-background-color;\r\n\r\n  padding: $default-card-padding;\r\n\r\n  & > div.content {\r\n    min-height: 300px;\r\n\r\n    position: relative;\r\n\r\n    & > div.empty-list {\r\n      display: flex;\r\n      flex-direction: column;\r\n      align-items: center;\r\n\r\n      position: absolute;\r\n      top: 50%;\r\n      left: 50%;\r\n      transform: translate(-50%, -50%);\r\n\r\n      & > * {\r\n        margin: 0.25rem;\r\n\r\n        &:first-child {\r\n          margin-top: 0;\r\n        }\r\n        &:last-child {\r\n          margin-bottom: 0;\r\n        }\r\n      }\r\n\r\n      & > svg.emoji {\r\n        width: 100px;\r\n        height: 100px;\r\n\r\n        & > path {\r\n          fill: $default-border-color;\r\n        }\r\n      }\r\n\r\n      & > div.description {\r\n        color: $default-border-color;\r\n\r\n        text-align: center;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./items-list-card.component.scss"
                 }
             ],
@@ -1259,11 +1280,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<h2>\n  Warenkorb\n</h2>\n<div class=\"shopping-cart-items-list-container\">\n  <shopping-cart-items-list\n    [shoppingCartItems]=\"shoppingCartItems\"\n    (changeShoppingCartItems)=\"changeShoppingCartItems.emit($event)\"\n  >\n  </shopping-cart-items-list>\n</div>\n"
+            "templateData": "<h2>\r\n  Warenkorb\r\n</h2>\r\n<div class=\"content\">\r\n  <shopping-cart-items-list\r\n    *ngIf=\"shoppingCartItems.length > 0\"\r\n    [shoppingCartItems]=\"shoppingCartItems\"\r\n    (changeShoppingCartItems)=\"changeShoppingCartItems.emit($event)\"\r\n  >\r\n  </shopping-cart-items-list>\r\n  <div class=\"empty-list\" *ngIf=\"shoppingCartItems.length === 0\">\r\n    <svg\r\n      class=\"emoji\"\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      width=\"24\"\r\n      height=\"24\"\r\n      viewBox=\"0 0 24 24\"\r\n    >\r\n      <path\r\n        d=\"M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3.5 8c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm-.941 9.94c-.903-.19-1.741-.282-2.562-.282-.819 0-1.658.092-2.562.282-1.11.233-1.944-.24-2.255-1.015-.854-2.131 1.426-3.967 4.816-3.967 3.537 0 5.666 1.853 4.817 3.968-.308.769-1.136 1.249-2.254 1.014zm-2.563-1.966c1.614 0 3.056.67 3.206.279.803-2.079-7.202-2.165-6.411 0 .138.377 1.614-.279 3.205-.279z\"\r\n      />\r\n    </svg>\r\n    <div class=\"description\">\r\n      Leider hast du derzeit keine Produkte in deinem Warenkorb!\r\n    </div>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ItemsListComponent",
-            "id": "component-ItemsListComponent-92b943cc413d1f8fd5b5f268f05b105c",
+            "id": "component-ItemsListComponent-a8cda0faf2c78fd96a7ee84f9488e2b0",
             "file": "src/app/features/shopping-cart/components/items-list/items-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1377,11 +1398,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\nimport { ShoppingCartItem } from '../../../../core/models/shopping-cart-item.model';\n\n@Component({\n  selector: 'shopping-cart-items-list',\n  templateUrl: './items-list.component.html',\n  styleUrls: ['./items-list.component.scss'],\n})\nexport class ItemsListComponent implements OnInit {\n  @Input() shoppingCartItems: ShoppingCartItem[] = [];\n  @Output() changeShoppingCartItems = new EventEmitter<ShoppingCartItem[]>();\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  onClickRemoveShoppingCartItem(shoppingCartItem: ShoppingCartItem): void {\n    this.shoppingCartItems = this.shoppingCartItems.filter(\n      (item) => item.id !== shoppingCartItem.id\n    );\n    this.changeShoppingCartItems.emit(this.shoppingCartItems);\n\n    this.updateLocalStorageShoppingCartItems(this.shoppingCartItems);\n  }\n\n  updateLocalStorageShoppingCartItems(\n    shoppingCartItems: ShoppingCartItem[]\n  ): void {\n    if (shoppingCartItems.length > 0) {\n      localStorage.setItem(\n        'shoppingCartItems',\n        JSON.stringify(shoppingCartItems)\n      );\n    } else {\n      localStorage.removeItem('shoppingCartItems');\n    }\n  }\n\n  onChangeShoppingCartItem(shoppingCartItem: ShoppingCartItem): void {\n    this.shoppingCartItems = this.shoppingCartItems.map((item) =>\n      item.id !== shoppingCartItem.id ? item : shoppingCartItem\n    );\n    this.changeShoppingCartItems.emit(this.shoppingCartItems);\n\n    this.updateLocalStorageShoppingCartItems(this.shoppingCartItems);\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\nimport { ShoppingCartItem } from '../../../../core/models/shopping-cart-item.model';\r\n\r\n@Component({\r\n  selector: 'shopping-cart-items-list',\r\n  templateUrl: './items-list.component.html',\r\n  styleUrls: ['./items-list.component.scss'],\r\n})\r\nexport class ItemsListComponent implements OnInit {\r\n  @Input() shoppingCartItems: ShoppingCartItem[] = [];\r\n  @Output() changeShoppingCartItems = new EventEmitter<ShoppingCartItem[]>();\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  onClickRemoveShoppingCartItem(shoppingCartItem: ShoppingCartItem): void {\r\n    this.shoppingCartItems = this.shoppingCartItems.filter(\r\n      (item) => item.id !== shoppingCartItem.id\r\n    );\r\n    this.changeShoppingCartItems.emit(this.shoppingCartItems);\r\n\r\n    this.updateLocalStorageShoppingCartItems(this.shoppingCartItems);\r\n  }\r\n\r\n  updateLocalStorageShoppingCartItems(\r\n    shoppingCartItems: ShoppingCartItem[]\r\n  ): void {\r\n    if (shoppingCartItems.length > 0) {\r\n      localStorage.setItem(\r\n        'shoppingCartItems',\r\n        JSON.stringify(shoppingCartItems)\r\n      );\r\n    } else {\r\n      localStorage.removeItem('shoppingCartItems');\r\n    }\r\n  }\r\n\r\n  onChangeShoppingCartItem(shoppingCartItem: ShoppingCartItem): void {\r\n    this.shoppingCartItems = this.shoppingCartItems.map((item) =>\r\n      item.id !== shoppingCartItem.id ? item : shoppingCartItem\r\n    );\r\n    this.changeShoppingCartItems.emit(this.shoppingCartItems);\r\n\r\n    this.updateLocalStorageShoppingCartItems(this.shoppingCartItems);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"src/styles/colors.scss\";\r\n@import \"src/styles/variables.scss\";\r\n\r\n:host {\r\n  & > div.shopping-cart-item-container {\r\n    margin: 1rem 0;\r\n    padding: 0.5rem 0;\r\n    border-bottom: 1px solid $default-border-color;\r\n\r\n    &:first-child {\r\n      margin-top: 0;\r\n      padding-top: 0;\r\n    }\r\n    &:last-child {\r\n      margin-bottom: 0;\r\n      padding-bottom: 0;\r\n      border-bottom: none;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import \"src/styles/colors.scss\";\r\n@import \"src/styles/variables.scss\";\r\n\r\n:host {\r\n  & > div.shopping-cart-item-container {\r\n    padding: 0.5rem 0;\r\n    border-bottom: 1px solid $default-border-color;\r\n\r\n    &:first-child {\r\n      padding-top: 0;\r\n    }\r\n    &:last-child {\r\n      padding-bottom: 0;\r\n      border-bottom: none;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./items-list.component.scss"
                 }
             ],
@@ -1463,7 +1484,7 @@
         },
         {
             "name": "PriceOverviewCardComponent",
-            "id": "component-PriceOverviewCardComponent-967d21d0ff4b12207b52c4fad3fe7ea0",
+            "id": "component-PriceOverviewCardComponent-52f2b69601d5ce5b7991655e62094139",
             "file": "src/app/features/shopping-cart/components/price-overview-card/price-overview-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1525,7 +1546,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\nimport { ButtonSize } from '../../../../shared/components/button/button.component';\n\n@Component({\n  selector: 'shopping-cart-price-overview-card',\n  templateUrl: './price-overview-card.component.html',\n  styleUrls: ['./price-overview-card.component.scss'],\n})\nexport class PriceOverviewCardComponent implements OnInit {\n  @Input() priceOfAllItems = 0;\n  @Input() shippingCosts = 3.99;\n\n  ButtonSize = ButtonSize;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  onClickCheckoutButton(): void {}\n}\n",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\nimport { ButtonSize } from '../../../../shared/components/button/button.component';\r\n\r\n@Component({\r\n  selector: 'shopping-cart-price-overview-card',\r\n  templateUrl: './price-overview-card.component.html',\r\n  styleUrls: ['./price-overview-card.component.scss'],\r\n})\r\nexport class PriceOverviewCardComponent implements OnInit {\r\n  @Input() priceOfAllItems = 0;\r\n  @Input() shippingCosts = 3.99;\r\n\r\n  ButtonSize = ButtonSize;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  onClickCheckoutButton(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1543,11 +1564,67 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<h2>\n  Gesamtsumme\n</h2>\n<ul>\n  <li>\n    <div>\n      Zwischensumme\n    </div>\n    <div>{{ priceOfAllItems }} €</div>\n  </li>\n  <li>\n    <div>\n      Versand\n    </div>\n    <div>{{ shippingCosts }} €</div>\n  </li>\n  <li>\n    <div>\n      Gesamtsumme (inkl. MwSt.)\n    </div>\n    <div>{{ priceOfAllItems + shippingCosts }} €</div>\n  </li>\n</ul>\n<shared-button\n  [size]=\"ButtonSize.Fluid\"\n  (clickButton)=\"onClickCheckoutButton()\"\n>\n  Zur Kasse\n</shared-button>\n"
+            "templateData": "<h2>\n  Gesamtsumme\n</h2>\n<ul>\n  <li>\n    <p>\n      Zwischensumme\n    </p>\n    <p>{{ priceOfAllItems | currency: \"EUR\" }}</p>\n  </li>\n  <li>\n    <p>\n      Versand\n    </p>\n    <p>{{ shippingCosts | currency: \"EUR\" }}</p>\n  </li>\n  <li>\n    <p>\n      Gesamtsumme (inkl. MwSt.)\n    </p>\n    <p>{{ priceOfAllItems + shippingCosts | currency: \"EUR\" }}</p>\n  </li>\n</ul>\n<shared-button\n  [size]=\"ButtonSize.Fluid\"\n  [isDisabled]=\"priceOfAllItems === 0\"\n  (clickButton)=\"onClickCheckoutButton()\"\n>\n  Zur Kasse\n</shared-button>\n"
+        },
+        {
+            "name": "ProductComponent",
+            "id": "component-ProductComponent-b0b33a90ab5b6ee21341eab30e0bab01",
+            "file": "src/app/features/products/components/product/product.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-product",
+            "styleUrls": [
+                "./product.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./product.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-product',\r\n  templateUrl: './product.component.html',\r\n  styleUrls: ['./product.component.scss']\r\n})\r\nexport class ProductComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./product.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>product works!</p>\r\n"
         },
         {
             "name": "ProductsComponent",
-            "id": "component-ProductsComponent-aa2bab5b6e1a9b498f3bae8b07306182",
+            "id": "component-ProductsComponent-70cfdc405683ad93ffcb2f7bd4c4b758",
             "file": "src/app/core/views/products/products.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1567,9 +1644,9 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "shoppingCartItem",
-                    "defaultValue": "{\n    id: '1',\n    product: {\n      id: '1',\n      name: 'shirt-1',\n      title: 'Wunderbares T-Shirt',\n      subtitle: 'Da kann man sich nur drin wohlfühlen',\n      shortDescription: 'lorem ipsum dolor sit amet constitutor',\n      description:\n        'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\n      amountOnStock: 40,\n      price: 24.99,\n      reviews: [],\n      keyFacts: [],\n      inStockSinceInMs: 0,\n      thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\n      previewImagesUrls: [\n        'assets/images/81PtikmVALL._AC_UY550_.jpg',\n        'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\n      ],\n      discountedPrice: 19.99,\n    },\n    quantity: 2,\n    price: 49.98,\n  }",
-                    "type": "ShoppingCartItem",
+                    "name": "shoppingCartItems",
+                    "defaultValue": "[\r\n    {\r\n      id: '1',\r\n      product: {\r\n        id: '1',\r\n        name: 'shirt-1',\r\n        title: 'Wunderbares T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 2,\r\n      price: 49.98,\r\n    },\r\n    {\r\n      id: '2',\r\n      product: {\r\n        id: '2',\r\n        name: 'shirt-2',\r\n        title: 'Tolles T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 2,\r\n      price: 49.98,\r\n    },\r\n    {\r\n      id: '3',\r\n      product: {\r\n        id: '3',\r\n        name: 'shirt-3',\r\n        title: 'Super T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 2,\r\n      price: 49.98,\r\n    },\r\n    {\r\n      id: '4',\r\n      product: {\r\n        id: '4',\r\n        name: 'shirt-4',\r\n        title: 'Spitze T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 1,\r\n      price: 49.98,\r\n    },\r\n  ]",
+                    "type": "ShoppingCartItem[]",
                     "optional": false,
                     "description": "",
                     "line": 10
@@ -1582,7 +1659,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38
+                    "line": 115
                 },
                 {
                     "name": "onClickAddToShoppingCart",
@@ -1590,7 +1667,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 40
+                    "line": 117
                 }
             ],
             "hostBindings": [],
@@ -1598,7 +1675,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { ShoppingCartItem } from '../../models/shopping-cart-item.model';\n\n@Component({\n  selector: 'app-products',\n  templateUrl: './products.component.html',\n  styleUrls: ['./products.component.scss'],\n})\nexport class ProductsComponent implements OnInit {\n  shoppingCartItem: ShoppingCartItem = {\n    id: '1',\n    product: {\n      id: '1',\n      name: 'shirt-1',\n      title: 'Wunderbares T-Shirt',\n      subtitle: 'Da kann man sich nur drin wohlfühlen',\n      shortDescription: 'lorem ipsum dolor sit amet constitutor',\n      description:\n        'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\n      amountOnStock: 40,\n      price: 24.99,\n      reviews: [],\n      keyFacts: [],\n      inStockSinceInMs: 0,\n      thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\n      previewImagesUrls: [\n        'assets/images/81PtikmVALL._AC_UY550_.jpg',\n        'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\n      ],\n      discountedPrice: 19.99,\n    },\n    quantity: 2,\n    price: 49.98,\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  onClickAddToShoppingCart(): void {\n    let shoppingCartItems: ShoppingCartItem[] = [];\n\n    if (localStorage.getItem('shoppingCartItems')) {\n      shoppingCartItems = JSON.parse(\n        localStorage.getItem('shoppingCartItems') || ''\n      );\n    }\n\n    shoppingCartItems.push(this.shoppingCartItem);\n    localStorage.setItem(\n      'shoppingCartItems',\n      JSON.stringify(shoppingCartItems)\n    );\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { ShoppingCartItem } from '../../models/shopping-cart-item.model';\r\n\r\n@Component({\r\n  selector: 'app-products',\r\n  templateUrl: './products.component.html',\r\n  styleUrls: ['./products.component.scss'],\r\n})\r\nexport class ProductsComponent implements OnInit {\r\n  shoppingCartItems: ShoppingCartItem[] = [\r\n    {\r\n      id: '1',\r\n      product: {\r\n        id: '1',\r\n        name: 'shirt-1',\r\n        title: 'Wunderbares T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 2,\r\n      price: 49.98,\r\n    },\r\n    {\r\n      id: '2',\r\n      product: {\r\n        id: '2',\r\n        name: 'shirt-2',\r\n        title: 'Tolles T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 2,\r\n      price: 49.98,\r\n    },\r\n    {\r\n      id: '3',\r\n      product: {\r\n        id: '3',\r\n        name: 'shirt-3',\r\n        title: 'Super T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 2,\r\n      price: 49.98,\r\n    },\r\n    {\r\n      id: '4',\r\n      product: {\r\n        id: '4',\r\n        name: 'shirt-4',\r\n        title: 'Spitze T-Shirt',\r\n        subtitle: 'Da kann man sich nur drin wohlfühlen',\r\n        shortDescription: 'lorem ipsum dolor sit amet constitutor',\r\n        description:\r\n          'lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor lorem ipsum dolor sit amet constitutor',\r\n        amountOnStock: 40,\r\n        price: 24.99,\r\n        reviews: [],\r\n        keyFacts: [],\r\n        inStockSinceInMs: 0,\r\n        thumbnailImageUrl: 'assets/images/81c1CIYeVQL._AC_UX522_.jpg',\r\n        previewImagesUrls: [\r\n          'assets/images/81PtikmVALL._AC_UY550_.jpg',\r\n          'assets/images/81Vxxwy9UlL._AC_UX522_.jpg',\r\n        ],\r\n        discountedPrice: 19.99,\r\n      },\r\n      quantity: 1,\r\n      price: 49.98,\r\n    },\r\n  ];\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  onClickAddToShoppingCart(): void {\r\n    let shoppingCartItems: ShoppingCartItem[] = [];\r\n\r\n    if (localStorage.getItem('shoppingCartItems')) {\r\n      shoppingCartItems = JSON.parse(\r\n        localStorage.getItem('shoppingCartItems') || ''\r\n      );\r\n    }\r\n\r\n    this.shoppingCartItems.forEach((shoppingCartItem) =>\r\n      shoppingCartItems.push(shoppingCartItem)\r\n    );\r\n\r\n    localStorage.setItem(\r\n      'shoppingCartItems',\r\n      JSON.stringify(shoppingCartItems)\r\n    );\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1611,12 +1688,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 34
+                "line": 111
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\n  <button (click)=\"onClickAddToShoppingCart()\">Add T-shirt to products</button>\n</app-view-container>\n"
+            "templateData": "<app-view-container>\r\n  <button (click)=\"onClickAddToShoppingCart()\">\r\n    Add 4 different T-shirts to products\r\n  </button>\r\n  <app-product></app-product>\r\n</app-view-container>\r\n"
         },
         {
             "name": "ProfileComponent",
@@ -1676,7 +1753,7 @@
         },
         {
             "name": "ShoppingCartComponent",
-            "id": "component-ShoppingCartComponent-1113a0b32cdbdba37fffc22059c716bf",
+            "id": "component-ShoppingCartComponent-61b05710bf9fcd83fbc1d78952c77cf4",
             "file": "src/app/core/views/shopping-cart/shopping-cart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1771,11 +1848,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { ShoppingCartItem } from '../../models/shopping-cart-item.model';\n\n@Component({\n  selector: 'app-shopping-cart',\n  templateUrl: './shopping-cart.component.html',\n  styleUrls: ['./shopping-cart.component.scss'],\n})\nexport class ShoppingCartComponent implements OnInit {\n  shoppingCartItems: ShoppingCartItem[] = [];\n  priceOfAllItems = 0;\n\n  constructor() {}\n\n  ngOnInit(): void {\n    if (localStorage.getItem('shoppingCartItems')) {\n      this.shoppingCartItems = JSON.parse(\n        localStorage.getItem('shoppingCartItems') || ''\n      );\n      this.priceOfAllItems = this.calculateSumOfAllItems(\n        this.shoppingCartItems\n      );\n    }\n  }\n\n  calculateSumOfAllItems(shoppingCartItems: ShoppingCartItem[]): number {\n    let priceOfAllItems = 0;\n    shoppingCartItems.forEach(\n      (shoppingCartItem) => (priceOfAllItems += shoppingCartItem.price)\n    );\n    return priceOfAllItems;\n  }\n\n  onChangeShoppingCartItems(shoppingCartItems: ShoppingCartItem[]): void {\n    this.shoppingCartItems = shoppingCartItems;\n    this.priceOfAllItems = this.calculateSumOfAllItems(this.shoppingCartItems);\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { ShoppingCartItem } from '../../models/shopping-cart-item.model';\r\n\r\n@Component({\r\n  selector: 'app-shopping-cart',\r\n  templateUrl: './shopping-cart.component.html',\r\n  styleUrls: ['./shopping-cart.component.scss'],\r\n})\r\nexport class ShoppingCartComponent implements OnInit {\r\n  shoppingCartItems: ShoppingCartItem[] = [];\r\n  priceOfAllItems = 0;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {\r\n    if (localStorage.getItem('shoppingCartItems')) {\r\n      this.shoppingCartItems = JSON.parse(\r\n        localStorage.getItem('shoppingCartItems') || ''\r\n      );\r\n      this.priceOfAllItems = this.calculateSumOfAllItems(\r\n        this.shoppingCartItems\r\n      );\r\n    }\r\n  }\r\n\r\n  calculateSumOfAllItems(shoppingCartItems: ShoppingCartItem[]): number {\r\n    let priceOfAllItems = 0;\r\n    shoppingCartItems.forEach(\r\n      (shoppingCartItem) => (priceOfAllItems += shoppingCartItem.price)\r\n    );\r\n    return priceOfAllItems;\r\n  }\r\n\r\n  onChangeShoppingCartItems(shoppingCartItems: ShoppingCartItem[]): void {\r\n    this.shoppingCartItems = shoppingCartItems;\r\n    this.priceOfAllItems = this.calculateSumOfAllItems(this.shoppingCartItems);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  div.row {\r\n    height: 100%;\r\n\r\n    & > div.shopping-cart-items-list-card-container {\r\n      height: 50%;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": ":host {\r\n  div.row {\r\n    & > div.shopping-cart-items-list-card-container {\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./shopping-cart.component.scss"
                 }
             ],
@@ -1789,7 +1866,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-view-container>\n  <div class=\"row\">\n    <div class=\"col-md-8 shopping-cart-items-list-card-container\">\n      <shopping-cart-items-list-card\n        [shoppingCartItems]=\"shoppingCartItems\"\n        (changeShoppingCartItems)=\"onChangeShoppingCartItems($event)\"\n      >\n      </shopping-cart-items-list-card>\n    </div>\n    <div class=\"col-md-4\">\n      <shopping-cart-price-overview-card [priceOfAllItems]=\"priceOfAllItems\">\n      </shopping-cart-price-overview-card>\n    </div>\n  </div>\n</app-view-container>\n"
+            "templateData": "<app-view-container>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-8 shopping-cart-items-list-card-container\">\r\n      <shopping-cart-items-list-card\r\n        [shoppingCartItems]=\"shoppingCartItems\"\r\n        (changeShoppingCartItems)=\"onChangeShoppingCartItems($event)\"\r\n      >\r\n      </shopping-cart-items-list-card>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n      <shopping-cart-price-overview-card [priceOfAllItems]=\"priceOfAllItems\">\r\n      </shopping-cart-price-overview-card>\r\n    </div>\r\n  </div>\r\n</app-view-container>\r\n"
         },
         {
             "name": "ViewContainerComponent",
@@ -1837,7 +1914,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  height: 100vh;\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  & > main {\r\n    flex: 1;\r\n\r\n    &.with-margin {\r\n      margin-top: 65px;\r\n\r\n      & > div {\r\n        height: calc(100vh - 65px);\r\n      }\r\n    }\r\n\r\n    & > div {\r\n      height: 100vh;\r\n\r\n      overflow: auto;\r\n\r\n      &.container {\r\n        padding-top: 3rem;\r\n        padding-bottom: 3rem;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": ":host {\r\n  height: 100vh;\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  & > main {\r\n    flex: 1;\r\n\r\n    overflow: auto;\r\n\r\n    &.with-margin {\r\n      margin-top: 65px;\r\n\r\n      & > div {\r\n        height: calc(100vh - 65px);\r\n      }\r\n    }\r\n\r\n    & > div {\r\n      height: 100vh;\r\n\r\n      &.container {\r\n        padding-top: 3rem;\r\n        padding-bottom: 3rem;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./view-container.component.scss"
                 }
             ],
@@ -1869,16 +1946,7 @@
                             "name": "AboutComponent"
                         },
                         {
-                            "name": "AdvantageComponent"
-                        },
-                        {
-                            "name": "AdvantagesComponent"
-                        },
-                        {
                             "name": "AppComponent"
-                        },
-                        {
-                            "name": "BannerMaxComponent"
                         },
                         {
                             "name": "ContactComponent"
@@ -1913,6 +1981,12 @@
                             "name": "AppRoutingModule"
                         },
                         {
+                            "name": "HomeModule"
+                        },
+                        {
+                            "name": "ProductModule"
+                        },
+                        {
                             "name": "ShoppingCartModule"
                         }
                     ]
@@ -1924,16 +1998,7 @@
                             "name": "AboutComponent"
                         },
                         {
-                            "name": "AdvantageComponent"
-                        },
-                        {
-                            "name": "AdvantagesComponent"
-                        },
-                        {
                             "name": "AppComponent"
-                        },
-                        {
-                            "name": "BannerMaxComponent"
                         },
                         {
                             "name": "ContactComponent"
@@ -1993,6 +2058,112 @@
                 {
                     "type": "exports",
                     "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HomeModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AdvantageComponent"
+                        },
+                        {
+                            "name": "AdvantagesComponent"
+                        },
+                        {
+                            "name": "BannerMaxComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "AdvantageComponent"
+                        },
+                        {
+                            "name": "AdvantagesComponent"
+                        },
+                        {
+                            "name": "BannerMaxComponent"
+                        },
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ProductModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ProductComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "AdvantageComponent"
+                        },
+                        {
+                            "name": "AdvantagesComponent"
+                        },
+                        {
+                            "name": "BannerMaxComponent"
+                        },
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2083,16 +2254,13 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "ItemComponent"
+                            "name": "AdvantageComponent"
                         },
                         {
-                            "name": "ItemsListCardComponent"
+                            "name": "AdvantagesComponent"
                         },
                         {
-                            "name": "ItemsListComponent"
-                        },
-                        {
-                            "name": "PriceOverviewCardComponent"
+                            "name": "BannerMaxComponent"
                         },
                         {
                             "name": "SharedModule"
@@ -2124,6 +2292,22 @@
                 "name": "declarations",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/features/home/home.module.ts",
+                "type": "[]",
+                "defaultValue": "[\r\n  AdvantageComponent,\r\n  AdvantagesComponent,\r\n  BannerMaxComponent,\r\n]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/features/products/products.module.ts",
+                "type": "[]",
+                "defaultValue": "[ProductComponent]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/features/shopping-cart/shopping-cart.module.ts",
                 "type": "[]",
                 "defaultValue": "[\r\n  PriceOverviewCardComponent,\r\n  ItemComponent,\r\n  ItemsListComponent,\r\n  ItemsListCardComponent,\r\n]"
@@ -2145,12 +2329,12 @@
                 "defaultValue": "() => ({\r\n  component: PriceOverviewCardComponent,\r\n  props: {},\r\n})"
             },
             {
-                "name": "environment",
+                "name": "disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "file": "src/app/shared/components/button/button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <shared-button [disabled]=\"disabled\">\r\n      Klick\r\n    </shared-button>\r\n  `,\r\n  props: {\r\n    disabled: true,\r\n  },\r\n})"
             },
             {
                 "name": "environment",
@@ -2159,6 +2343,14 @@
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "fluid",
@@ -2239,6 +2431,7 @@
                         "name": "querySelector"
                     }
                 ],
+                "returnType": "void",
                 "jsdoctags": [
                     {
                         "name": "animationClass",
@@ -2257,6 +2450,27 @@
         ],
         "typealiases": [],
         "enumerations": [
+            {
+                "name": "Advantage",
+                "childs": [
+                    {
+                        "name": "Return",
+                        "value": "Return"
+                    },
+                    {
+                        "name": "Price",
+                        "value": "Price"
+                    },
+                    {
+                        "name": "PlaceHolder",
+                        "value": "Placeholder"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "src/app/features/home/components/advantage/advantage.component.ts"
+            },
             {
                 "name": "ButtonSize",
                 "childs": [
@@ -2301,6 +2515,26 @@
                     "type": "literal type"
                 }
             ],
+            "src/app/features/home/home.module.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/features/home/home.module.ts",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  AdvantageComponent,\r\n  AdvantagesComponent,\r\n  BannerMaxComponent,\r\n]"
+                }
+            ],
+            "src/app/features/products/products.module.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/features/products/products.module.ts",
+                    "type": "[]",
+                    "defaultValue": "[ProductComponent]"
+                }
+            ],
             "src/app/features/shopping-cart/shopping-cart.module.ts": [
                 {
                     "name": "declarations",
@@ -2331,27 +2565,15 @@
                     "defaultValue": "() => ({\r\n  component: PriceOverviewCardComponent,\r\n  props: {},\r\n})"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/app/shared/components/button/button.stories.ts": [
+                {
+                    "name": "disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <shared-button [disabled]=\"disabled\">\r\n      Klick\r\n    </shared-button>\r\n  `,\r\n  props: {\r\n    disabled: true,\r\n  },\r\n})"
+                },
                 {
                     "name": "fluid",
                     "ctype": "miscellaneous",
@@ -2383,6 +2605,26 @@
                     "file": "src/app/shared/components/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <shared-button [size]=\"size\">\r\n      Klick\r\n    </shared-button>\r\n  `,\r\n  props: {\r\n    size: ButtonSize.Small,\r\n  },\r\n})"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/app/shared/components/input-stepper/input-stepper.stories.ts": [
@@ -2432,6 +2674,7 @@
                             "name": "querySelector"
                         }
                     ],
+                    "returnType": "void",
                     "jsdoctags": [
                         {
                             "name": "animationClass",
@@ -2450,6 +2693,29 @@
             ]
         },
         "groupedEnumerations": {
+            "src/app/features/home/components/advantage/advantage.component.ts": [
+                {
+                    "name": "Advantage",
+                    "childs": [
+                        {
+                            "name": "Return",
+                            "value": "Return"
+                        },
+                        {
+                            "name": "Price",
+                            "value": "Price"
+                        },
+                        {
+                            "name": "PlaceHolder",
+                            "value": "Placeholder"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "src/app/features/home/components/advantage/advantage.component.ts"
+                }
+            ],
             "src/app/shared/components/button/button.component.ts": [
                 {
                     "name": "ButtonSize",
@@ -2543,33 +2809,6 @@
                 "name": "AppComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/core/components/advantage/advantage.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AdvantageComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/core/components/advantages/advantages.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AdvantagesComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/core/components/banner-max/banner-max.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "BannerMaxComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -2691,6 +2930,62 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/features/home/components/advantage/advantage.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AdvantageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/home/components/advantages/advantages.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AdvantagesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/home/components/banner-max/banner-max.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BannerMaxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/home/home.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/products/components/product/product.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProductComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/products/products.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/features/shopping-cart/components/item/item.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2781,7 +3076,17 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

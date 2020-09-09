@@ -8,7 +8,7 @@
 
   background-color: $secondary-color;
 
-  color: $light-font-color;
+  color: $lightest-font-color;
 
   transition: background-color 0.25s ease-in-out;
 
@@ -31,5 +31,9 @@
 
   &:hover {
     background-color: $secondary-color-dark;
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
   }
 }
