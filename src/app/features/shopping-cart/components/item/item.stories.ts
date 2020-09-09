@@ -1,10 +1,10 @@
 import { moduleMetadata } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
-import { ShoppingCartItemComponent } from './shopping-cart-item.component';
+import { ItemComponent } from './item.component';
 import { ShoppingCartModule } from '../../shopping-cart.module';
 
 export default {
-  title: 'shopping-cart/shopping-cart-item',
+  title: 'shopping-cart/item',
   decorators: [
     moduleMetadata({
       imports: [ShoppingCartModule],
@@ -13,7 +13,7 @@ export default {
 };
 
 export const wonderfulTShirt = () => ({
-  component: ShoppingCartItemComponent,
+  component: ItemComponent,
   props: {
     shoppingCartItem: {
       id: '1',

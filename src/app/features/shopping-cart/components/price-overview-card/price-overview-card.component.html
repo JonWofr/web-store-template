@@ -3,26 +3,27 @@
 </h2>
 <ul>
   <li>
-    <div>
+    <p>
       Zwischensumme
-    </div>
-    <div>{{ priceOfAllItems }} €</div>
+    </p>
+    <p>{{ priceOfAllItems | currency: "EUR" }}</p>
   </li>
   <li>
-    <div>
+    <p>
       Versand
-    </div>
-    <div>{{ shippingCosts }} €</div>
+    </p>
+    <p>{{ shippingCosts | currency: "EUR" }}</p>
   </li>
   <li>
-    <div>
+    <p>
       Gesamtsumme (inkl. MwSt.)
-    </div>
-    <div>{{ priceOfAllItems + shippingCosts }} €</div>
+    </p>
+    <p>{{ priceOfAllItems + shippingCosts | currency: "EUR" }}</p>
   </li>
 </ul>
 <shared-button
   [size]="ButtonSize.Fluid"
+  [isDisabled]="priceOfAllItems === 0"
   (clickButton)="onClickCheckoutButton()"
 >
   Zur Kasse

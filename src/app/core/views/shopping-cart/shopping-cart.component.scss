@@ -1,5 +1,10 @@
 :host {
-  div.container {
-    margin-top: 65px;
+  div.row {
+    align-items: flex-start;
+
+    & > div.shopping-cart-price-overview-card-container {
+      position: sticky;
+      top: 1rem;
+    }
   }
 }

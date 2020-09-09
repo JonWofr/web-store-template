@@ -1,10 +1,10 @@
 import { moduleMetadata } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
-import { ShoppingCartItemsListComponent } from './shopping-cart-items-list.component';
+import { ItemsListCardComponent } from './items-list-card.component';
 import { ShoppingCartModule } from '../../shopping-cart.module';
 
 export default {
-  title: 'shopping-cart/shopping-cart-items-list',
+  title: 'shopping-cart/items-list-card',
   decorators: [
     moduleMetadata({
       imports: [ShoppingCartModule],
@@ -13,7 +13,7 @@ export default {
 };
 
 export const threeItems = () => ({
-  component: ShoppingCartItemsListComponent,
+  component: ItemsListCardComponent,
   props: {
     shoppingCartItems: [
       {

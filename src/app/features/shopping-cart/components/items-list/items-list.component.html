@@ -1,0 +1,11 @@
+<div
+  class="shopping-cart-item-container"
+  *ngFor="let shoppingCartItem of shoppingCartItems"
+>
+  <shopping-cart-item
+    [shoppingCartItem]="shoppingCartItem"
+    (clickRemove)="onClickRemoveShoppingCartItem(shoppingCartItem)"
+    (changeShoppingCartItem)="onChangeShoppingCartItem($event)"
+  >
+  </shopping-cart-item>
+</div>

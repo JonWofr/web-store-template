@@ -9,15 +9,15 @@
       <h3 class="title">
         {{ shoppingCartItem?.product.title }}
       </h3>
-      <h4 class="subtitle">
+      <p>
         {{ shoppingCartItem?.product.subtitle }}
-      </h4>
+      </p>
     </div>
     <button class="remove" (click)="clickRemove.emit()">
       <img src="assets/icons/trash-can.svg" alt="" />
-      <div>
+      <p>
         Entfernen
-      </div>
+      </p>
     </button>
   </div>
   <div class="right-side">
@@ -25,6 +25,6 @@
       [quantity]="shoppingCartItem?.quantity"
       (changeQuantity)="onChangeQuantity($event)"
     ></shared-input-stepper>
-    <div class="price">{{ shoppingCartItem?.price }}€</div>
+    <p>{{ shoppingCartItem?.price | currency: "EUR" }}</p>
   </div>
 </div>
