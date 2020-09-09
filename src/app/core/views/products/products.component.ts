@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
+import { animateOnScrollWithDelay } from 'src/app/shared/animations/animations';
 
 @Component({
   selector: 'app-products',
@@ -35,7 +36,9 @@ export class ProductsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    animateOnScrollWithDelay('animate__zoomIn', '.product');
+  }
 
   onClickAddToShoppingCart(): void {
     let shoppingCartItems: ShoppingCartItem[] = [];

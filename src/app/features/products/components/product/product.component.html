@@ -1,1 +1,36 @@
-<p>product works!</p>
+<div class="product-header">
+  <div class="after">
+    <div
+      class="color"
+      [style]="{ 'background-color': color }"
+      *ngFor="let color of colors"
+    ></div>
+    <h3 *ngIf="colors.length == 0">check me out!</h3>
+  </div>
+  <h3
+    class="before animate__animated animate__faster"
+    [class.animate__fadeOutUp]="isHovering"
+    [ngStyle]="{
+      'background-color': !isHovering ? 'hsl(0, 0%, 95%)' : 'transparent'
+    }"
+  >
+    A.I. T-Shirt
+  </h3>
+</div>
+
+<div class="product-image">
+  <img
+    (mouseover)="isHovering = true"
+    (mouseout)="isHovering = false"
+    src="/assets/images/example-product.png"
+    alt=""
+  />
+  <div
+    class="price-tag animate__animated animate__faster"
+    [class.animate__fadeOut]="isHovering"
+  >
+    19,99 €
+  </div>
+</div>
+
+<p>noch 4 verfügbar</p>
