@@ -11,7 +11,15 @@ export default {
   ],
 };
 
-export const defaultProps = () => ({
+export const noPrice = () => ({
   component: PriceOverviewCardComponent,
   props: {},
+});
+
+export const noShippingCosts = () => ({
+  component: PriceOverviewCardComponent,
+  props: {
+    priceOfAllItems: 19.99,
+    shippingCosts: 0,
+  },
 });
