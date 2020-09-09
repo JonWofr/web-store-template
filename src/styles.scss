@@ -8,13 +8,13 @@
 }
 
 @font-face {
-  font-family: "m-bold";
-  src: url("/assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-family: "m-extra-light";
+  src: url("/assets/fonts/Montserrat-ExtraLight.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "m-med";
-  src: url("/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-family: "m-light";
+  src: url("/assets/fonts/Montserrat-Light.ttf") format("truetype");
 }
 
 @font-face {
@@ -23,8 +23,23 @@
 }
 
 @font-face {
-  font-family: "m-sem-bold";
+  font-family: "m-med";
+  src: url("/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "m-semi-bold";
   src: url("/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "m-bold";
+  src: url("/assets/fonts/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "mono-reg";
+  src: url("/assets/fonts/FiraCode-Regular.ttf") format("truetype");
 }
 
 html,
@@ -36,11 +51,23 @@ body {
 body {
   background-color: $lightest-background-color;
   color: $dark-font-color;
+
+  font-family: m-reg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
 
 h1,
 h2 {
   color: $darkest-font-color;
+  font-family: m-semi-bold;
 }
 
 h3,
@@ -48,6 +75,7 @@ h4,
 h5,
 h6 {
   color: $darker-font-color;
+  font-family: m-med;
 }
 
 button {
@@ -73,5 +101,9 @@ button {
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+}
+
+p {
   margin: 0;
 }

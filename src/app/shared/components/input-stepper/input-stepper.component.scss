@@ -15,6 +15,10 @@
     }
   }
 
+  & > p.quantity {
+    font-family: mono-reg;
+  }
+
   & > button.plus,
   & > button.minus {
     padding: 0.25rem;
@@ -24,8 +28,15 @@
 
     transition: border-color 0.25s ease-in-out;
 
-    & > svg > path {
-      transition: fill 0.25s ease-in-out;
+    & > svg {
+      width: 16px;
+      height: 16px;
+
+      display: block;
+
+      & > path {
+        transition: fill 0.25s ease-in-out;
+      }
     }
 
     &:disabled {
@@ -35,8 +46,5 @@
         fill: $disabled-color;
       }
     }
-  }
-
-  & > div.quantity {
   }
 }

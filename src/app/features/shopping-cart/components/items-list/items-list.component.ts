@@ -2,11 +2,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ShoppingCartItem } from '../../../../core/models/shopping-cart-item.model';
 
 @Component({
-  selector: 'app-shopping-cart-items-list',
-  templateUrl: './shopping-cart-items-list.component.html',
-  styleUrls: ['./shopping-cart-items-list.component.scss'],
+  selector: 'shopping-cart-items-list',
+  templateUrl: './items-list.component.html',
+  styleUrls: ['./items-list.component.scss'],
 })
-export class ShoppingCartItemsListComponent implements OnInit {
+export class ItemsListComponent implements OnInit {
   @Input() shoppingCartItems: ShoppingCartItem[] = [];
   @Output() changeShoppingCartItems = new EventEmitter<ShoppingCartItem[]>();
 
@@ -19,6 +19,21 @@ export class ShoppingCartItemsListComponent implements OnInit {
       (item) => item.id !== shoppingCartItem.id
     );
     this.changeShoppingCartItems.emit(this.shoppingCartItems);
+
+    this.updateLocalStorageShoppingCartItems(this.shoppingCartItems);
+  }
+
+  updateLocalStorageShoppingCartItems(
+    shoppingCartItems: ShoppingCartItem[]
+  ): void {
+    if (shoppingCartItems.length > 0) {
+      localStorage.setItem(
+        'shoppingCartItems',
+        JSON.stringify(shoppingCartItems)
+      );
+    } else {
+      localStorage.removeItem('shoppingCartItems');
+    }
   }
 
   onChangeShoppingCartItem(shoppingCartItem: ShoppingCartItem): void {
@@ -26,5 +41,7 @@ export class ShoppingCartItemsListComponent implements OnInit {
       item.id !== shoppingCartItem.id ? item : shoppingCartItem
     );
     this.changeShoppingCartItems.emit(this.shoppingCartItems);
+
+    this.updateLocalStorageShoppingCartItems(this.shoppingCartItems);
   }
 }

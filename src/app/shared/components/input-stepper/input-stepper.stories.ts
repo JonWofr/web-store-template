@@ -5,7 +5,7 @@ import { AppModule } from 'src/app/app.module';
 import { RouterModule } from '@angular/router';
 
 export default {
-  title: 'Item Quantity Input Stepper',
+  title: 'shared/input-stepper',
   decorators: [
     moduleMetadata({
       imports: [AppModule, RouterModule.forRoot([], { useHash: true })],

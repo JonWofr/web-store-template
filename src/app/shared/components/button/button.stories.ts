@@ -5,7 +5,7 @@ import { SharedModule } from '../../shared.module';
 import { ButtonComponent, ButtonSize } from './button.component';
 
 export default {
-  title: 'Button',
+  title: 'shared/button',
   decorators: [
     moduleMetadata({
       imports: [SharedModule],
@@ -58,5 +58,17 @@ export const fluid = () => ({
   `,
   props: {
     size: ButtonSize.Fluid,
+  },
+});
+
+export const disabled = () => ({
+  component: ButtonComponent,
+  template: `
+    <shared-button [isDisabled]="isDisabled">
+      Klick
+    </shared-button>
+  `,
+  props: {
+    isDisabled: true,
   },
 });

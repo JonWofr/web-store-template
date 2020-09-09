@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ButtonSize } from '../../../../shared/components/button/button.component';
 
 @Component({
-  selector: 'app-price-overview-card',
+  selector: 'shopping-cart-price-overview-card',
   templateUrl: './price-overview-card.component.html',
   styleUrls: ['./price-overview-card.component.scss'],
 })

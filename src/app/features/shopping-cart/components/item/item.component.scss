@@ -2,34 +2,22 @@
 @import "src/styles/variables.scss";
 
 :host {
-  width: 100%;
-  height: 100px;
-
   display: flex;
+  flex-direction: column;
   align-items: stretch;
 
-  box-shadow: $default-card-box-shadow;
-  border-radius: $default-card-border-radius;
-
-  background-color: $default-card-background-color;
-
   & > img.thumbnail {
-    width: 100px;
+    height: 100px;
 
     object-fit: cover;
-
-    border-top-left-radius: $default-card-border-radius;
-    border-bottom-left-radius: $default-card-border-radius;
   }
 
   & > div.additional-information {
-    flex: 1;
-
     display: flex;
     justify-content: space-between;
     align-items: stretch;
 
-    padding: 0.75rem;
+    padding: 0.5rem;
 
     & > div.left-side {
       display: flex;
@@ -38,12 +26,18 @@
       align-items: flex-start;
 
       & > div {
-        & > h3.title {
-          font-size: 1.8rem;
-        }
+        & > * {
+          margin: 0.125rem 0;
 
-        & > h4.subtitle {
-          font-size: 1.6rem;
+          :first-child {
+            margin-top: 0;
+          }
+          :last-child {
+            margin-bottom: 0;
+          }
+        }
+        & > h3.title {
+          font-size: 1.2rem;
         }
       }
 
@@ -68,6 +62,10 @@
           width: 20px;
           height: 20px;
         }
+
+        & > p {
+          font-family: m-light;
+        }
       }
     }
 
@@ -76,6 +74,20 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-end;
+    }
+  }
+}
+
+@media only screen and (min-width: $md-breakpoint) {
+  :host {
+    flex-direction: row;
+
+    & > img.thumbnail {
+      width: 100px;
+    }
+
+    & > div.additional-information {
+      flex: 1;
     }
   }
 }
