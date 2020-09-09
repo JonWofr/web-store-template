@@ -22,6 +22,7 @@ import { ViewContainerComponent } from './core/components/view-container/view-co
 import { ProductsComponent } from './core/views/products/products.component';
 import { ShoppingCartComponent } from './core/views/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from './core/views/profile/profile.component';
+import { CheckoutComponent } from './core/views/checkout/checkout.component';
 
 // Angular has by default the necessary data to format values in en-US (e.g. with the help of pipes).
 // In order to be able to use german formatting we manually have to register corresponding data.
@@ -39,6 +40,7 @@ registerLocaleData(localeDe);
     ProductsComponent,
     ShoppingCartComponent,
     ProfileComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
