@@ -1,4 +1,13 @@
-<form [formGroup]="formGroup" (ngSubmit)="continue(formGroup.value)">
-  <shared-email-input [formControlName]="email"></shared-email-input>
+<form [formGroup]="formGroup" (ngSubmit)="continue(formGroup?.value)">
+  <shared-email-input formControlName="email"></shared-email-input>
+  <div
+    *ngIf="
+      !(formGroup?.controls)['email'].valid &&
+      (formGroup?.controls)['email'].touched
+    "
+    class="alert alert-warning"
+  >
+    Eingabe ist ungültig!
+  </div>
   <shared-button type="submit">Weiter</shared-button>
 </form>

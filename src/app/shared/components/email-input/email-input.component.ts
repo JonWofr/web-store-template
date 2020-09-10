@@ -1,9 +1,5 @@
-import { Component, OnInit, Input, forwardRef } from '@angular/core';
-import {
-  FormGroup,
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { Component, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'shared-email-input',
@@ -12,25 +8,22 @@ import {
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => {
-        console.log('reached this point');
-        return EmailInputComponent;
-      }),
+      useExisting: forwardRef(() => EmailInputComponent),
       multi: true,
     },
   ],
 })
 export class EmailInputComponent implements ControlValueAccessor {
-  value: string = '';
-  propagateChange?: (value: any) => {};
+  @Input() placeholder: string = 'max-mustermann@mail.de';
 
-  constructor() {}
+  value: string = '';
+  propagateChange?: (value: string) => {};
+  propagateBlur?: () => {};
 
   /**
    * A method that writes a new value from the form model into the view
    */
   writeValue(value: any): void {
-    console.log('Inititalising form control with value', value);
     if (typeof value === 'string') {
       this.value = value;
     }
@@ -39,15 +32,16 @@ export class EmailInputComponent implements ControlValueAccessor {
   /**
    * A method that registers a handler that should be called when something in the view has changed
    */
-  registerOnChange(onChangeFunction: any): void {
-    console.log('register on change', onChangeFunction);
-    this.propagateChange = onChangeFunction;
+  registerOnChange(propagateChangeFunction: (value: string) => {}): void {
+    this.propagateChange = propagateChangeFunction;
   }
 
   /**
    * A method that registers a handler specifically for when a control receives a touch event
    */
-  registerOnTouched(): void {}
+  registerOnTouched(propagateBlurFunction: () => {}): void {
+    this.propagateBlur = propagateBlurFunction;
+  }
 
   /**
    * Is called when the input value of the underlying view is changed
@@ -55,6 +49,15 @@ export class EmailInputComponent implements ControlValueAccessor {
   onChangeValue(value: string): void {
     if (this.propagateChange) {
       this.propagateChange(value);
+    }
+  }
+
+  /**
+   * Is called when the input of the underlying view has been touched
+   */
+  onBlur(): void {
+    if (this.propagateBlur) {
+      this.propagateBlur();
     }
   }
 }

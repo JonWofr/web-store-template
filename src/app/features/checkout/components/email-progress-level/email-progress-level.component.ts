@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-email-progress-level',
+  selector: 'checkout-email-progress-level',
   templateUrl: './email-progress-level.component.html',
   styleUrls: ['./email-progress-level.component.scss'],
 })

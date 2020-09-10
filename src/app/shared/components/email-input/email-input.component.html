@@ -4,6 +4,9 @@
     type="email"
     class="form-control"
     id="emailInput"
+    [placeholder]="placeholder"
+    [value]="value"
     (input)="onChangeValue($event.target.value)"
+    (blur)="onBlur()"
   />
 </div>
