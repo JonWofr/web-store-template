@@ -9,14 +9,16 @@ export enum ProgressLevel {
 }
 
 @Component({
-  selector: 'app-progress-indicator',
+  selector: 'checkout-progress-indicator',
   templateUrl: './progress-indicator.component.html',
   styleUrls: ['./progress-indicator.component.scss'],
 })
 export class ProgressIndicatorComponent implements OnInit {
   @Input() currentProgressLevel: ProgressLevel = ProgressLevel.Email;
   @Input() highestReachedProgressLevel: ProgressLevel = ProgressLevel.Email;
-  @Output() clickProgressLevelButton = new EventEmitter<ProgressLevel>();
+  @Output() clickProgressLevelButton: EventEmitter<
+    ProgressLevel
+  > = new EventEmitter<ProgressLevel>();
 
   ProgressLevel = ProgressLevel;
 

@@ -1,15 +1,8 @@
 import { ProgressIndicatorComponent } from './progress-indicator.component';
-import { moduleMetadata } from '@storybook/angular';
-import { CheckoutModule } from '../../checkout.module';
 import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'checkout/progress-indicator',
-  /*   decorators: [
-    moduleMetadata({
-      imports: [CheckoutModule],
-    }),
-  ], */
 };
 
 export const firstProgressLevel = () => ({

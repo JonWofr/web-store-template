@@ -1,0 +1,4 @@
+<form [formGroup]="formGroup" (ngSubmit)="continue(formGroup.value)">
+  <shared-email-input [formControlName]="email"></shared-email-input>
+  <shared-button type="submit">Weiter</shared-button>
+</form>

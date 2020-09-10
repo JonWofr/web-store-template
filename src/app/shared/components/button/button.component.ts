@@ -14,8 +14,9 @@ export enum ButtonSize {
 })
 export class ButtonComponent implements OnInit {
   @Input() size: ButtonSize = ButtonSize.Medium;
-  @Input() isDisabled = false;
-  @Output() clickButton = new EventEmitter<void>();
+  @Input() isDisabled: boolean = false;
+  @Input() type: string = 'button';
+  @Output() clickButton: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() {}
 
