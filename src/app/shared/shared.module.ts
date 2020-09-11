@@ -10,7 +10,12 @@ import { InputStepperComponent } from './components/input-stepper/input-stepper.
 import { InputComponent } from './components/input/input.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
-const declarations = [ButtonComponent, InputStepperComponent, InputComponent];
+const declarations = [
+  ButtonComponent,
+  InputStepperComponent,
+  InputComponent,
+  CheckboxComponent,
+];
 
 @NgModule({
   declarations,

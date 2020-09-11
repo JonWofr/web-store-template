@@ -1,5 +1,6 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 
 export enum InputType {
   Email = 'email',
@@ -23,14 +24,19 @@ export enum InputType {
     },
   ],
 })
-export class InputComponent implements ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor, OnInit {
   @Input() label: string = '';
   @Input() type: InputType = InputType.Text;
   @Input() placeholder: string = '';
 
+  elementId?: string;
   value: string = '';
   propagateChange?: (value: string) => {};
   propagateBlur?: () => {};
+
+  ngOnInit(): void {
+    this.elementId = uuidv4();
+  }
 
   /**
    * A method that writes a new value from the form model into the view

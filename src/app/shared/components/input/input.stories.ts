@@ -47,7 +47,10 @@ export const typeEmail = () => ({
     `,
   props: {
     formGroup: new FormGroup({
-      email: new FormControl(null, Validators.required),
+      email: new FormControl(
+        null,
+        Validators.compose([Validators.required, Validators.email])
+      ),
     }),
     formControlName: 'email',
     type: InputType.Email,

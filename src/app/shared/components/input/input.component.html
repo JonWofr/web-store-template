@@ -1,10 +1,10 @@
 <div class="form-group">
-  <label for="emailInput">
+  <label [for]="elementId">
     {{ label }}
   </label>
   <input
     class="form-control"
-    id="emailInput"
+    [id]="elementId"
     [type]="type"
     [placeholder]="placeholder"
     [value]="value"

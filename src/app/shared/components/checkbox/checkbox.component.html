@@ -1,1 +1,13 @@
-<p>checkbox works!</p>
+<div class="form-group">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    [id]="elementId"
+    [checked]="isChecked"
+    (input)="onChangeValue($event.target.checked)"
+    (blur)="onBlur()"
+  />
+  <label class="form-check-label" [for]="elementId">
+    {{ label }}
+  </label>
+</div>
