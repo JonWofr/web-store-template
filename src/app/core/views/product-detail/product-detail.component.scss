@@ -1,0 +1,20 @@
+@import "src/styles/colors.scss";
+
+div.product-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 8rem;
+  font-family: m-bold;
+  margin-bottom: 50px;
+}
+
+img.product-image {
+  -webkit-filter: drop-shadow(5px 5px 5px $darker-background-color);
+  filter: drop-shadow(5px 5px 5px $darker-background-color);
+}

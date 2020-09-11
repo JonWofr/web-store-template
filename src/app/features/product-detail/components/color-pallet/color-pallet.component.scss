@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+div.color {
+  border-radius: 50% 50%;
+  height: 50px;
+  width: 50px;
+  margin: 7px;
+}
