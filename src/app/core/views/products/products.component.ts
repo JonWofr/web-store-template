@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
-import { animateOnScrollWithDelay } from 'src/app/shared/animations/animations';
+import { animateOnScrollWithDelay } from '@shared/animations/animations';
 
 @Component({
   selector: 'app-products',

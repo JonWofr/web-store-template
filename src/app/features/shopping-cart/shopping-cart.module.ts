@@ -5,7 +5,7 @@ import { PriceOverviewCardComponent } from './components/price-overview-card/pri
 import { ItemComponent } from './components/item/item.component';
 import { ItemsListComponent } from './components/items-list/items-list.component';
 import { ItemsListCardComponent } from './components/items-list-card/items-list-card.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { CommonModule } from '@angular/common';
 
 const declarations = [
