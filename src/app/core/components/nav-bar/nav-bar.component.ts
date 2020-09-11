@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnInit(): void {
-    this.animateOnScroll();
+    this.route.events.subscribe(() => {
+      if (this.route.url !== '/') {
+        document.querySelector('#nav')?.classList.add('nav-transparent');
+      } else {
+        this.animateOnScroll();
+      }
+    });
   }
 
   animateOnScroll(): void {

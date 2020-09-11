@@ -19,13 +19,15 @@
 }
 
 img.icon {
-  height: 30px;
+  display: block;
+  height: 1.5rem;
 }
 
 nav.navbar {
-  padding-top: 40px;
+  padding-top: 2.5rem;
   background-color: transparent;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   transition: 0.3s;
   box-shadow: rgba(0, 0, 0, 0.47) 3px 3px 15px 3px;
 

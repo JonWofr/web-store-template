@@ -2,7 +2,7 @@ import { NgModule, Component } from '@angular/core';
 
 // Components
 
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { AdvantageComponent } from './components/advantage/advantage.component';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
