@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd, RouterEvent } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,19 +8,36 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  constructor(private route: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.route.events.subscribe(() => {
-      if (this.route.url !== '/') {
-        document.querySelector('#nav')?.classList.add('nav-transparent');
-      } else {
-        this.animateOnScroll();
-      }
+    this.onNavigationChange();
+  }
+
+  onNavigationChange(): void {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        event = event as NavigationEnd;
+        switch (event.url) {
+          case '/':
+            this.animateNavBarOnScroll();
+            break;
+          default: {
+            document.querySelector('#nav')?.classList.add('nav-transparent');
+            this.createNewRellax();
+          }
+        }
+      });
+  }
+
+  createNewRellax(): void {
+    const rellax = new Rellax('.rellax', {
+      wrapper: 'main',
     });
   }
 
-  animateOnScroll(): void {
+  animateNavBarOnScroll(): void {
     const options = {
       rootMargin: '0px',
       threshold: 0.9,

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Components
 import { HomeComponent } from './core/views/home/home.component';
-import { DetailComponent } from './core/views/detail/detail.component';
+import { ProductDetailComponent } from './core/views/product-detail/product-detail.component';
 import { ContactComponent } from './core/views/contact/contact.component';
 import { AboutComponent } from './core/views/about/about.component';
 import { ProductsComponent } from './core/views/products/products.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'products/:id',
-    component: DetailComponent,
+    component: ProductDetailComponent,
   },
   {
     path: 'products',

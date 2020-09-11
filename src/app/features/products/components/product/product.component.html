@@ -22,7 +22,9 @@
   <img
     (mouseover)="isHovering = true"
     (mouseout)="isHovering = false"
+    (click)="openProductDetails()"
     src="/assets/images/example-product.png"
+    routerLink="/products/0"
     alt=""
   />
   <div

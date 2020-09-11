@@ -15,13 +15,16 @@ import { SharedModule } from '@shared/shared.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from '@core/components/nav-bar/nav-bar.component';
 import { HomeComponent } from '@core/views/home/home.component';
-import { DetailComponent } from '@core/views/detail/detail.component';
 import { AboutComponent } from '@core/views/about/about.component';
 import { ContactComponent } from '@core/views/contact/contact.component';
 import { ViewContainerComponent } from '@core/components/view-container/view-container.component';
 import { ProductsComponent } from '@core/views/products/products.component';
 import { ShoppingCartComponent } from '@core/views/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from '@core/views/profile/profile.component';
+import { ProductDetailComponent } from './core/views/product-detail/product-detail.component';
+import { ColorPalletComponent } from './features/product-detail/components/color-pallet/color-pallet.component';
+import { SizeSelectorComponent } from './features/product-detail/components/size-selector/size-selector.component';
+import { ProductImageSliderComponent } from './features/product-detail/components/product-image-slider/product-image-slider.component';
 
 // Angular has by default the necessary data to format values in en-US (e.g. with the help of pipes).
 // In order to be able to use german formatting we manually have to register corresponding data.
@@ -32,13 +35,16 @@ registerLocaleData(localeDe);
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    DetailComponent,
+    ProductDetailComponent,
     AboutComponent,
     ContactComponent,
     ViewContainerComponent,
     ProductsComponent,
     ShoppingCartComponent,
     ProfileComponent,
+    ColorPalletComponent,
+    SizeSelectorComponent,
+    ProductImageSliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,7 @@ registerLocaleData(localeDe);
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    DetailComponent,
+    ProductDetailComponent,
     AboutComponent,
     ContactComponent,
     ViewContainerComponent,
