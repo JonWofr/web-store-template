@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -13,7 +12,13 @@
     "target": "es2015",
     "strict": true,
     "lib": ["es2018", "dom"],
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "baseUrl": "src",
+    "paths": {
+      "@core/*": ["app/core/*"],
+      "@features/*": ["app/features/*"],
+      "@shared/*": ["app/shared/*"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

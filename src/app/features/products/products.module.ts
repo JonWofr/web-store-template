@@ -3,7 +3,7 @@ import { NgModule, Component } from '@angular/core';
 // Components
 import { ProductComponent } from './components/product/product.component';
 
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { CommonModule } from '@angular/common';
 
 const declarations = [ProductComponent];
