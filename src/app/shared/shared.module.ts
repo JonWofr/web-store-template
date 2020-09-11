@@ -7,13 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Components
 import { ButtonComponent } from './components/button/button.component';
 import { InputStepperComponent } from './components/input-stepper/input-stepper.component';
-import { EmailInputComponent } from './components/email-input/email-input.component';
+import { InputComponent } from './components/input/input.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
-const declarations = [
-  ButtonComponent,
-  InputStepperComponent,
-  EmailInputComponent,
-];
+const declarations = [ButtonComponent, InputStepperComponent, InputComponent];
 
 @NgModule({
   declarations,

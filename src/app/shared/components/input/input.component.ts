@@ -1,20 +1,32 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+export enum InputType {
+  Email = 'email',
+  Text = 'text',
+  Number = 'number',
+  Password = 'password',
+}
+
+/**
+ * This component can be used for more than just a text input. It also supports inputs of all types mentioned in the enum {@link InputType}
+ */
 @Component({
-  selector: 'shared-email-input',
-  templateUrl: './email-input.component.html',
-  styleUrls: ['./email-input.component.scss'],
+  selector: 'shared-input',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => EmailInputComponent),
+      useExisting: forwardRef(() => InputComponent),
       multi: true,
     },
   ],
 })
-export class EmailInputComponent implements ControlValueAccessor {
-  @Input() placeholder: string = 'max-mustermann@mail.de';
+export class InputComponent implements ControlValueAccessor {
+  @Input() label: string = '';
+  @Input() type: InputType = InputType.Text;
+  @Input() placeholder: string = '';
 
   value: string = '';
   propagateChange?: (value: string) => {};

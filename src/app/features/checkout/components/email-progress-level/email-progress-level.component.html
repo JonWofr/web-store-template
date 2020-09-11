@@ -1,5 +1,5 @@
 <form [formGroup]="formGroup" (ngSubmit)="continue(formGroup?.value)">
-  <shared-email-input formControlName="email"></shared-email-input>
+  <shared-input formControlName="email"></shared-input>
   <div
     *ngIf="
       !(formGroup?.controls)['email'].valid &&
