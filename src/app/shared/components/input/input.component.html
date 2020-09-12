@@ -3,12 +3,13 @@
     {{ label }}
   </label>
   <input
+    #input
     class="form-control"
     [id]="elementId"
     [type]="type"
     [placeholder]="placeholder"
     [value]="value"
-    (input)="onChangeValue($event.target.value)"
+    (input)="onChangeValue(input.value)"
     (blur)="onBlur()"
   />
 </div>

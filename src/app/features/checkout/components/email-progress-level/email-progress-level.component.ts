@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { InputType } from '@shared/components/input/input.component';
+import { InputType } from '@shared/enums/input-type.enum';
 
 @Component({
   selector: 'checkout-email-progress-level',

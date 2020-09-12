@@ -1,7 +1,8 @@
-import { InputComponent, InputType } from './input.component';
+import { InputComponent } from './input.component';
 import { moduleMetadata } from '@storybook/angular';
 import { SharedModule } from '../../shared.module';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { InputType } from '@shared/enums/input-type.enum';
 
 export default {
   title: 'shared/input',

@@ -1,26 +1,23 @@
 import { Component, Input, forwardRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { InputType } from '@shared/enums/input-type.enum';
+import { SelectOption } from '@shared/models/select-option.model';
 import { v4 as uuidv4 } from 'uuid';
 
-/**
- * This component can be used for more than just a text input. It also supports inputs of all types mentioned in the enum {@link InputType}
- */
 @Component({
-  selector: 'shared-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss'],
+  selector: 'shared-select',
+  templateUrl: './select.component.html',
+  styleUrls: ['./select.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
+      useExisting: forwardRef(() => SelectComponent),
       multi: true,
     },
   ],
 })
-export class InputComponent implements ControlValueAccessor, OnInit {
+export class SelectComponent implements ControlValueAccessor, OnInit {
   @Input() label: string = '';
-  @Input() type: InputType = InputType.Text;
+  @Input() options: SelectOption[] = [];
   @Input() placeholder: string = '';
 
   elementId?: string;
@@ -56,7 +53,7 @@ export class InputComponent implements ControlValueAccessor, OnInit {
   }
 
   /**
-   * Is called when the input value of the underlying view is changed
+   * Is called when the select value of the underlying view is changed
    */
   onChangeValue(value: string): void {
     if (this.propagateChange) {
@@ -65,7 +62,7 @@ export class InputComponent implements ControlValueAccessor, OnInit {
   }
 
   /**
-   * Is called when the input of the underlying view has been touched
+   * Is called when the select of the underlying view has been touched
    */
   onBlur(): void {
     if (this.propagateBlur) {

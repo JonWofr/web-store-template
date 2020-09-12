@@ -1,0 +1,21 @@
+<div class="form-group">
+  <label [for]="elementId">
+    {{ label }}
+  </label>
+  <select
+    #select
+    class="form-control"
+    [class.text-muted]="select.value === ''"
+    [id]="elementId"
+    [value]="value"
+    (change)="onChangeValue(select.value)"
+    (blur)="onBlur()"
+  >
+    <option value="">
+      {{ placeholder }}
+    </option>
+    <option *ngFor="let option of options" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+</div>
