@@ -11,4 +11,7 @@
   <label class="form-check-label" [for]="elementId">
     {{ label }}
   </label>
+  <small *ngIf="hint" class="form-text text-muted">
+    {{ hint }}
+  </small>
 </div>

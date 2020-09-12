@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ButtonSize } from '@shared/enums/button-size.enum';
 import { InputType } from '@shared/enums/input-type.enum';
 
 @Component({
@@ -13,6 +14,7 @@ export class EmailProgressLevelComponent implements OnInit {
 
   InputType = InputType;
   Object = Object;
+  ButtonSize = ButtonSize;
 
   constructor(private formBuilder: FormBuilder) {}
 

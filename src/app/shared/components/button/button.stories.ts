@@ -1,8 +1,7 @@
 import { moduleMetadata } from '@storybook/angular';
-import { action } from '@storybook/addon-actions';
-import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared.module';
-import { ButtonComponent, ButtonSize } from './button.component';
+import { ButtonComponent } from './button.component';
+import { ButtonSize } from '@shared/enums/button-size.enum';
 
 export default {
   title: 'shared/button',

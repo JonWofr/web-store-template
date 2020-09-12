@@ -80,7 +80,27 @@ export const typePassword = () => ({
     label: 'Passwort',
   },
 });
-
+export const withHint = () => ({
+  component: InputComponent,
+  template: `
+        <form [formGroup]="formGroup">
+            <shared-input [formControlName]="formControlName" [type]="type" [label]="label" [hint]="hint">
+            </shared-input>
+            <div *ngIf="!(formGroup?.controls)[formControlName].valid && (formGroup?.controls)[formControlName].touched" class="alert alert-warning">
+              Eingabe ist ungültig!
+            </div>
+        </form>
+    `,
+  props: {
+    formGroup: new FormGroup({
+      password: new FormControl(null, Validators.required),
+    }),
+    formControlName: 'password',
+    type: InputType.Password,
+    label: 'Passwort',
+    hint: 'Das Passwort sollte 8-20 Zeichen haben',
+  },
+});
 export const typeNumber = () => ({
   component: InputComponent,
   template: `

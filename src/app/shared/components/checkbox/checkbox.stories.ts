@@ -45,3 +45,21 @@ export const checked = () => ({
     label: 'Ist dir langweilig?',
   },
 });
+
+export const withHint = () => ({
+  component: CheckboxComponent,
+  template: `
+          <form [formGroup]="formGroup">
+              <shared-checkbox [formControlName]="formControlName" [label]="label" [hint]="hint">
+              </shared-checkbox>
+          </form>
+      `,
+  props: {
+    formGroup: new FormGroup({
+      isBored: new FormControl(true),
+    }),
+    formControlName: 'isBored',
+    label: 'Ist dir langweilig?',
+    hint: 'Du kannst ruhig ehrlich sein',
+  },
+});

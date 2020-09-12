@@ -18,4 +18,7 @@
       {{ option.label }}
     </option>
   </select>
+  <small *ngIf="hint" class="form-text text-muted">
+    {{ hint }}
+  </small>
 </div>

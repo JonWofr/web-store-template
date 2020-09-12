@@ -1,8 +1,12 @@
+<h1>
+  Gastbestellung
+</h1>
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup?.value)">
   <shared-input
     formControlName="email"
     label="Email"
     placeholder="max-mustermann@mail.de"
+    hint="Ihre Email-Adresse wird nicht weitergegeben und wird einzig und allein für Versandmitteilungen verwendet"
     [type]="InputType.Email"
   ></shared-input>
   <ng-container

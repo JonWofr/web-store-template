@@ -46,3 +46,39 @@ export const threeOptions = () => ({
     placeholder: 'Auswahl...',
   },
 });
+
+export const withHint = () => ({
+  component: SelectComponent,
+  template: `
+        <form [formGroup]="formGroup">
+            <shared-select [formControlName]="formControlName" [label]="label" [options]="options" [placeholder]="placeholder" [hint]="hint">
+            </shared-select>
+            <div *ngIf="!(formGroup?.controls)[formControlName].valid && (formGroup?.controls)[formControlName].touched" class="alert alert-warning">
+              Eingabe ist ungültig!
+            </div>
+        </form>
+    `,
+  props: {
+    formGroup: new FormGroup({
+      select: new FormControl(null, Validators.required),
+    }),
+    formControlName: 'select',
+    label: 'Farbe',
+    options: [
+      {
+        label: 'Rot',
+        value: 'red',
+      },
+      {
+        label: 'Grün',
+        value: 'green',
+      },
+      {
+        label: 'Blau',
+        value: 'blue',
+      },
+    ],
+    placeholder: 'Auswahl...',
+    hint: 'Der Filter beeinträchtig nicht ihre Sehfähigkeit',
+  },
+});

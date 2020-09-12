@@ -22,6 +22,7 @@ export class InputComponent implements ControlValueAccessor, OnInit {
   @Input() label: string = '';
   @Input() type: InputType = InputType.Text;
   @Input() placeholder: string = '';
+  @Input() hint?: string;
 
   elementId?: string;
   value: string = '';

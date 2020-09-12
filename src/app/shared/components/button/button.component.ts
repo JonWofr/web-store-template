@@ -1,11 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-
-export enum ButtonSize {
-  Small = 'small',
-  Medium = 'medium',
-  Large = 'large',
-  Fluid = 'fluid',
-}
+import { ButtonSize } from '@shared/enums/button-size.enum';
 
 @Component({
   selector: 'shared-button',

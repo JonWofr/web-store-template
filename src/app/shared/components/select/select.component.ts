@@ -19,6 +19,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   @Input() label: string = '';
   @Input() options: SelectOption[] = [];
   @Input() placeholder: string = '';
+  @Input() hint?: string;
 
   elementId?: string;
   value: string = '';
