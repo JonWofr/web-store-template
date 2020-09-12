@@ -10,7 +10,6 @@ import { InputType } from '@shared/enums/input-type.enum';
 })
 export class EmailProgressLevelComponent implements OnInit {
   formGroup?: FormGroup;
-  email: string = '';
 
   InputType = InputType;
   Object = Object;

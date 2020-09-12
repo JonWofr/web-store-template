@@ -1,0 +1,685 @@
+<form (ngSubmit)="onSubmit()">
+  <div
+    class="address-information-form-container"
+    [formGroup]="shippingAddressInformation"
+  >
+    <h2>
+      Lieferadresse
+    </h2>
+
+    <!-- name section -->
+
+    <!-- first row (title, firstname, lastname) -->
+
+    <div class="form-row" formGroupName="name">
+      <div class="col-md-2">
+        <shared-select
+          formControlName="title"
+          label="Anrede"
+          placeholder="Auswahl..."
+          [options]="titleSelectOptions"
+        ></shared-select>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.name.controls.title.valid &&
+            shippingAddressInformation?.controls.name.controls.title.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.name.controls.title.errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-5">
+        <shared-input
+          formControlName="firstName"
+          label="Vorname"
+          placeholder="Max"
+          [type]="InputType.Text"
+        ></shared-input>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.name.controls.firstName
+              .valid &&
+            shippingAddressInformation?.controls.name.controls.firstName.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.name.controls.firstName
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-5">
+        <shared-input
+          formControlName="lastName"
+          label="Nachname"
+          placeholder="Mustermann"
+          [type]="InputType.Text"
+        ></shared-input>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.name.controls.lastName
+              .valid &&
+            shippingAddressInformation?.controls.name.controls.lastName.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.name.controls.lastName
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- address section -->
+
+    <!-- second row (street,housenumber) -->
+
+    <div class="form-row" formGroupName="address">
+      <div class="col-md">
+        <shared-input
+          formControlName="street"
+          label="Straße"
+          placeholder="Musterstraße"
+          [type]="InputType.Text"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.address.controls.street
+              .valid &&
+            shippingAddressInformation?.controls.address.controls.street.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.address.controls.street
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md">
+        <shared-input
+          formControlName="houseNumber"
+          label="Hausnummer"
+          placeholder="1"
+          [type]="InputType.Number"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.address.controls.houseNumber
+              .valid &&
+            shippingAddressInformation?.controls.address.controls.houseNumber
+              .touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.address.controls
+                  .houseNumber.errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- third row (addition) -->
+
+    <div class="form-row" formGroupName="address">
+      <div class="col-md">
+        <shared-input
+          formControlName="addition"
+          label="Adresszusatz"
+          placeholder="a"
+          [type]="InputType.Text"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.address.controls.addition
+              .valid &&
+            shippingAddressInformation?.controls.address.controls.addition
+              .touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.address.controls.addition
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- fourth row (postcode, city, country) -->
+
+    <div class="form-row" formGroupName="address">
+      <div class="col-md">
+        <shared-input
+          formControlName="postCode"
+          label="Postleitzahl"
+          placeholder="11111"
+          [type]="InputType.Number"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.address.controls.postCode
+              .valid &&
+            shippingAddressInformation?.controls.address.controls.postCode
+              .touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.address.controls.postCode
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md">
+        <shared-input
+          formControlName="city"
+          label="Stadt"
+          placeholder="Musterstadt"
+          [type]="InputType.Text"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.address.controls.city.valid &&
+            shippingAddressInformation?.controls.address.controls.city.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.address.controls.city
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md">
+        <shared-select
+          formControlName="country"
+          label="Land"
+          placeholder="Auswahl..."
+          [options]="countrySelectOptions"
+        >
+        </shared-select>
+        <ng-container
+          *ngIf="
+            !shippingAddressInformation?.controls.address.controls.country
+              .valid &&
+            shippingAddressInformation?.controls.address.controls.country
+              .touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                shippingAddressInformation?.controls.address.controls.country
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <shared-checkbox
+    label="Rechnungsadresse gleich Lieferadresse"
+    [formControl]="shippingAddressMatchingBillingAddressCheckbox"
+  >
+  </shared-checkbox>
+
+  <div
+    *ngIf="billingAddressInformation"
+    class="address-information-form-container"
+    [formGroup]="billingAddressInformation"
+  >
+    <h2>
+      Rechnungsadresse
+    </h2>
+
+    <!-- name section -->
+
+    <!-- first row (title, firstname, lastname) -->
+
+    <div class="form-row" formGroupName="name">
+      <div class="col-md-2">
+        <shared-select
+          formControlName="title"
+          label="Anrede"
+          placeholder="Auswahl..."
+          [options]="titleSelectOptions"
+        ></shared-select>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.name.controls.title.valid &&
+            billingAddressInformation?.controls.name.controls.title.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.name.controls.title.errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-5">
+        <shared-input
+          formControlName="firstName"
+          label="Vorname"
+          placeholder="Max"
+          [type]="InputType.Text"
+        ></shared-input>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.name.controls.firstName
+              .valid &&
+            billingAddressInformation?.controls.name.controls.firstName.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.name.controls.firstName
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-5">
+        <shared-input
+          formControlName="lastName"
+          label="Nachname"
+          placeholder="Mustermann"
+          [type]="InputType.Text"
+        ></shared-input>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.name.controls.lastName.valid &&
+            billingAddressInformation?.controls.name.controls.lastName.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.name.controls.lastName
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- address section -->
+
+    <!-- second row (street,housenumber) -->
+
+    <div class="form-row" formGroupName="address">
+      <div class="col-md">
+        <shared-input
+          formControlName="street"
+          label="Straße"
+          placeholder="Musterstraße"
+          [type]="InputType.Text"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.address.controls.street
+              .valid &&
+            billingAddressInformation?.controls.address.controls.street.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.address.controls.street
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md">
+        <shared-input
+          formControlName="houseNumber"
+          label="Hausnummer"
+          placeholder="1"
+          [type]="InputType.Number"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.address.controls.houseNumber
+              .valid &&
+            billingAddressInformation?.controls.address.controls.houseNumber
+              .touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.address.controls.houseNumber
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- third row (addition) -->
+
+    <div class="form-row" formGroupName="address">
+      <div class="col-md">
+        <shared-input
+          formControlName="addition"
+          label="Adresszusatz"
+          placeholder="a"
+          [type]="InputType.Text"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.address.controls.addition
+              .valid &&
+            billingAddressInformation?.controls.address.controls.addition
+              .touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.address.controls.addition
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- fourth row (postcode, city, country) -->
+
+    <div class="form-row" formGroupName="address">
+      <div class="col-md">
+        <shared-input
+          formControlName="postCode"
+          label="Postleitzahl"
+          placeholder="11111"
+          [type]="InputType.Number"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.address.controls.postCode
+              .valid &&
+            billingAddressInformation?.controls.address.controls.postCode
+              .touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.address.controls.postCode
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md">
+        <shared-input
+          formControlName="city"
+          label="Stadt"
+          placeholder="Musterstadt"
+          [type]="InputType.Text"
+        >
+        </shared-input>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.address.controls.city.valid &&
+            billingAddressInformation?.controls.address.controls.city.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.address.controls.city.errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md">
+        <shared-select
+          formControlName="country"
+          label="Land"
+          placeholder="Auswahl..."
+          [options]="countrySelectOptions"
+        >
+        </shared-select>
+        <ng-container
+          *ngIf="
+            !billingAddressInformation?.controls.address.controls.country
+              .valid &&
+            billingAddressInformation?.controls.address.controls.country.touched
+          "
+        >
+          <div
+            class="alert alert-warning"
+            *ngFor="
+              let errorKey of Object.keys(
+                billingAddressInformation?.controls.address.controls.country
+                  .errors
+              )
+            "
+            [ngSwitch]="errorKey"
+          >
+            <ng-container *ngSwitchCase="'required'">
+              Die Eingabe ist erforderlich
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              Invalide
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <shared-button
+    type="submit"
+    [isDisabled]="
+      !shippingAddressInformation?.valid ||
+      (shippingAddressInformation?.valid &&
+        billingAddressInformation &&
+        !billingAddressInformation?.valid)
+    "
+  >
+    Weiter
+  </shared-button>
+</form>
