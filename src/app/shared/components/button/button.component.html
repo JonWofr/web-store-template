@@ -1,3 +1,8 @@
-<button [ngClass]="size" [disabled]="isDisabled" (click)="clickButton.emit()">
+<button
+  [ngClass]="size"
+  [disabled]="isDisabled"
+  [type]="type"
+  (click)="clickButton.emit()"
+>
   <ng-content></ng-content>
 </button>

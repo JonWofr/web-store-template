@@ -9,10 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { ShoppingCartModule } from '@features/shopping-cart/shopping-cart.module';
 import { HomeModule } from '@features/home/home.module';
 import { ProductModule } from '@features/products/products.module';
-import { SharedModule } from '@shared/shared.module';
+import { CheckoutModule } from '@features/checkout/checkout.module';
 
 // Components
 import { AppComponent } from './app.component';
+import { CheckoutComponent } from '@core/views/checkout/checkout.component';
 import { NavBarComponent } from '@core/components/nav-bar/nav-bar.component';
 import { HomeComponent } from '@core/views/home/home.component';
 import { DetailComponent } from '@core/views/detail/detail.component';
@@ -39,6 +40,7 @@ registerLocaleData(localeDe);
     ProductsComponent,
     ShoppingCartComponent,
     ProfileComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ registerLocaleData(localeDe);
     ShoppingCartModule,
     HomeModule,
     ProductModule,
+    CheckoutModule,
   ],
   exports: [
     AppComponent,

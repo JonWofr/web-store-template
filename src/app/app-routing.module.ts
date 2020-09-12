@@ -9,6 +9,7 @@ import { AboutComponent } from './core/views/about/about.component';
 import { ProductsComponent } from './core/views/products/products.component';
 import { ShoppingCartComponent } from './core/views/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from './core/views/profile/profile.component';
+import { CheckoutComponent } from './core/views/checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
   },
 ];
 

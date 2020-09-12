@@ -1,0 +1,18 @@
+<div class="form-group">
+  <label [for]="elementId">
+    {{ label }}
+  </label>
+  <input
+    #input
+    class="form-control"
+    [id]="elementId"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onChangeValue(input.value)"
+    (blur)="onBlur()"
+  />
+  <small *ngIf="hint" class="form-text text-muted">
+    {{ hint }}
+  </small>
+</div>

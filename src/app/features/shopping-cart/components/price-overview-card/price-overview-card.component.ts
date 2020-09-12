@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ButtonSize } from '../../../../shared/components/button/button.component';
+import { ButtonSize } from '@shared/enums/button-size.enum';
 
 @Component({
   selector: 'shopping-cart-price-overview-card',

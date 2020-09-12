@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import { InputStepperComponent } from './input-stepper.component';
 import { moduleMetadata } from '@storybook/angular';
-import { AppModule } from 'src/app/app.module';
+import { AppModule } from 'app/app.module';
 import { RouterModule } from '@angular/router';
 
 export default {
