@@ -10,6 +10,7 @@ import { ProgressIndicatorComponent } from './components/progress-indicator/prog
 import { EmailProgressLevelComponent } from './components/email-progress-level/email-progress-level.component';
 import { AddressProgressLevelComponent } from './components/address-progress-level/address-progress-level.component';
 import { ShipmentProgressLevelComponent } from './components/shipment-progress-level/shipment-progress-level.component';
+import { PaymentProgressLevelComponent } from './components/payment-progress-level/payment-progress-level.component';
 
 const declarations = [
   ProgressIndicatorComponent,
@@ -18,7 +19,7 @@ const declarations = [
 ];
 
 @NgModule({
-  declarations: [...declarations, ShipmentProgressLevelComponent],
+  declarations: [...declarations, ShipmentProgressLevelComponent, PaymentProgressLevelComponent],
   imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
   exports: [declarations],
   providers: [],
