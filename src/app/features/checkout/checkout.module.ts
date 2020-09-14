@@ -8,11 +8,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Components
 import { ProgressIndicatorComponent } from './components/progress-indicator/progress-indicator.component';
 import { EmailProgressLevelComponent } from './components/email-progress-level/email-progress-level.component';
+import { AddressProgressLevelComponent } from './components/address-progress-level/address-progress-level.component';
 
-const declarations = [ProgressIndicatorComponent, EmailProgressLevelComponent];
+const declarations = [
+  ProgressIndicatorComponent,
+  EmailProgressLevelComponent,
+  AddressProgressLevelComponent,
+];
 
 @NgModule({
-  declarations,
+  declarations: [...declarations],
   imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
   exports: [declarations],
   providers: [],
