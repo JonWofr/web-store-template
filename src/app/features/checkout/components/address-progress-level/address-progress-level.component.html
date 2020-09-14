@@ -34,11 +34,11 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -67,11 +67,11 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -100,11 +100,11 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -141,11 +141,14 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Pattern">
+              Ein Straßenname darf keine Zahlen beinhalten
+            </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -176,11 +179,14 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Min">
+              Die Hausnumme darf nicht kleiner als 1 sein
+            </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -217,7 +223,7 @@
             [ngSwitch]="errorKey"
           >
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -253,11 +259,20 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Min">
+              Die Postleitzahl darf nicht negativ sein
+            </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.MinLength">
+              Die Postleitzahl muss aus fünf Ziffern bestehen
+            </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.MaxLength">
+              Die Postleitzahl muss aus fünf Ziffern bestehen
+            </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -286,11 +301,14 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Pattern">
+              Ein Straßenname darf keine Zahlen beinhalten
+            </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -321,11 +339,11 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -375,11 +393,11 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -408,11 +426,11 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -440,11 +458,11 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -481,11 +499,14 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Pattern">
+              Ein Straßenname darf keine Zahlen beinhalten
+            </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -516,11 +537,14 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Min">
+              Die Hausnumme darf nicht kleiner als 1 sein
+            </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -557,7 +581,7 @@
             [ngSwitch]="errorKey"
           >
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -593,11 +617,20 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Min">
+              Die Postleitzahl darf nicht negativ sein
+            </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.MinLength">
+              Die Postleitzahl muss aus fünf Ziffern bestehen
+            </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.MaxLength">
+              Die Postleitzahl muss aus fünf Ziffern bestehen
+            </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -625,11 +658,14 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Pattern">
+              Ein Straßenname darf keine Zahlen beinhalten
+            </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>
@@ -659,11 +695,11 @@
             "
             [ngSwitch]="errorKey"
           >
-            <ng-container *ngSwitchCase="'required'">
+            <ng-container *ngSwitchCase="FormValidationErrorKey.Required">
               Die Eingabe ist erforderlich
             </ng-container>
             <ng-container *ngSwitchDefault>
-              Invalide
+              {{ errorKey }}
             </ng-container>
           </div>
         </ng-container>

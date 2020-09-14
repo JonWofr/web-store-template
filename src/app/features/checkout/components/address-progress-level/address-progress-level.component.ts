@@ -6,6 +6,7 @@ import {
   FormControl,
 } from '@angular/forms';
 import { ButtonSize } from '@shared/enums/button-size.enum';
+import { FormValidationErrorKey } from '@shared/enums/form-validation-error-key.enum';
 import { InputType } from '@shared/enums/input-type.enum';
 import { SelectOption } from '@shared/models/select-option.model';
 import { Subscription } from 'rxjs';
@@ -33,6 +34,7 @@ export class AddressProgressLevelComponent implements OnInit, OnDestroy {
   InputType = InputType;
   Object = Object;
   ButtonSize = ButtonSize;
+  FormValidationErrorKey = FormValidationErrorKey;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -58,11 +60,34 @@ export class AddressProgressLevelComponent implements OnInit, OnDestroy {
         lastName: [null, Validators.compose([Validators.required])],
       }),
       address: this.formBuilder.group({
-        street: [null, Validators.compose([Validators.required])],
-        houseNumber: [null, Validators.compose([Validators.required])],
+        street: [
+          null,
+          Validators.compose([
+            Validators.required,
+            Validators.pattern(/[^0-9]+/),
+          ]),
+        ],
+        houseNumber: [
+          null,
+          Validators.compose([Validators.required, Validators.min(1)]),
+        ],
         addition: [null],
-        postCode: [null, Validators.compose([Validators.required])],
-        city: [null, Validators.compose([Validators.required])],
+        postCode: [
+          null,
+          Validators.compose([
+            Validators.required,
+            Validators.min(1),
+            Validators.minLength(5),
+            Validators.maxLength(5),
+          ]),
+        ],
+        city: [
+          null,
+          Validators.compose([
+            Validators.required,
+            Validators.pattern(/[^0-9]+/),
+          ]),
+        ],
         country: [null, Validators.compose([Validators.required])],
       }),
     });
