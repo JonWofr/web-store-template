@@ -16,6 +16,7 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class CheckboxComponent implements ControlValueAccessor, OnInit {
   @Input() label: string = '';
+  @Input() isDisabled: boolean = false;
   @Input() hint?: string;
 
   elementId?: string;

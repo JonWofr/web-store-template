@@ -82,3 +82,39 @@ export const withHint = () => ({
     hint: 'Der Filter beeinträchtig nicht ihre Sehfähigkeit',
   },
 });
+
+export const disabled = () => ({
+  component: SelectComponent,
+  template: `
+        <form [formGroup]="formGroup">
+            <shared-select [formControlName]="formControlName" [label]="label" [options]="options" [placeholder]="placeholder" [isDisabled]="isDisabled">
+            </shared-select>
+            <div *ngIf="!(formGroup?.controls)[formControlName].valid && (formGroup?.controls)[formControlName].touched" class="alert alert-warning">
+              Eingabe ist ungültig!
+            </div>
+        </form>
+    `,
+  props: {
+    formGroup: new FormGroup({
+      select: new FormControl(null, Validators.required),
+    }),
+    formControlName: 'select',
+    label: 'Farbe',
+    options: [
+      {
+        label: 'Rot',
+        value: 'red',
+      },
+      {
+        label: 'Grün',
+        value: 'green',
+      },
+      {
+        label: 'Blau',
+        value: 'blue',
+      },
+    ],
+    placeholder: 'Auswahl...',
+    isDisabled: true,
+  },
+});

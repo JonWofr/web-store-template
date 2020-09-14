@@ -19,7 +19,12 @@
       ["app", "shopping-cart", "checkout", "shared"],
       "camelCase"
     ],
-    "component-selector": [true, "element", "app", "kebab-case"],
+    "component-selector": [
+      true,
+      "element",
+      ["app", "shopping-cart", "checkout", "shared"],
+      "kebab-case"
+    ],
     "eofline": true,
     "import-blacklist": [true, "rxjs/Rx"],
     "import-spacing": true,

@@ -5,6 +5,7 @@
     type="checkbox"
     [id]="elementId"
     [checked]="isChecked"
+    [disabled]="isDisabled"
     (input)="onChangeValue(input.checked)"
     (blur)="onBlur()"
   />

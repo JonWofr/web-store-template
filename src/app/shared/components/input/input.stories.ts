@@ -122,3 +122,26 @@ export const typeNumber = () => ({
     placeholder: '18',
   },
 });
+
+export const disabled = () => ({
+  component: InputComponent,
+  template: `
+        <form [formGroup]="formGroup">
+            <shared-input [formControlName]="formControlName" [type]="type" [label]="label" [placeholder]="placeholder" [isDisabled]="isDisabled">
+            </shared-input>
+            <div *ngIf="!(formGroup?.controls)[formControlName].valid && (formGroup?.controls)[formControlName].touched" class="alert alert-warning">
+              Eingabe ist ungültig!
+            </div>
+        </form>
+    `,
+  props: {
+    formGroup: new FormGroup({
+      text: new FormControl(null, Validators.required),
+    }),
+    formControlName: 'text',
+    type: InputType.Text,
+    label: 'Name',
+    placeholder: 'Max Mustermann',
+    isDisabled: true,
+  },
+});
