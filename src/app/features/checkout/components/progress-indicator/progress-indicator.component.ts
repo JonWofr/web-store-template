@@ -1,12 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
-export enum ProgressLevel {
-  Email = 1,
-  Address = 2,
-  Shipment = 3,
-  Payment = 4,
-  Overview = 5,
-}
+import { ProgressLevel } from '@features/checkout/enums/progress-level.enum';
 
 @Component({
   selector: 'checkout-progress-indicator',
