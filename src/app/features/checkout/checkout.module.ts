@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProgressIndicatorComponent } from './components/progress-indicator/progress-indicator.component';
 import { EmailProgressLevelComponent } from './components/email-progress-level/email-progress-level.component';
 import { AddressProgressLevelComponent } from './components/address-progress-level/address-progress-level.component';
+import { ShipmentProgressLevelComponent } from './components/shipment-progress-level/shipment-progress-level.component';
 
 const declarations = [
   ProgressIndicatorComponent,
@@ -17,7 +18,7 @@ const declarations = [
 ];
 
 @NgModule({
-  declarations: [...declarations],
+  declarations: [...declarations, ShipmentProgressLevelComponent],
   imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
   exports: [declarations],
   providers: [],
