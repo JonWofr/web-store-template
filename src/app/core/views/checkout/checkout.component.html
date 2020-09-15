@@ -1,6 +1,34 @@
 <app-view-container>
-  <div class="checkout-progress-indicator-container">
-    <checkout-progress-indicator> </checkout-progress-indicator>
-    <checkout-email-progress-level></checkout-email-progress-level>
+  <checkout-progress-indicator
+    [currentProgressLevel]="currentProgressLevel"
+    [highestReachedProgressLevel]="highestReachedProgressLevel"
+    (clickProgressLevelButton)="
+      onClickProgressIndicatorProgressLevelButton($event)
+    "
+  >
+  </checkout-progress-indicator>
+  <div class="current-progress-level" [ngSwitch]="currentProgressLevel">
+    <checkout-email-progress-level
+      *ngSwitchCase="ProgressLevel.Email"
+      [emailInformation]="emailInformation"
+      (clickContinueButton)="onClickEmailProgressLevelContinueButton($event)"
+    ></checkout-email-progress-level>
+    <checkout-address-progress-level
+      *ngSwitchCase="ProgressLevel.Address"
+      [addressInformation]="addressInformation"
+      (clickContinueButton)="onClickAddressProgressLevelContinueButton($event)"
+    ></checkout-address-progress-level>
+    <checkout-shipment-progress-level
+      *ngSwitchCase="ProgressLevel.Shipment"
+      (clickContinueButton)="onClickShipmentProgressLevelContinueButton()"
+    ></checkout-shipment-progress-level>
+    <checkout-payment-progress-level
+      *ngSwitchCase="ProgressLevel.Payment"
+      (clickContinueButton)="onClickPaymentProgressLevelContinueButton()"
+    ></checkout-payment-progress-level>
+    <checkout-overview-progress-level
+      *ngSwitchCase="ProgressLevel.Overview"
+      [addressInformation]="addressInformation"
+    ></checkout-overview-progress-level>
   </div>
 </app-view-container>

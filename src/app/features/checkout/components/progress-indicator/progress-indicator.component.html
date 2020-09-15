@@ -1,99 +1,103 @@
-<div
-  class="progress-level"
-  [class.current-progress-level]="currentProgressLevel === ProgressLevel.Email"
->
-  <button
-    (click)="clickProgressLevelButton.emit(ProgressLevel.Email)"
-    [disabled]="highestReachedProgressLevel < ProgressLevel.Email"
-    id="progress-level-email"
+<div class="progress-levels-container">
+  <div
+    class="progress-level"
+    [class.current-progress-level]="
+      currentProgressLevel === ProgressLevel.Email
+    "
   >
-    1
-  </button>
-  <label for="progress-level-email">
-    Email
-  </label>
-</div>
-<div
-  class="horizontal-line"
-  [class.disabled]="highestReachedProgressLevel < ProgressLevel.Address"
-></div>
-<div
-  class="progress-level"
-  [class.current-progress-level]="
-    currentProgressLevel === ProgressLevel.Address
-  "
->
-  <button
-    (click)="clickProgressLevelButton.emit(ProgressLevel.Address)"
-    [disabled]="highestReachedProgressLevel < ProgressLevel.Address"
-    id="progress-level-address"
+    <button
+      (click)="clickProgressLevelButton.emit(ProgressLevel.Email)"
+      [disabled]="highestReachedProgressLevel < ProgressLevel.Email"
+      id="progress-level-email"
+    >
+      1
+    </button>
+    <label for="progress-level-email">
+      Email
+    </label>
+  </div>
+  <div
+    class="horizontal-line"
+    [class.disabled]="highestReachedProgressLevel < ProgressLevel.Address"
+  ></div>
+  <div
+    class="progress-level"
+    [class.current-progress-level]="
+      currentProgressLevel === ProgressLevel.Address
+    "
   >
-    2
-  </button>
-  <label for="progress-level-address">
-    Adresse
-  </label>
-</div>
-<div
-  class="horizontal-line"
-  [class.disabled]="highestReachedProgressLevel < ProgressLevel.Shipment"
-></div>
-<div
-  class="progress-level"
-  [class.current-progress-level]="
-    currentProgressLevel === ProgressLevel.Shipment
-  "
->
-  <button
-    (click)="clickProgressLevelButton.emit(ProgressLevel.Shipment)"
-    [disabled]="highestReachedProgressLevel < ProgressLevel.Shipment"
-    id="progress-level-shipment"
+    <button
+      (click)="clickProgressLevelButton.emit(ProgressLevel.Address)"
+      [disabled]="highestReachedProgressLevel < ProgressLevel.Address"
+      id="progress-level-address"
+    >
+      2
+    </button>
+    <label for="progress-level-address">
+      Adresse
+    </label>
+  </div>
+  <div
+    class="horizontal-line"
+    [class.disabled]="highestReachedProgressLevel < ProgressLevel.Shipment"
+  ></div>
+  <div
+    class="progress-level"
+    [class.current-progress-level]="
+      currentProgressLevel === ProgressLevel.Shipment
+    "
   >
-    3
-  </button>
-  <label for="progress-level-shipment">
-    Lieferung
-  </label>
-</div>
-<div
-  class="horizontal-line"
-  [class.disabled]="highestReachedProgressLevel < ProgressLevel.Payment"
-></div>
-<div
-  class="progress-level"
-  [class.current-progress-level]="
-    currentProgressLevel === ProgressLevel.Payment
-  "
->
-  <button
-    (click)="clickProgressLevelButton.emit(ProgressLevel.Payment)"
-    [disabled]="highestReachedProgressLevel < ProgressLevel.Payment"
-    id="progress-level-payment"
+    <button
+      (click)="clickProgressLevelButton.emit(ProgressLevel.Shipment)"
+      [disabled]="highestReachedProgressLevel < ProgressLevel.Shipment"
+      id="progress-level-shipment"
+    >
+      3
+    </button>
+    <label for="progress-level-shipment">
+      Lieferung
+    </label>
+  </div>
+  <div
+    class="horizontal-line"
+    [class.disabled]="highestReachedProgressLevel < ProgressLevel.Payment"
+  ></div>
+  <div
+    class="progress-level"
+    [class.current-progress-level]="
+      currentProgressLevel === ProgressLevel.Payment
+    "
   >
-    4
-  </button>
-  <label for="progress-level-payment">
-    Bezahlung
-  </label>
-</div>
-<div
-  class="horizontal-line"
-  [class.disabled]="highestReachedProgressLevel < ProgressLevel.Overview"
-></div>
-<div
-  class="progress-level"
-  [class.current-progress-level]="
-    currentProgressLevel === ProgressLevel.Overview
-  "
->
-  <button
-    (click)="clickProgressLevelButton.emit(ProgressLevel.Overview)"
-    [disabled]="highestReachedProgressLevel < ProgressLevel.Overview"
-    id="progress-level-overview"
+    <button
+      (click)="clickProgressLevelButton.emit(ProgressLevel.Payment)"
+      [disabled]="highestReachedProgressLevel < ProgressLevel.Payment"
+      id="progress-level-payment"
+    >
+      4
+    </button>
+    <label for="progress-level-payment">
+      Bezahlung
+    </label>
+  </div>
+  <div
+    class="horizontal-line"
+    [class.disabled]="highestReachedProgressLevel < ProgressLevel.Overview"
+  ></div>
+  <div
+    class="progress-level"
+    [class.current-progress-level]="
+      currentProgressLevel === ProgressLevel.Overview
+    "
   >
-    5
-  </button>
-  <label for="progress-level-overview">
-    Übersicht
-  </label>
+    <button
+      (click)="clickProgressLevelButton.emit(ProgressLevel.Overview)"
+      [disabled]="highestReachedProgressLevel < ProgressLevel.Overview"
+      id="progress-level-overview"
+    >
+      5
+    </button>
+    <label for="progress-level-overview">
+      Übersicht
+    </label>
+  </div>
 </div>

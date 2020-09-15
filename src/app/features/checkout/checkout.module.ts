@@ -17,10 +17,13 @@ const declarations = [
   ProgressIndicatorComponent,
   EmailProgressLevelComponent,
   AddressProgressLevelComponent,
+  ShipmentProgressLevelComponent,
+  PaymentProgressLevelComponent,
+  OverviewProgressLevelComponent,
 ];
 
 @NgModule({
-  declarations: [...declarations, ShipmentProgressLevelComponent, PaymentProgressLevelComponent, OverviewProgressLevelComponent],
+  declarations: [...declarations],
   imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
   exports: [declarations],
   providers: [],

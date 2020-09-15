@@ -8,7 +8,7 @@ import { InputType } from '@shared/enums/input-type.enum';
 import { SelectOption } from '@shared/models/select-option.model';
 
 @Component({
-  selector: 'app-overview-progress-level',
+  selector: 'checkout-overview-progress-level',
   templateUrl: './overview-progress-level.component.html',
   styleUrls: ['./overview-progress-level.component.scss'],
 })
@@ -41,10 +41,14 @@ export class OverviewProgressLevelComponent implements OnInit {
         this.billingAddressInformation = this.createAddressInformationFormGroup(
           this.addressInformation.billingAddressInformation
         );
+        this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
+          false
+        );
+      } else {
+        this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
+          true
+        );
       }
-      this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
-        this.addressInformation.billingAddressInformation ? false : true
-      );
     }
   }
 

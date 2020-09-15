@@ -1,10 +1,20 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   Validators,
   FormControl,
 } from '@angular/forms';
+import { AddressInformation } from '@features/checkout/models/address-information.model';
+import { BillingAddressInformation } from '@features/checkout/models/billing-address-information.model';
+import { ShippingAddressInformation } from '@features/checkout/models/shipping-address-information.model';
 import { ButtonSize } from '@shared/enums/button-size.enum';
 import { FormValidationErrorKey } from '@shared/enums/form-validation-error-key.enum';
 import { InputType } from '@shared/enums/input-type.enum';
@@ -17,6 +27,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./address-progress-level.component.scss'],
 })
 export class AddressProgressLevelComponent implements OnInit, OnDestroy {
+  @Input() addressInformation?: AddressInformation;
+  @Output() clickContinueButton = new EventEmitter<AddressInformation>();
+
   shippingAddressInformation?: FormGroup;
   shippingAddressMatchingBillingAddressCheckbox?: FormControl;
   billingAddressInformation?: FormGroup;
@@ -39,8 +52,18 @@ export class AddressProgressLevelComponent implements OnInit, OnDestroy {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.shippingAddressInformation = this.createAddressInformationFormGroup();
-    this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(true);
+    this.shippingAddressInformation = this.createAddressInformationFormGroup(
+      this.addressInformation?.shippingAddressInformation
+    );
+    if (this.addressInformation?.billingAddressInformation) {
+      this.billingAddressInformation = this.createAddressInformationFormGroup(
+        this.addressInformation?.billingAddressInformation
+      );
+    }
+
+    this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
+      this.addressInformation?.billingAddressInformation ? false : true
+    );
     this.shippingAddressMatchingBillingAddressCheckbox.valueChanges.subscribe(
       (isChecked: boolean) => {
         if (isChecked) {
@@ -52,28 +75,39 @@ export class AddressProgressLevelComponent implements OnInit, OnDestroy {
     );
   }
 
-  createAddressInformationFormGroup(): FormGroup {
+  createAddressInformationFormGroup(
+    addressInformation?: ShippingAddressInformation | BillingAddressInformation
+  ): FormGroup {
     return this.formBuilder.group({
       name: this.formBuilder.group({
-        title: [null, Validators.compose([Validators.required])],
-        firstName: [null, Validators.compose([Validators.required])],
-        lastName: [null, Validators.compose([Validators.required])],
+        title: [
+          addressInformation?.title,
+          Validators.compose([Validators.required]),
+        ],
+        firstName: [
+          addressInformation?.name.firstName,
+          Validators.compose([Validators.required]),
+        ],
+        lastName: [
+          addressInformation?.name.lastName,
+          Validators.compose([Validators.required]),
+        ],
       }),
       address: this.formBuilder.group({
         street: [
-          null,
+          addressInformation?.address.street,
           Validators.compose([
             Validators.required,
             Validators.pattern(/[^0-9]+/),
           ]),
         ],
         houseNumber: [
-          null,
+          addressInformation?.address.houseNumber.toString(),
           Validators.compose([Validators.required, Validators.min(1)]),
         ],
-        addition: [null],
+        addition: [addressInformation?.address.addition],
         postCode: [
-          null,
+          addressInformation?.address.postCode.toString(),
           Validators.compose([
             Validators.required,
             Validators.min(1),
@@ -82,13 +116,16 @@ export class AddressProgressLevelComponent implements OnInit, OnDestroy {
           ]),
         ],
         city: [
-          null,
+          addressInformation?.address.city,
           Validators.compose([
             Validators.required,
             Validators.pattern(/[^0-9]+/),
           ]),
         ],
-        country: [null, Validators.compose([Validators.required])],
+        country: [
+          addressInformation?.address.country,
+          Validators.compose([Validators.required]),
+        ],
       }),
     });
   }
@@ -98,7 +135,7 @@ export class AddressProgressLevelComponent implements OnInit, OnDestroy {
       shippingAddressInformation: this.shippingAddressInformation?.value,
       billingAddressInformation: this.billingAddressInformation?.value,
     };
-    console.log(addressInformation);
+    this.clickContinueButton.emit(addressInformation);
   }
 
   ngOnDestroy(): void {

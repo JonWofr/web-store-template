@@ -1,8 +1,8 @@
 :host {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  & > div.checkout-progress-indicator-container {
+  div.current-progress-level {
+    margin-top: 2rem;
   }
 }
