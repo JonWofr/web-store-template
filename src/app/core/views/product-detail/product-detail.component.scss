@@ -1,4 +1,5 @@
 @import "src/styles/colors.scss";
+@import "styles/variables.scss";
 
 div.product-detail-wrapper {
   display: flex;
@@ -7,14 +8,35 @@ div.product-detail-wrapper {
   align-items: center;
 }
 
+div.info-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   text-align: center;
-  font-size: 8rem;
+  font-size: 4rem;
   font-family: m-bold;
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: $sm-breakpoint) {
+  h1 {
+    font-size: 6rem;
+  }
 }
 
 img.product-image {
+  padding: 0;
   -webkit-filter: drop-shadow(5px 5px 5px $darker-background-color);
   filter: drop-shadow(5px 5px 5px $darker-background-color);
+}
+
+div.other-products {
+  margin-top: 400px;
+  .product {
+    height: 35rem;
+  }
 }

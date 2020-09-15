@@ -8,6 +8,7 @@ import { animateOnScrollWithDelay } from '@shared/animations/animations';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
+  constructor() {}
   shoppingCartItems: ShoppingCartItem[] = [
     {
       id: '1',
@@ -111,12 +112,9 @@ export class ProductsComponent implements OnInit {
     },
   ];
 
-  constructor() {}
-
   ngOnInit(): void {
     animateOnScrollWithDelay('animate__zoomIn', '.product');
   }
-
   onClickAddToShoppingCart(): void {
     let shoppingCartItems: ShoppingCartItem[] = [];
 

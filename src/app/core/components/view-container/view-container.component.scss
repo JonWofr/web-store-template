@@ -9,12 +9,18 @@
 
     overflow: auto;
 
-    &.with-margin {
+    &.with-margin-top {
       margin-top: 3.5rem;
     }
     & > div.container {
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
+  }
+
+  .full-width {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
 }

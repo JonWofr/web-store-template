@@ -10,6 +10,7 @@ import { ShoppingCartModule } from '@features/shopping-cart/shopping-cart.module
 import { HomeModule } from '@features/home/home.module';
 import { ProductModule } from '@features/products/products.module';
 import { SharedModule } from '@shared/shared.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 // Components
 import { AppComponent } from './app.component';
@@ -24,7 +25,9 @@ import { ProfileComponent } from '@core/views/profile/profile.component';
 import { ProductDetailComponent } from './core/views/product-detail/product-detail.component';
 import { ColorPalletComponent } from './features/product-detail/components/color-pallet/color-pallet.component';
 import { SizeSelectorComponent } from './features/product-detail/components/size-selector/size-selector.component';
-import { ProductImageSliderComponent } from './features/product-detail/components/product-image-slider/product-image-slider.component';
+import { PriceBuyBarComponent } from './features/product-detail/components/price-buy-bar/price-buy-bar.component';
+import { SwiperSlideProductImagesComponent } from './features/product-detail/components/swiper-slide-product-images/swiper-slide-product-images.component';
+import { SwiperConfigModule } from '@core/swiper-config.module';
 
 // Angular has by default the necessary data to format values in en-US (e.g. with the help of pipes).
 // In order to be able to use german formatting we manually have to register corresponding data.
@@ -44,7 +47,8 @@ registerLocaleData(localeDe);
     ProfileComponent,
     ColorPalletComponent,
     SizeSelectorComponent,
-    ProductImageSliderComponent,
+    PriceBuyBarComponent,
+    SwiperSlideProductImagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ registerLocaleData(localeDe);
     ShoppingCartModule,
     HomeModule,
     ProductModule,
+    SwiperConfigModule,
+    LayoutModule,
   ],
   exports: [
     AppComponent,

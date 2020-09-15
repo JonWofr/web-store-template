@@ -6,7 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./color-pallet.component.scss'],
 })
 export class ColorPalletComponent implements OnInit {
-  @Input() colors: string[] = ['gray', 'blue', 'black', 'white'];
+  @Input() colors: string[] = [
+    'gray',
+    'blue',
+    'black',
+    'hsl(0, 0%, 20%)',
+    'white',
+  ];
+  selectedColor = 'gray';
 
   constructor() {}
 

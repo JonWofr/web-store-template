@@ -5,9 +5,10 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 450px;
+  height: 28.125rem;
   position: relative;
   margin-bottom: 1rem;
+  animation-duration: 500ms;
 }
 
 div.product-header {
@@ -28,10 +29,14 @@ div.after {
 }
 
 div.color {
-  height: 15px;
-  width: 15px;
+  height: 30px;
+  width: 30px;
   border-radius: 50% 50%;
   margin: 5px;
+  svg {
+    -webkit-filter: drop-shadow(2px 2px 3px $light-background-color);
+    filter: drop-shadow(2px 2px 3px $light-background-color);
+  }
 }
 
 h3,

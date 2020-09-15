@@ -1,3 +1,4 @@
-<div class="size-box" *ngFor="let size of sizes">
-  <p>{{ size }}</p>
-</div>
+<label class="radio-container" *ngFor="let size of sizes">
+  <input type="radio" name="radio-size" [checked]="size === selectedSize" />
+  <span class="radio">{{ size }}</span>
+</label>

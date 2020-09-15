@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SizeSelectorComponent implements OnInit {
   sizes: string[] = ['S', 'M', 'L', 'XL'];
 
+  selectedSize = 'M';
   constructor() {}
 
   ngOnInit(): void {}

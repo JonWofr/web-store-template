@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ViewContainerComponent implements OnInit {
   @Input() shouldBeFullscreen = false;
+  @Input() shouldBeFullWidth = false;
 
   constructor() {}
 
