@@ -1,0 +1,61 @@
+@import "src/styles/colors.scss";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio {
+  min-width: 3.125rem;
+  background-color: #eee;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  border: solid $primary-color 2.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: 200ms;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.radio-container:hover input ~ .radio {
+  background-color: $secondary-color-dark;
+  color: $lightest-font-color;
+}
+
+.radio-container input:checked ~ .radio {
+  background-color: $secondary-color;
+  color: $lightest-background-color;
+}
+
+.radio-container input:checked ~ .radio:after {
+  display: block;
+}
+
+.radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}

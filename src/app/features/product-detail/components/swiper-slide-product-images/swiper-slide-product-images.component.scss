@@ -1,0 +1,35 @@
+@import "src/styles/colors.scss";
+@import "styles/variables.scss";
+
+.swiper-container {
+  width: 99vw;
+  height: 30vh;
+  box-sizing: content-box;
+  margin: 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    -webkit-filter: drop-shadow(5px 5px 10px $darker-background-color);
+    filter: drop-shadow(5px 5px 10px $darker-background-color);
+  }
+}
+
+@media only screen and (min-width: $sm-breakpoint) {
+  .swiper-container {
+    height: 60vh;
+  }
+}
+
+@media only screen and (min-width: $md-breakpoint) {
+  .swiper-container {
+    height: 70vh;
+  }
+}

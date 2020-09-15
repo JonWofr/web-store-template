@@ -1,5 +1,8 @@
-<main [class.with-margin]="!shouldBeFullscreen">
-  <div [class.container]="!shouldBeFullscreen">
+<main [class.with-margin-top]="!shouldBeFullscreen">
+  <div
+    [class.container]="!shouldBeFullscreen"
+    [class.full-width]="shouldBeFullWidth"
+  >
     <ng-content></ng-content>
   </div>
 </main>

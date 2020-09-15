@@ -48,11 +48,36 @@ body {
   width: 100%;
 }
 
+html {
+  font-size: 14px;
+}
+
 body {
   background-color: $lightest-background-color;
   color: $dark-font-color;
 
   font-family: m-reg;
+}
+
+@media only screen and (min-width: $sm-breakpoint) {
+  html {
+  }
+}
+
+@media only screen and (min-width: $md-breakpoint) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: $lg-breakpoint) {
+  html {
+  }
+}
+
+@media only screen and (min-width: $xl-breakpoint) {
+  html {
+  }
 }
 
 h1,

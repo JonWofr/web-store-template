@@ -1,0 +1,60 @@
+@import "src/styles/colors.scss";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.color {
+  border-radius: 50% 50%;
+  height: 4rem;
+  width: 4rem;
+  margin: 0.5rem;
+  svg {
+    -webkit-filter: drop-shadow(2px 2px 3px $light-background-color);
+    filter: drop-shadow(2px 2px 3px $light-background-color);
+  }
+}
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio {
+  transition: 200ms;
+}
+
+.radio-container:hover input ~ .radio {
+  transform: translateY(-5px);
+  -webkit-filter: drop-shadow(3px 3px 4px $light-background-color);
+  filter: drop-shadow(2px 2px 3px $dark-background-color);
+}
+
+.underline {
+  width: 4rem;
+  opacity: 0;
+}
+
+.radio-container input:checked ~ .underline {
+  transition: 400ms;
+  opacity: 1;
+}

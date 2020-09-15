@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ShoppingCartModule } from '@features/shopping-cart/shopping-cart.module';
 import { HomeModule } from '@features/home/home.module';
 import { ProductModule } from '@features/products/products.module';
+import { SharedModule } from '@shared/shared.module';
+import { LayoutModule } from '@angular/cdk/layout';
 import { CheckoutModule } from '@features/checkout/checkout.module';
 
 // Components
@@ -16,13 +18,18 @@ import { AppComponent } from './app.component';
 import { CheckoutComponent } from '@core/views/checkout/checkout.component';
 import { NavBarComponent } from '@core/components/nav-bar/nav-bar.component';
 import { HomeComponent } from '@core/views/home/home.component';
-import { DetailComponent } from '@core/views/detail/detail.component';
 import { AboutComponent } from '@core/views/about/about.component';
 import { ContactComponent } from '@core/views/contact/contact.component';
 import { ViewContainerComponent } from '@core/components/view-container/view-container.component';
 import { ProductsComponent } from '@core/views/products/products.component';
 import { ShoppingCartComponent } from '@core/views/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from '@core/views/profile/profile.component';
+import { ProductDetailComponent } from './core/views/product-detail/product-detail.component';
+import { ColorPalletComponent } from './features/product-detail/components/color-pallet/color-pallet.component';
+import { SizeSelectorComponent } from './features/product-detail/components/size-selector/size-selector.component';
+import { PriceBuyBarComponent } from './features/product-detail/components/price-buy-bar/price-buy-bar.component';
+import { SwiperSlideProductImagesComponent } from './features/product-detail/components/swiper-slide-product-images/swiper-slide-product-images.component';
+import { SwiperConfigModule } from '@core/swiper-config.module';
 
 // Angular has by default the necessary data to format values in en-US (e.g. with the help of pipes).
 // In order to be able to use german formatting we manually have to register corresponding data.
@@ -33,13 +40,17 @@ registerLocaleData(localeDe);
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    DetailComponent,
+    ProductDetailComponent,
     AboutComponent,
     ContactComponent,
     ViewContainerComponent,
     ProductsComponent,
     ShoppingCartComponent,
     ProfileComponent,
+    ColorPalletComponent,
+    SizeSelectorComponent,
+    PriceBuyBarComponent,
+    SwiperSlideProductImagesComponent,
     CheckoutComponent,
   ],
   imports: [
@@ -49,13 +60,15 @@ registerLocaleData(localeDe);
     ShoppingCartModule,
     HomeModule,
     ProductModule,
+    SwiperConfigModule,
+    LayoutModule,
     CheckoutModule,
   ],
   exports: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    DetailComponent,
+    ProductDetailComponent,
     AboutComponent,
     ContactComponent,
     ViewContainerComponent,
