@@ -6,8 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./view-container.component.scss'],
 })
 export class ViewContainerComponent implements OnInit {
-  @Input() shouldBeFullscreen = false;
-  @Input() shouldBeFullWidth = false;
+  @Input() shouldNavBarOverlap = false;
+  @Input() hasFullWidth = false;
+  @Input() hasFullHeight = false;
 
   constructor() {}
 

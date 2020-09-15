@@ -26,8 +26,32 @@ import { Subscription } from 'rxjs';
   templateUrl: './address-progress-level.component.html',
   styleUrls: ['./address-progress-level.component.scss'],
 })
-export class AddressProgressLevelComponent implements OnInit, OnDestroy {
-  @Input() addressInformation?: AddressInformation;
+export class AddressProgressLevelComponent implements OnDestroy {
+  @Input() set addressInformation(
+    addressInformation: AddressInformation | undefined
+  ) {
+    this.shippingAddressInformation = this.createAddressInformationFormGroup(
+      addressInformation?.shippingAddressInformation
+    );
+    if (this.addressInformation?.billingAddressInformation) {
+      this.billingAddressInformation = this.createAddressInformationFormGroup(
+        addressInformation?.billingAddressInformation
+      );
+    }
+
+    this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
+      addressInformation?.billingAddressInformation ? false : true
+    );
+    this.shippingAddressMatchingBillingAddressCheckbox?.valueChanges.subscribe(
+      (isChecked: boolean) => {
+        if (isChecked) {
+          this.billingAddressInformation = undefined;
+        } else {
+          this.billingAddressInformation = this.createAddressInformationFormGroup();
+        }
+      }
+    );
+  }
   @Output() clickContinueButton = new EventEmitter<AddressInformation>();
 
   shippingAddressInformation?: FormGroup;
@@ -51,37 +75,13 @@ export class AddressProgressLevelComponent implements OnInit, OnDestroy {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
-    this.shippingAddressInformation = this.createAddressInformationFormGroup(
-      this.addressInformation?.shippingAddressInformation
-    );
-    if (this.addressInformation?.billingAddressInformation) {
-      this.billingAddressInformation = this.createAddressInformationFormGroup(
-        this.addressInformation?.billingAddressInformation
-      );
-    }
-
-    this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
-      this.addressInformation?.billingAddressInformation ? false : true
-    );
-    this.shippingAddressMatchingBillingAddressCheckbox.valueChanges.subscribe(
-      (isChecked: boolean) => {
-        if (isChecked) {
-          this.billingAddressInformation = undefined;
-        } else {
-          this.billingAddressInformation = this.createAddressInformationFormGroup();
-        }
-      }
-    );
-  }
-
   createAddressInformationFormGroup(
     addressInformation?: ShippingAddressInformation | BillingAddressInformation
   ): FormGroup {
     return this.formBuilder.group({
       name: this.formBuilder.group({
         title: [
-          addressInformation?.title,
+          addressInformation?.name.title,
           Validators.compose([Validators.required]),
         ],
         firstName: [

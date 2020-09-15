@@ -1,6 +1,6 @@
 export interface BillingAddressInformation {
-  title: string;
   name: {
+    title: string;
     firstName: string;
     lastName: string;
   };

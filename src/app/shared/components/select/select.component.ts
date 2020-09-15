@@ -35,6 +35,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
    * A method that writes a new value from the form model into the view
    */
   writeValue(value: any): void {
+    console.log('setting value of select', value);
     if (typeof value === 'string') {
       this.value = value;
     }

@@ -1,6 +1,6 @@
 export interface ShippingAddressInformation {
-  title: string;
   name: {
+    title: string;
     firstName: string;
     lastName: string;
   };

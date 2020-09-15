@@ -12,8 +12,23 @@ import { SelectOption } from '@shared/models/select-option.model';
   templateUrl: './overview-progress-level.component.html',
   styleUrls: ['./overview-progress-level.component.scss'],
 })
-export class OverviewProgressLevelComponent implements OnInit {
-  @Input() addressInformation?: AddressInformation;
+export class OverviewProgressLevelComponent {
+  @Input() set addressInformation(
+    addressInformation: AddressInformation | undefined
+  ) {
+    this.shippingAddressInformation = this.createAddressInformationFormGroup(
+      addressInformation?.shippingAddressInformation
+    );
+    if (this.addressInformation?.billingAddressInformation) {
+      this.billingAddressInformation = this.createAddressInformationFormGroup(
+        addressInformation?.billingAddressInformation
+      );
+    }
+
+    this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
+      addressInformation?.billingAddressInformation ? false : true
+    );
+  }
 
   shippingAddressInformation?: FormGroup;
   shippingAddressMatchingBillingAddressCheckbox?: FormControl;
@@ -32,42 +47,22 @@ export class OverviewProgressLevelComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
-    if (this.addressInformation) {
-      this.shippingAddressInformation = this.createAddressInformationFormGroup(
-        this.addressInformation.shippingAddressInformation
-      );
-      if (this.addressInformation.billingAddressInformation) {
-        this.billingAddressInformation = this.createAddressInformationFormGroup(
-          this.addressInformation.billingAddressInformation
-        );
-        this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
-          false
-        );
-      } else {
-        this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
-          true
-        );
-      }
-    }
-  }
-
   createAddressInformationFormGroup(
-    addressInformation: ShippingAddressInformation | BillingAddressInformation
+    addressInformation?: ShippingAddressInformation | BillingAddressInformation
   ): FormGroup {
     return this.formBuilder.group({
       name: this.formBuilder.group({
-        title: [addressInformation.title],
-        firstName: [addressInformation.name.firstName],
-        lastName: [addressInformation.name.lastName],
+        title: [addressInformation?.name.title],
+        firstName: [addressInformation?.name.firstName],
+        lastName: [addressInformation?.name.lastName],
       }),
       address: this.formBuilder.group({
-        street: [addressInformation.address.street],
-        houseNumber: [addressInformation.address.houseNumber.toString()],
-        addition: [addressInformation.address.addition],
-        postCode: [addressInformation.address.postCode.toString()],
-        city: [addressInformation.address.city],
-        country: [addressInformation.address.country],
+        street: [addressInformation?.address.street],
+        houseNumber: [addressInformation?.address.houseNumber.toString()],
+        addition: [addressInformation?.address.addition],
+        postCode: [addressInformation?.address.postCode.toString()],
+        city: [addressInformation?.address.city],
+        country: [addressInformation?.address.country],
       }),
     });
   }
