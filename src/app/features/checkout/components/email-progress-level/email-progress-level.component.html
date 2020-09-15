@@ -1,0 +1,36 @@
+<h1>
+  Gastbestellung
+</h1>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup?.value)">
+  <shared-input
+    formControlName="email"
+    label="Email"
+    placeholder="max-mustermann@mail.de"
+    hint="Ihre Email-Adresse wird nicht weitergegeben und wird einzig und allein für Versandmitteilungen verwendet"
+    [type]="InputType.Email"
+  ></shared-input>
+  <ng-container
+    *ngIf="
+      !formGroup?.controls.email.valid && formGroup?.controls.email.touched
+    "
+  >
+    <div
+      class="alert alert-warning"
+      *ngFor="let errorKey of Object.keys(formGroup?.controls.email.errors)"
+      [ngSwitch]="errorKey"
+    >
+      <ng-container *ngSwitchCase="'required'">
+        Die Eingabe ist erforderlich
+      </ng-container>
+      <ng-container *ngSwitchCase="'email'">
+        Es muss eine Email angegeben werden
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        Invalide
+      </ng-container>
+    </div>
+  </ng-container>
+  <shared-button type="submit" [isDisabled]="!formGroup?.valid"
+    >Weiter</shared-button
+  >
+</form>

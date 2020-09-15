@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class InputStepperComponent implements OnInit {
   @Input() quantity: number = 1;
-  @Output() changeQuantity = new EventEmitter<number>();
+  @Output() changeQuantity: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {}
 

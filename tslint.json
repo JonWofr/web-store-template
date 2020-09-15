@@ -13,7 +13,12 @@
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
-    "directive-selector": [true, "attribute", "app", "camelCase"],
+    "directive-selector": [
+      true,
+      "attribute",
+      ["app", "shopping-cart", "checkout", "shared"],
+      "camelCase"
+    ],
     "component-selector": [true, "element", "app", "kebab-case"],
     "eofline": true,
     "import-blacklist": [true, "rxjs/Rx"],
@@ -36,7 +41,7 @@
     ],
     "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-empty": false,
-    "no-inferrable-types": [true, "ignore-params"],
+    "no-inferrable-types": [true, "ignore-params", "ignore-properties"],
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
