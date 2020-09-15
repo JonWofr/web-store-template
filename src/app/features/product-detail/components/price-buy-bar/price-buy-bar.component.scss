@@ -1,0 +1,39 @@
+@import "src/styles/colors.scss";
+@import "styles/variables.scss";
+
+:host {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98vw;
+}
+
+h2 {
+  font-size: 3rem;
+  font-family: m-bold;
+  text-shadow: 2px 2px 3px gray;
+  z-index: 100;
+  margin-bottom: 1.5rem;
+  &.left {
+    left: 0;
+    cursor: default;
+  }
+  &.right {
+    right: 0;
+    cursor: pointer;
+    transition: 200ms;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm-breakpoint) {
+  h2 {
+    font-size: 5rem;
+    margin: 3rem;
+  }
+}
