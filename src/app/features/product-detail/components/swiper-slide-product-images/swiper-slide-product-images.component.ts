@@ -13,15 +13,15 @@ export class SwiperSlideProductImagesComponent implements OnInit {
     freeMode: true,
     freeModeMomentum: false,
     grabCursor: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+    scrollbar: {
+      el: '.swiper-scrollbar',
     },
     breakpoints: {
       // when window width is >= 320px
       320: {
         slidesPerView: 1,
         spaceBetween: 10,
+        freeModeMomentum: true,
       },
       // when window width is >= 480px
       480: {

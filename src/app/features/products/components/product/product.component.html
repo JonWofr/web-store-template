@@ -1,6 +1,6 @@
 <div class="product-header">
   <div class="after">
-    <div class="color" *ngFor="let color of colors">
+    <div class="color" *ngFor="let color of product?.colors">
       <svg
         width="100%"
         height="100%"
@@ -26,7 +26,7 @@
         </g>
       </svg>
     </div>
-    <h3 *ngIf="colors.length == 0">check me out!</h3>
+    <h3 *ngIf="!product?.colors">Check it out!</h3>
   </div>
   <h3
     class="before animate__animated animate__faster"
@@ -35,7 +35,7 @@
       'background-color': !isHovering ? 'hsl(0, 0%, 95%)' : 'transparent'
     }"
   >
-    A.I. T-Shirt
+    {{ product?.name }}
   </h3>
 </div>
 
@@ -44,7 +44,7 @@
     (mouseover)="isHovering = true"
     (mouseout)="isHovering = false"
     (click)="openProductDetails()"
-    src="/assets/images/example-product.png"
+    [src]="product?.thumbnailImageUrl"
     routerLink="/products/0"
     alt=""
   />
@@ -52,8 +52,8 @@
     class="price-tag animate__animated animate__faster"
     [class.animate__fadeOut]="isHovering"
   >
-    19,99 €
+    {{ product?.price }} €
   </div>
 </div>
 
-<p>noch 4 verfügbar</p>
+<p>noch {{ product?.amountOnStock }} verfügbar</p>
