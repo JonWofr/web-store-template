@@ -25,9 +25,7 @@ img.icon {
 
 nav.navbar {
   padding-top: 2.5rem;
-  background-color: transparent;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background-color: #2b2d42 !important;
   transition: 0.3s;
   box-shadow: rgba(0, 0, 0, 0.47) 3px 3px 15px 3px;
 
@@ -38,7 +36,6 @@ nav.navbar {
 
 .nav-transparent {
   padding-top: 8px !important;
-  background-color: #2b2d42 !important;
 }
 
 a.nav-link {

@@ -19,28 +19,26 @@ export class NavBarComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event) => {
         event = event as NavigationEnd;
+        this.createNewRellax();
         switch (event.url) {
           case '/':
             this.animateNavBarOnScroll();
             break;
           default: {
             document.querySelector('#nav')?.classList.add('nav-transparent');
-            this.createNewRellax();
           }
         }
       });
   }
 
   createNewRellax(): void {
-    const rellax = new Rellax('.rellax', {
-      wrapper: 'main',
-    });
+    const rellax = new Rellax('.rellax');
   }
 
   animateNavBarOnScroll(): void {
     const options = {
       rootMargin: '0px',
-      threshold: 0.9,
+      threshold: 0.5,
     };
 
     const observer = new IntersectionObserver(

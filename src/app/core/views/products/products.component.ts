@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 import { animateOnScrollWithDelay } from '@shared/animations/animations';
-import { url } from 'inspector';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-products',
