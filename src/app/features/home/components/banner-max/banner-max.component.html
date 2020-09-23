@@ -8,7 +8,7 @@
         viewBox="0 0 500 500"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
-        id="blobSvg"
+        id="blobSvg1"
       >
         <path
           id="blob"
@@ -26,7 +26,7 @@
         viewBox="0 0 500 500"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
-        id="blobSvg"
+        id="blobSvg2"
       >
         <path
           id="blob"
@@ -36,51 +36,94 @@
       </svg>
     </div>
     <div class="bottom-part-banner">
-      <p>
-        hasdfsaj fjdsa fasf fjdasl f fjaksdlöf fsjakdlö f fjakslöf dad
-        afdsjkaflö dsjfkdlsö fjf saöfld a djfaklsöd fjsdf jsafkdlöa fjdkl
-        fasdjklösa fasdjkfaslsöd fjasd fjasdklf as fskdlfj sda fsakdfö asöd
-        fjdsköa fdkja sdfds fjkasdlöf asdjklöf
-      </p>
+      <h1>Angesagte T-Shirts</h1>
+      <div class="container">
+        <div class="row justify-content-between">
+          <app-product
+            class="product col-lg-4"
+            [product]="product1"
+            backgroundColorHeader="gray"
+            darkmode="true"
+          ></app-product>
+          <app-product
+            class="product col-lg-4"
+            [product]="product1"
+            backgroundColorHeader="gray"
+            darkmode="true"
+          ></app-product>
+          <app-product
+            class="product col-lg-4"
+            [product]="product1"
+            backgroundColorHeader="gray"
+            darkmode="true"
+          ></app-product>
+        </div>
+        <div class="row justify-content-between">
+          <app-product
+            class="product col-lg-4"
+            [product]="product1"
+            backgroundColorHeader="gray"
+            darkmode="true"
+          ></app-product>
+          <app-product
+            class="product col-lg-4"
+            [product]="product1"
+            backgroundColorHeader="gray"
+            darkmode="true"
+          ></app-product>
+          <app-product
+            class="product col-lg-4"
+            [product]="product1"
+            backgroundColorHeader="gray"
+            darkmode="true"
+          ></app-product>
+        </div>
+      </div>
+      <h4
+        class="show-more-btn"
+        [ngStyle]="{ 'font-size': showMoreBtnFontSize }"
+      >
+        Show me more!
+      </h4>
+    </div>
+
+    <div
+      id="wave"
+      class="wave"
+      data-from='{"scaleY": "1"}'
+      data-to='{"scaleY": "0"}'
+      data-dur=".95"
+      data-mobile-dur=".72"
+      [style.transform]="transform"
+    >
+      <svg
+        preserveAspectRatio="xMaxYMin slice"
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 1440 270"
+        style="enable-background: new 0 0 1440 270;"
+        xml:space="preserve"
+      >
+        <style type="text/css">
+          .hero-wave {
+            fill: #edf2f4;
+          }
+        </style>
+        <path
+          vector-effect="non-scaling-stroke"
+          class="hero-wave"
+          d="M860.8,73.7C1110.2-1,1303.3-18.9,1440,19.9v249.5H0V89.3C324.5,153.6,611.4,148.4,860.8,73.7z"
+        ></path>
+      </svg>
     </div>
   </div>
-  <img
-    class="arrow-down animate__upDown"
-    src="/assets/icons/arrow-down.svg"
-    alt=""
-  />
-
-  <div
-    id="wave"
-    class="wave"
-    data-from='{"scaleY": "1"}'
-    data-to='{"scaleY": "0"}'
-    data-dur=".95"
-    data-mobile-dur=".72"
-    [style.transform]="transform"
-  >
-    <svg
-      preserveAspectRatio="xMaxYMin slice"
-      version="1.1"
-      id="Layer_1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      x="0px"
-      y="0px"
-      viewBox="0 0 1440 270"
-      style="enable-background: new 0 0 1440 270;"
-      xml:space="preserve"
-    >
-      <style type="text/css">
-        .hero-wave {
-          fill: #edf2f4;
-        }
-      </style>
-      <path
-        vector-effect="non-scaling-stroke"
-        class="hero-wave"
-        d="M860.8,73.7C1110.2-1,1303.3-18.9,1440,19.9v249.5H0V89.3C324.5,153.6,611.4,148.4,860.8,73.7z"
-      ></path>
-    </svg>
-  </div>
 </div>
+<img
+  class="arrow-down animate__upDown"
+  src="/assets/icons/arrow-down.svg"
+  alt=""
+/>

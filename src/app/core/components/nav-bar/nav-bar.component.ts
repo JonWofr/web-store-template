@@ -20,6 +20,7 @@ export class NavBarComponent implements OnInit {
       .subscribe((event) => {
         event = event as NavigationEnd;
         this.createNewRellax();
+        window.scrollTo(0, 0);
         switch (event.url) {
           case '/':
             this.animateNavBarOnScroll();

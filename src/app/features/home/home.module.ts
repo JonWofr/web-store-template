@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { AdvantageComponent } from './components/advantage/advantage.component';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { BannerMaxComponent } from './components/banner-max/banner-max.component';
+import { ProductModule } from '@features/products/products.module';
 
 const declarations = [
   AdvantageComponent,
@@ -16,7 +17,7 @@ const declarations = [
 
 @NgModule({
   declarations,
-  imports: [SharedModule, CommonModule],
+  imports: [SharedModule, CommonModule, ProductModule],
   exports: [declarations, SharedModule],
   providers: [],
 })

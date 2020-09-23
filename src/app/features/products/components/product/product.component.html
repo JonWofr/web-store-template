@@ -1,4 +1,13 @@
-<div class="product-header">
+<div class="product-header" [class.dark-mode]="darkmode">
+  <h3
+    class="before animate__animated animate__faster"
+    [class.animate__fadeOutUp]="isHovering"
+    [ngStyle]="{
+      'background-color': !isHovering ? backgroundColorHeader : 'transparent'
+    }"
+  >
+    {{ product?.name }}
+  </h3>
   <div class="after">
     <div class="color" *ngFor="let color of product?.colors">
       <svg
@@ -28,15 +37,6 @@
     </div>
     <h3 *ngIf="!product?.colors">Check it out!</h3>
   </div>
-  <h3
-    class="before animate__animated animate__faster"
-    [class.animate__fadeOutUp]="isHovering"
-    [ngStyle]="{
-      'background-color': !isHovering ? 'hsl(0, 0%, 95%)' : 'transparent'
-    }"
-  >
-    {{ product?.name }}
-  </h3>
 </div>
 
 <div class="product-image">

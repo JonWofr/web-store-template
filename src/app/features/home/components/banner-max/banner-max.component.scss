@@ -17,7 +17,7 @@ img.arrow-down {
 div.banner {
   display: flex;
   flex-direction: column;
-  height: 240vh;
+  min-height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -28,21 +28,16 @@ div.banner {
 
 div.main-banner {
   width: 100%;
-  height: 200vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 
   div.t-shirt {
     position: fixed;
     max-width: 49vw;
     margin-top: 10vh;
-
-    svg {
-      width: 200vh;
-      z-index: -1;
-      position: absolute;
-    }
+    z-index: 20;
 
     &.move-left {
       transform: translateX(-50%);
@@ -60,27 +55,64 @@ div.main-banner {
       }
     }
 
+    svg {
+      width: 95vw;
+      z-index: -1;
+      position: absolute;
+      transition: 1s;
+    }
+
     img {
       max-width: 50vw;
       object-fit: contain;
       -webkit-filter: drop-shadow(5px 5px 5px $darker-background-color);
       filter: drop-shadow(5px 5px 5px $darker-background-color);
       transition: 1s;
-      cursor: pointer;
+
       &:hover {
         transform: translateY(-5%);
         -webkit-filter: drop-shadow(10px 10px 10px $primary-color);
         filter: drop-shadow(10px 10px 10px $primary-color);
+
+        + svg#blobSvg1 {
+          transform: translate(-45%, -70%);
+        }
+        + svg#blobSvg2 {
+          transform: translate(45%, -65%);
+        }
       }
     }
   }
 
   div.bottom-part-banner {
     margin-top: 100vh;
-    width: 40vw;
-    font-size: 5rem;
-    text-align: center;
+    position: relative;
+
+    h1 {
+      text-align: center;
+      font-size: 5rem;
+      margin-bottom: 3rem;
+    }
+    h4 {
+      font-family: m-bold;
+      position: absolute;
+      bottom: -3rem;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      width: 100%;
+      text-align: center;
+    }
   }
+}
+h3.before {
+  color: $lightest-font-color !important;
+}
+
+div.wave {
+  transform-origin: 50% 100%;
+  width: 100%;
+  margin-bottom: -2px;
+  z-index: 2;
 }
 
 @keyframes upDownAnimation {
@@ -100,13 +132,4 @@ div.main-banner {
 @media only screen and (min-width: $md-breakpoint) {
   div.t-shirt {
   }
-}
-
-div.wave {
-  margin-top: calc((var(--vh, 1vh) * 100));
-  transform-origin: 50% 100%;
-  position: absolute;
-  width: 100%;
-  bottom: -2px;
-  z-index: 2;
 }
