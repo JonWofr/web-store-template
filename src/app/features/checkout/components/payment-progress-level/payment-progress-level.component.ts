@@ -1,4 +1,19 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { PaymentInformationModel } from '@features/checkout/models/payment-information.model';
 
 @Component({
   selector: 'checkout-payment-progress-level',
@@ -6,9 +21,19 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./payment-progress-level.component.scss'],
 })
 export class PaymentProgressLevelComponent implements OnInit {
+  @Input() paymentInformation?: PaymentInformationModel;
   @Output() clickContinueButton = new EventEmitter<void>();
 
-  constructor() {}
+  formGroup?: FormGroup;
 
-  ngOnInit(): void {}
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      paymentMethod: [
+        this.paymentInformation?.paymentMethod,
+        Validators.compose([Validators.required]),
+      ],
+    });
+  }
 }

@@ -1,11 +1,12 @@
-<div class="form-check">
+<div class="form-check" [class.disabled]="isDisabled">
   <input
     #input
     class="form-check-input"
-    type="checkbox"
+    type="radio"
     [id]="elementId"
     [checked]="isChecked"
     [disabled]="isDisabled"
+    [name]="name"
     (input)="onChangeValue(input.checked)"
     (blur)="onBlur()"
   />

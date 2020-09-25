@@ -16,10 +16,10 @@ import { v4 as uuidv4 } from 'uuid';
   ],
 })
 export class SelectComponent implements ControlValueAccessor, OnInit {
-  @Input() label: string = '';
   @Input() options: SelectOption[] = [];
   @Input() placeholder: string = '';
   @Input() isDisabled: boolean = false;
+  @Input() label?: string;
   @Input() hint?: string;
 
   elementId?: string;

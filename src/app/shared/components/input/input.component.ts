@@ -19,10 +19,10 @@ import { v4 as uuidv4 } from 'uuid';
   ],
 })
 export class InputComponent implements ControlValueAccessor, OnInit {
-  @Input() label: string = '';
   @Input() type: InputType = InputType.Text;
   @Input() placeholder: string = '';
   @Input() isDisabled: boolean = false;
+  @Input() label?: string;
   @Input() hint?: string;
 
   elementId?: string;

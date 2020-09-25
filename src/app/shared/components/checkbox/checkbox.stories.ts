@@ -81,3 +81,19 @@ export const disabled = () => ({
     isDisabled: true,
   },
 });
+
+export const withoutLabel = () => ({
+  component: CheckboxComponent,
+  template: `
+          <form [formGroup]="formGroup">
+              <shared-checkbox [formControlName]="formControlName">
+              </shared-checkbox>
+          </form>
+      `,
+  props: {
+    formGroup: new FormGroup({
+      isBored: new FormControl(),
+    }),
+    formControlName: 'isBored',
+  },
+});

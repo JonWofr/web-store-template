@@ -118,3 +118,37 @@ export const disabled = () => ({
     isDisabled: true,
   },
 });
+
+export const withoutLabel = () => ({
+  component: SelectComponent,
+  template: `
+        <form [formGroup]="formGroup">
+            <shared-select [formControlName]="formControlName" [options]="options" [placeholder]="placeholder">
+            </shared-select>
+            <div *ngIf="!(formGroup?.controls)[formControlName].valid && (formGroup?.controls)[formControlName].touched" class="alert alert-warning">
+              Eingabe ist ungültig!
+            </div>
+        </form>
+    `,
+  props: {
+    formGroup: new FormGroup({
+      select: new FormControl(null, Validators.required),
+    }),
+    formControlName: 'select',
+    options: [
+      {
+        label: 'Rot',
+        value: 'red',
+      },
+      {
+        label: 'Grün',
+        value: 'green',
+      },
+      {
+        label: 'Blau',
+        value: 'blue',
+      },
+    ],
+    placeholder: 'Auswahl...',
+  },
+});
