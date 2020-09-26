@@ -1,19 +1,18 @@
 @import "src/styles/colors.scss";
 
-.shopping-bag {
-  position: relative;
-
+a.shopping-bag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   div.counter {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 20px;
-    width: 20px;
-    background-color: $secondary-color;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+    margin-left: 0.3rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: $manatee-grey;
     border-radius: 50% 50%;
   }
 }
@@ -24,11 +23,12 @@ img.icon {
 }
 
 nav.navbar {
-  padding-top: 2.5rem;
-  background-color: transparent;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: 0.3s;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  background-color: transparent !important;
+  backdrop-filter: blur(5px);
+  transition: 0.5s;
   box-shadow: rgba(0, 0, 0, 0.47) 3px 3px 15px 3px;
 
   a {
@@ -36,23 +36,56 @@ nav.navbar {
   }
 }
 
-.nav-transparent {
-  padding-top: 8px !important;
+nav.usual {
+  min-height: 50px;
   background-color: #2b2d42 !important;
+  backdrop-filter: none;
 }
+
+$padding-for-nav-links: 1rem;
 
 a.nav-link {
   color: #edf2f4 !important;
   transition: 0.2s;
+  padding-left: $padding-for-nav-links !important;
+  padding-right: $padding-for-nav-links !important;
+  font-size: 1.2rem;
+  position: relative;
   &:hover {
-    transform: translateY(-4px);
-    text-shadow: 3px 3px 4px black;
+    + .hover-stripe {
+      width: 90%;
+    }
+  }
+}
+
+.logo {
+  padding-left: 40px;
+  padding-right: 40px;
+  a {
+    font-size: 1.5rem;
+  }
+}
+
+.nav-item {
+  position: relative;
+  .hover-stripe {
+    margin-left: $padding-for-nav-links;
+    width: 0px;
+    transition: 500ms ease-in-out;
+    position: absolute;
+    background-color: $secondary-color;
+    height: 0.8rem;
+    left: 0;
+    bottom: 0.3rem;
+    z-index: -1;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   nav.navbar {
-    padding-top: 8px;
+    min-height: 50px;
+    background-color: #2b2d42 !important;
+    backdrop-filter: none;
   }
 }

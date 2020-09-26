@@ -1,23 +1,20 @@
-<nav
-  class="animate__animated animate__fadeInDown navbar-light navbar navbar-expand-md fixed-top"
-  id="nav"
->
+<nav class="navbar-light navbar navbar-expand-md fixed-top" id="nav">
   <div
-    class="animate__animated animate__fadeInLeft navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"
+    class="collapse navbar-collapse w-100 order-1 order-md-0 dual-collapse2"
+    id="navbarText"
   >
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link">Service</a>
-      </li>
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link" routerLink="/products">Products</a>
+        <div class="hover-stripe"></div>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/about">About Us</a>
+        <div class="hover-stripe"></div>
       </li>
     </ul>
   </div>
-  <div class="order-0">
+  <div class="order-0 logo">
     <a
       class="navbar-brand mx-auto"
       style="font-family: p-regular;"
@@ -26,17 +23,19 @@
     >
   </div>
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link shopping-bag" routerLink="/shopping-cart">
-          <img class="icon" src="/assets/icons/shopping-bag.svg" alt="" />
-          <div class="counter">0</div>
+          ShoppingBag
+          <div class="counter"><p>0</p></div>
         </a>
+        <div class="hover-stripe"></div>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/profile">
-          <img class="icon" src="/assets/icons/user.svg" alt="" />
+          Account
         </a>
+        <div class="hover-stripe"></div>
       </li>
     </ul>
   </div>

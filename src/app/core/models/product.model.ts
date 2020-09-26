@@ -14,4 +14,5 @@ export interface Product {
   previewImagesUrls: string[];
   brand?: string;
   discountedPrice?: number;
+  colors?: string[];
 }

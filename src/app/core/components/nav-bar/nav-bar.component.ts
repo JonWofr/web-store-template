@@ -19,22 +19,22 @@ export class NavBarComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event) => {
         event = event as NavigationEnd;
+        this.createNewRellax();
+        window.scrollTo(0, 0);
         switch (event.url) {
           case '/':
             this.animateNavBarOnScroll();
+
             break;
           default: {
             document.querySelector('#nav')?.classList.add('nav-transparent');
-            this.createNewRellax();
           }
         }
       });
   }
 
   createNewRellax(): void {
-    const rellax = new Rellax('.rellax', {
-      wrapper: 'main',
-    });
+    const rellax = new Rellax('.rellax');
   }
 
   animateNavBarOnScroll(): void {
@@ -47,15 +47,15 @@ export class NavBarComponent implements OnInit {
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
-            document.querySelector('#nav')?.classList.add('nav-transparent');
+            document.querySelector('#nav')?.classList.add('usual');
           } else {
-            document.querySelector('#nav')?.classList.remove('nav-transparent');
+            document.querySelector('#nav')?.classList.remove('usual');
           }
         });
       },
       options
     );
-    document.querySelectorAll('.main-banner').forEach((value) => {
+    document.querySelectorAll('.top-part-banner').forEach((value) => {
       observer.observe(value);
     });
   }
