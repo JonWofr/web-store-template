@@ -13,9 +13,15 @@
     }
   }
 
-  & > div.address-information-form-container > h2 {
+  h2 {
     font-size: 1.4rem;
 
     margin-bottom: 1rem;
+  }
+
+  div.payment-method-radio-button-container {
+    display: block;
+    width: 100%;
+    max-width: 300px;
   }
 }

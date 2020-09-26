@@ -5,70 +5,38 @@
   [formGroup]="formGroup"
   (ngSubmit)="clickContinueButton.emit(formGroup?.value)"
 >
-  <div class="payment-methods-container">
-    <div class="payment-method-container radio-button">
-      <input
-        id="paypal-radio-button"
-        class="hidden"
-        type="radio"
+  <div class="payment-method-radio-buttons-container">
+    <div class="payment-method-radio-button-container">
+      <checkout-payment-method-radio-button
         value="paypal"
+        logoUrl="assets/images/paypal-logo.png"
         formControlName="paymentMethod"
-      />
-      <label for="paypal-radio-button">
-        <img
-          class="payment-method-logo"
-          src="assets/images/paypal-logo.png"
-          alt=""
-        />
-      </label>
+      >
+      </checkout-payment-method-radio-button>
     </div>
-    <div class="payment-method-container radio-button">
-      <input
-        id="sepa-radio-button"
-        class="hidden"
-        type="radio"
+    <div class="payment-method-radio-button-container">
+      <checkout-payment-method-radio-button
         value="sepa"
+        logoUrl="assets/images/sepa-logo.png"
         formControlName="paymentMethod"
-      />
-      <label for="sepa-radio-button">
-        <img
-          class="payment-method-logo"
-          src="assets/images/sepa-logo.png"
-          alt=""
-        />
-      </label>
+      >
+      </checkout-payment-method-radio-button>
     </div>
-    <div class="payment-method-container radio-button">
-      <input
-        id="sofort-radio-button"
-        class="hidden"
-        type="radio"
+    <div class="payment-method-radio-button-container">
+      <checkout-payment-method-radio-button
         value="sofort"
+        logoUrl="assets/images/sofort-logo.png"
         formControlName="paymentMethod"
-      />
-      <label for="sofort-radio-button" [style.backgroundColor]="'#FA82A0'">
-        <img
-          class="payment-method-logo"
-          src="assets/images/sofort-logo.png"
-          alt=""
-        />
-      </label>
+      >
+      </checkout-payment-method-radio-button>
     </div>
-    <div class="payment-method-container radio-button">
-      <input
-        id="card-radio-button"
-        class="hidden"
-        type="radio"
+    <div class="payment-method-radio-button-container">
+      <checkout-payment-method-radio-button
         value="card"
+        logoUrl="assets/images/card-logo.png"
         formControlName="paymentMethod"
-      />
-      <label for="card-radio-button">
-        <img
-          class="payment-method-logo"
-          src="assets/images/card-logo.png"
-          alt=""
-        />
-      </label>
+      >
+      </checkout-payment-method-radio-button>
     </div>
   </div>
 

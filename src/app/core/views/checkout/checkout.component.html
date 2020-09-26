@@ -39,14 +39,19 @@
       <div class="swiper-slide">
         <div>
           <checkout-payment-progress-level
-            (clickContinueButton)="onClickPaymentProgressLevelContinueButton()"
+            [paymentInformation]="paymentInformation"
+            (clickContinueButton)="
+              onClickPaymentProgressLevelContinueButton($event)
+            "
           ></checkout-payment-progress-level>
         </div>
       </div>
       <div class="swiper-slide">
         <div>
           <checkout-overview-progress-level
+            [emailInformation]="emailInformation"
             [addressInformation]="addressInformation"
+            [paymentInformation]="paymentInformation"
           ></checkout-overview-progress-level>
         </div>
       </div>

@@ -1,6 +1,17 @@
+<div *ngIf="emailInformationFormGroup" [formGroup]="emailInformationFormGroup">
+  <h2>
+    Gastbestellung
+  </h2>
+  <shared-input
+    formControlName="email"
+    label="Email"
+    [type]="InputType.Email"
+    [isDisabled]="true"
+  ></shared-input>
+</div>
 <div
-  class="address-information-form-container"
-  [formGroup]="shippingAddressInformation"
+  *ngIf="shippingAddressInformationFormGroup"
+  [formGroup]="shippingAddressInformationFormGroup"
 >
   <h2>
     Lieferadresse
@@ -110,16 +121,17 @@
 </div>
 
 <shared-checkbox
+  *ngIf="shippingAddressMatchingBillingAddressFormControl"
   label="Rechnungsadresse gleich Lieferadresse"
-  [formControl]="shippingAddressMatchingBillingAddressCheckbox"
+  [formControl]="shippingAddressMatchingBillingAddressFormControl"
   [isDisabled]="true"
 >
 </shared-checkbox>
 
 <div
-  *ngIf="billingAddressInformation"
+  *ngIf="billingAddressInformationFormGroup"
   class="address-information-form-container"
-  [formGroup]="billingAddressInformation"
+  [formGroup]="billingAddressInformationFormGroup"
 >
   <h2>
     Rechnungsadresse
@@ -225,6 +237,23 @@
       >
       </shared-select>
     </div>
+  </div>
+</div>
+<div
+  *ngIf="paymentInformationFormGroup"
+  [formGroup]="paymentInformationFormGroup"
+>
+  <h2>
+    Bezahlmethode
+  </h2>
+  <div class="payment-method-radio-button-container">
+    <checkout-payment-method-radio-button
+      formControlName="paymentMethod"
+      [value]="paymentInformationFormGroup.value.paymentMethod"
+      [logoUrl]="paymentMethodRadioButtonLogoUrl"
+      [isDisabled]="true"
+    >
+    </checkout-payment-method-radio-button>
   </div>
 </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProgressLevel } from '@features/checkout/enums/progress-level.enum';
 import { AddressInformation } from '@features/checkout/models/address-information.model';
 import { EmailInformation } from '@features/checkout/models/email-information.model';
+import { PaymentInformation } from '@features/checkout/models/payment-information.model';
 import Swiper from 'swiper';
 
 @Component({
@@ -25,6 +26,7 @@ export class CheckoutComponent implements OnInit {
 
   emailInformation?: EmailInformation;
   addressInformation?: AddressInformation;
+  paymentInformation?: PaymentInformation;
 
   ProgressLevel = ProgressLevel;
 
@@ -55,7 +57,6 @@ export class CheckoutComponent implements OnInit {
     addressInformation: AddressInformation
   ): void {
     this.addressInformation = addressInformation;
-    console.log(this.addressInformation);
     this.increaseProgressLevel(ProgressLevel.Shipment);
   }
 
@@ -63,7 +64,10 @@ export class CheckoutComponent implements OnInit {
     this.increaseProgressLevel(ProgressLevel.Payment);
   }
 
-  onClickPaymentProgressLevelContinueButton(): void {
+  onClickPaymentProgressLevelContinueButton(
+    paymentInformation: PaymentInformation
+  ): void {
+    this.paymentInformation = paymentInformation;
     this.increaseProgressLevel(ProgressLevel.Overview);
   }
 

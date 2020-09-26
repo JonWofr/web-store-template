@@ -1,0 +1,47 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/colors.scss";
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100px;
+
+  & > input.hidden {
+    display: none;
+
+    &:checked + label,
+    &:disabled + label {
+      background-color: $bootstrap-disabled-color;
+
+      cursor: default;
+    }
+  }
+
+  & > label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    border-radius: $default-card-border-radius;
+
+    box-shadow: $default-card-box-shadow;
+
+    background-color: $default-card-background-color;
+
+    cursor: pointer;
+
+    transition: filter 0.25s ease-in-out;
+
+    &:hover:enabled {
+      filter: brightness(0.9);
+    }
+
+    img.payment-method-logo {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+  }
+}

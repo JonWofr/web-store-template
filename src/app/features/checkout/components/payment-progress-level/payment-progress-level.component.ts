@@ -13,7 +13,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { PaymentInformationModel } from '@features/checkout/models/payment-information.model';
+import { PaymentInformation } from '@features/checkout/models/payment-information.model';
 
 @Component({
   selector: 'checkout-payment-progress-level',
@@ -21,7 +21,7 @@ import { PaymentInformationModel } from '@features/checkout/models/payment-infor
   styleUrls: ['./payment-progress-level.component.scss'],
 })
 export class PaymentProgressLevelComponent implements OnInit {
-  @Input() paymentInformation?: PaymentInformationModel;
+  @Input() paymentInformation?: PaymentInformation;
   @Output() clickContinueButton = new EventEmitter<void>();
 
   formGroup?: FormGroup;

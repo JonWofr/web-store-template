@@ -14,6 +14,9 @@ export default {
 export const defaultProps = () => ({
   component: OverviewProgressLevelComponent,
   props: {
+    emailInformation: {
+      email: 'max-mustermann@mail.de',
+    },
     addressInformation: {
       shippingAddressInformation: {
         title: 'Herr',
@@ -31,6 +34,9 @@ export const defaultProps = () => ({
         },
       },
       billingAddressInformation: undefined,
+    },
+    paymentInformation: {
+      paymentMethod: 'paypal',
     },
   },
 });
