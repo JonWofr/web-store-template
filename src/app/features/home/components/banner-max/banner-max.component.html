@@ -1,39 +1,29 @@
 <div class="banner banner-max">
   <div class="main-banner">
-    <div
-      class="t-shirt move-left animate__animated animate__fadeIn animate__slow"
-    >
-      <img src="/assets/images/t-shirt.png" alt="" />
-      <svg
-        viewBox="0 0 500 500"
-        xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        id="blobSvg1"
+    <div class="top-part-banner">
+      <div
+        class="t-shirt move-left animate__animated animate__fadeIn animate__slow"
       >
-        <path
-          id="blob"
-          d="M457.5,288Q433,326,414.5,361Q396,396,357,405Q318,414,284,425.5Q250,437,203,457Q156,477,134,432.5Q112,388,78.5,361.5Q45,335,24,292.5Q3,250,27,209Q51,168,78,136.5Q105,105,133,69.5Q161,34,205.5,20Q250,6,288.5,34.5Q327,63,351.5,93.5Q376,124,418.5,143Q461,162,471.5,206Q482,250,457.5,288Z"
-          fill="#d1d8e0"
-        ></path>
-      </svg>
-    </div>
-    <div
-      class="t-shirt move-right animate__animated animate__fadeIn animate__slow"
-    >
-      <img src="/assets/images/t-shirt.png" alt="" />
+        <img class="t-shirt-image" src="/assets/images/t-shirt-1.png" alt="" />
+        <img
+          id="blob-left"
+          class="blob"
+          src="/assets/images/landing-blob-1.svg"
+          alt=""
+        />
+      </div>
+      <div
+        class="t-shirt move-right animate__animated animate__fadeIn animate__slow"
+      >
+        <img class="t-shirt-image" src="/assets/images/t-shirt-2.png" alt="" />
 
-      <svg
-        viewBox="0 0 500 500"
-        xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        id="blobSvg2"
-      >
-        <path
-          id="blob"
-          d="M467,296Q473,342,427,361.5Q381,381,355.5,412.5Q330,444,290,471.5Q250,499,205.5,482.5Q161,466,130,433.5Q99,401,69,369Q39,337,24.5,293.5Q10,250,17.5,203.5Q25,157,72,138Q119,119,143.5,86Q168,53,209,61Q250,69,294,52.5Q338,36,369,68Q400,100,418.5,136.5Q437,173,449,211.5Q461,250,467,296Z"
-          fill="#ef233c"
-        ></path>
-      </svg>
+        <img
+          id="blob-right"
+          class="blob"
+          src="/assets/images/landing-blob-2.svg"
+          alt=""
+        />
+      </div>
     </div>
     <div class="bottom-part-banner">
       <h1>Angesagte T-Shirts</h1>
@@ -42,19 +32,19 @@
           <app-product
             class="product col-lg-4"
             [product]="product1"
-            backgroundColorHeader="gray"
+            [backgroundColorHeader]="backgroundColor"
             darkmode="true"
           ></app-product>
           <app-product
             class="product col-lg-4"
             [product]="product1"
-            backgroundColorHeader="gray"
+            [backgroundColorHeader]="backgroundColor"
             darkmode="true"
           ></app-product>
           <app-product
             class="product col-lg-4"
             [product]="product1"
-            backgroundColorHeader="gray"
+            [backgroundColorHeader]="backgroundColor"
             darkmode="true"
           ></app-product>
         </div>
@@ -62,19 +52,19 @@
           <app-product
             class="product col-lg-4"
             [product]="product1"
-            backgroundColorHeader="gray"
+            [backgroundColorHeader]="backgroundColor"
             darkmode="true"
           ></app-product>
           <app-product
             class="product col-lg-4"
             [product]="product1"
-            backgroundColorHeader="gray"
+            [backgroundColorHeader]="backgroundColor"
             darkmode="true"
           ></app-product>
           <app-product
             class="product col-lg-4"
             [product]="product1"
-            backgroundColorHeader="gray"
+            [backgroundColorHeader]="backgroundColor"
             darkmode="true"
           ></app-product>
         </div>

@@ -24,6 +24,7 @@ export class NavBarComponent implements OnInit {
         switch (event.url) {
           case '/':
             this.animateNavBarOnScroll();
+
             break;
           default: {
             document.querySelector('#nav')?.classList.add('nav-transparent');
@@ -39,22 +40,22 @@ export class NavBarComponent implements OnInit {
   animateNavBarOnScroll(): void {
     const options = {
       rootMargin: '0px',
-      threshold: 0.5,
+      threshold: 0.9,
     };
 
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
-            document.querySelector('#nav')?.classList.add('nav-transparent');
+            document.querySelector('#nav')?.classList.add('usual');
           } else {
-            document.querySelector('#nav')?.classList.remove('nav-transparent');
+            document.querySelector('#nav')?.classList.remove('usual');
           }
         });
       },
       options
     );
-    document.querySelectorAll('.main-banner').forEach((value) => {
+    document.querySelectorAll('.top-part-banner').forEach((value) => {
       observer.observe(value);
     });
   }

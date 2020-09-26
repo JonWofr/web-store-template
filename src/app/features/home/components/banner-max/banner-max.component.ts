@@ -10,23 +10,20 @@ export class BannerMaxComponent implements OnInit {
 
   transform = 'translate3d(0px, 0px, 0px) scale(1, 1)';
   showMoreBtnFontSize = '5rem';
+  backgroundColor = '#999188';
 
   computeTShirtPos(): void {
-    const margin = screen.width * 0.25;
+    //const margin = screen.width * 0.25;
     const leftTShirt = document.getElementsByClassName(
       't-shirt move-left'
     )[0] as HTMLElement;
     const rightTShirt = document.getElementsByClassName(
       't-shirt move-right'
     )[0] as HTMLElement;
-    leftTShirt.style.left = margin - window.scrollY + 'px';
-    rightTShirt.style.right = margin - window.scrollY + 'px';
-    leftTShirt.style.transform = `translateX(-50%) rotate(${
-      -5 - window.scrollY / 50
-    }deg)`;
-    rightTShirt.style.transform = `translateX(50%) rotate(${
-      5 + window.scrollY / 50
-    }deg)`;
+    leftTShirt.style.left = -window.scrollY + 'px';
+    rightTShirt.style.right = -window.scrollY + 'px';
+    leftTShirt.style.transform = `rotate(${-5 - window.scrollY / 50}deg)`;
+    rightTShirt.style.transform = `rotate(${5 + window.scrollY / 50}deg)`;
   }
 
   showHideScrollIndicator(): void {
