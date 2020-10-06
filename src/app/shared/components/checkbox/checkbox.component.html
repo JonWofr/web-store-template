@@ -5,10 +5,11 @@
     type="checkbox"
     [id]="elementId"
     [checked]="isChecked"
+    [disabled]="isDisabled"
     (input)="onChangeValue(input.checked)"
     (blur)="onBlur()"
   />
-  <label class="form-check-label" [for]="elementId">
+  <label *ngIf="label" class="form-check-label" [for]="elementId">
     {{ label }}
   </label>
   <small *ngIf="hint" class="form-text text-muted">

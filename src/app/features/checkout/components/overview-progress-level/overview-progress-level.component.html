@@ -1,0 +1,262 @@
+<div *ngIf="emailInformationFormGroup" [formGroup]="emailInformationFormGroup">
+  <h2>
+    Gastbestellung
+  </h2>
+  <shared-input
+    formControlName="email"
+    label="Email"
+    [type]="InputType.Email"
+    [isDisabled]="true"
+  ></shared-input>
+</div>
+<div
+  *ngIf="shippingAddressInformationFormGroup"
+  [formGroup]="shippingAddressInformationFormGroup"
+>
+  <h2>
+    Lieferadresse
+  </h2>
+
+  <!-- name section -->
+
+  <!-- first row (title, firstname, lastname) -->
+
+  <div class="form-row" formGroupName="name">
+    <div class="col-md-2">
+      <shared-select
+        formControlName="title"
+        label="Anrede"
+        [options]="titleSelectOptions"
+        [isDisabled]="true"
+      ></shared-select>
+    </div>
+    <div class="col-md-5">
+      <shared-input
+        formControlName="firstName"
+        label="Vorname"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      ></shared-input>
+    </div>
+    <div class="col-md-5">
+      <shared-input
+        formControlName="lastName"
+        label="Nachname"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      ></shared-input>
+    </div>
+  </div>
+
+  <!-- address section -->
+
+  <!-- second row (street,housenumber) -->
+
+  <div class="form-row" formGroupName="address">
+    <div class="col-md">
+      <shared-input
+        formControlName="street"
+        label="Straße"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+    <div class="col-md">
+      <shared-input
+        formControlName="houseNumber"
+        label="Hausnummer"
+        [type]="InputType.Number"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+  </div>
+
+  <!-- third row (addition) -->
+
+  <div class="form-row" formGroupName="address">
+    <div class="col-md">
+      <shared-input
+        formControlName="addition"
+        label="Adresszusatz"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+  </div>
+
+  <!-- fourth row (postcode, city, country) -->
+
+  <div class="form-row" formGroupName="address">
+    <div class="col-md">
+      <shared-input
+        formControlName="postCode"
+        label="Postleitzahl"
+        [type]="InputType.Number"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+    <div class="col-md">
+      <shared-input
+        formControlName="city"
+        label="Stadt"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+    <div class="col-md">
+      <shared-select
+        formControlName="country"
+        label="Land"
+        [options]="countrySelectOptions"
+        [isDisabled]="true"
+      >
+      </shared-select>
+    </div>
+  </div>
+</div>
+
+<shared-checkbox
+  *ngIf="shippingAddressMatchingBillingAddressFormControl"
+  label="Rechnungsadresse gleich Lieferadresse"
+  [formControl]="shippingAddressMatchingBillingAddressFormControl"
+  [isDisabled]="true"
+>
+</shared-checkbox>
+
+<div
+  *ngIf="billingAddressInformationFormGroup"
+  class="address-information-form-container"
+  [formGroup]="billingAddressInformationFormGroup"
+>
+  <h2>
+    Rechnungsadresse
+  </h2>
+
+  <!-- name section -->
+
+  <!-- first row (title, firstname, lastname) -->
+
+  <div class="form-row" formGroupName="name">
+    <div class="col-md-2">
+      <shared-select
+        formControlName="title"
+        label="Anrede"
+        [options]="titleSelectOptions"
+        [isDisabled]="true"
+      ></shared-select>
+    </div>
+    <div class="col-md-5">
+      <shared-input
+        formControlName="firstName"
+        label="Vorname"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      ></shared-input>
+    </div>
+    <div class="col-md-5">
+      <shared-input
+        formControlName="lastName"
+        label="Nachname"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      ></shared-input>
+    </div>
+  </div>
+
+  <!-- address section -->
+
+  <!-- second row (street,housenumber) -->
+
+  <div class="form-row" formGroupName="address">
+    <div class="col-md">
+      <shared-input
+        formControlName="street"
+        label="Straße"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+    <div class="col-md">
+      <shared-input
+        formControlName="houseNumber"
+        label="Hausnummer"
+        [type]="InputType.Number"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+  </div>
+
+  <!-- third row (addition) -->
+
+  <div class="form-row" formGroupName="address">
+    <div class="col-md">
+      <shared-input
+        formControlName="addition"
+        label="Adresszusatz"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+  </div>
+
+  <!-- fourth row (postcode, city, country) -->
+
+  <div class="form-row" formGroupName="address">
+    <div class="col-md">
+      <shared-input
+        formControlName="postCode"
+        label="Postleitzahl"
+        [type]="InputType.Number"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+    <div class="col-md">
+      <shared-input
+        formControlName="city"
+        label="Stadt"
+        [type]="InputType.Text"
+        [isDisabled]="true"
+      >
+      </shared-input>
+    </div>
+    <div class="col-md">
+      <shared-select
+        formControlName="country"
+        label="Land"
+        [options]="countrySelectOptions"
+        [isDisabled]="true"
+      >
+      </shared-select>
+    </div>
+  </div>
+</div>
+<div
+  *ngIf="paymentInformationFormGroup"
+  [formGroup]="paymentInformationFormGroup"
+>
+  <h2>
+    Bezahlmethode
+  </h2>
+  <div class="payment-method-radio-button-container">
+    <checkout-payment-method-radio-button
+      formControlName="paymentMethod"
+      [value]="paymentInformationFormGroup.value.paymentMethod"
+      [logoUrl]="paymentMethodRadioButtonLogoUrl"
+      [isDisabled]="true"
+    >
+    </checkout-payment-method-radio-button>
+  </div>
+</div>
+
+<shared-button (click)="onClickPurchaseButton()">
+  Kaufen
+</shared-button>

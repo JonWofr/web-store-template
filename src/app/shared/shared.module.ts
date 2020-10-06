@@ -10,6 +10,7 @@ import { InputStepperComponent } from './components/input-stepper/input-stepper.
 import { InputComponent } from './components/input/input.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { SelectComponent } from './components/select/select.component';
+import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 
 const declarations = [
   ButtonComponent,
@@ -17,6 +18,7 @@ const declarations = [
   InputComponent,
   CheckboxComponent,
   SelectComponent,
+  RadioButtonComponent,
 ];
 
 @NgModule({

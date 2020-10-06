@@ -1,7 +1,10 @@
 <h1>
   Gastbestellung
 </h1>
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup?.value)">
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="clickContinueButton.emit(formGroup?.value)"
+>
   <shared-input
     formControlName="email"
     label="Email"
@@ -30,7 +33,7 @@
       </ng-container>
     </div>
   </ng-container>
-  <shared-button type="submit" [isDisabled]="!formGroup?.valid"
-    >Weiter</shared-button
-  >
+  <shared-button type="submit" [isDisabled]="!formGroup?.valid">
+    Weiter
+  </shared-button>
 </form>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EmailInformation } from '@features/checkout/models/email-information.model';
 import { ButtonSize } from '@shared/enums/button-size.enum';
 import { InputType } from '@shared/enums/input-type.enum';
 
@@ -9,6 +10,9 @@ import { InputType } from '@shared/enums/input-type.enum';
   styleUrls: ['./email-progress-level.component.scss'],
 })
 export class EmailProgressLevelComponent implements OnInit {
+  @Input() emailInformation?: EmailInformation;
+  @Output() clickContinueButton = new EventEmitter<EmailInformation>();
+
   formGroup?: FormGroup;
 
   InputType = InputType;
@@ -20,14 +24,9 @@ export class EmailProgressLevelComponent implements OnInit {
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
       email: [
-        null,
+        this.emailInformation?.email,
         Validators.compose([Validators.required, Validators.email]),
       ],
     });
-    console.log(this.formGroup);
-  }
-
-  onSubmit(value: { email: string }): void {
-    console.log(value);
   }
 }

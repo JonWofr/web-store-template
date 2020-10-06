@@ -1,70 +1,77 @@
 @import "../../../../../styles/colors.scss";
 
 :host {
-  display: flex;
-  align-items: center;
+  display: block;
 
-  & > * {
-    margin: 0 0.5rem;
+  height: 3.5rem;
 
-    &:first-child {
-      margin-left: 0;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+  & > div.progress-levels-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  & > div.progress-level {
-    position: relative;
+    & > * {
+      margin: 0 0.5rem;
 
-    &.current-progress-level {
-      transform: scale(1.1);
-    }
-
-    & > button {
-      width: 30px;
-      height: 30px;
-
-      text-align: center;
-      line-height: 30px;
-
-      color: $darkest-font-color;
-
-      border: 1px solid $darkest-font-color;
-      border-radius: 50%;
-
-      &:disabled {
-        color: $disabled-color;
-
-        border-color: $disabled-color;
-
-        & + label {
-          color: $disabled-color;
-        }
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
       }
     }
 
-    & > label {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 100%);
+    & > div.progress-level {
+      position: relative;
 
-      color: $darkest-font-color;
+      &.current-progress-level {
+        transform: scale(1.1);
+      }
 
-      margin-bottom: 0;
+      & > button {
+        width: 2rem;
+        height: 2rem;
+
+        text-align: center;
+        line-height: 2rem;
+
+        color: $darkest-font-color;
+
+        border: 1px solid $darkest-font-color;
+        border-radius: 50%;
+
+        &:disabled {
+          color: $disabled-color;
+
+          border-color: $disabled-color;
+
+          & + label {
+            color: $disabled-color;
+          }
+        }
+      }
+
+      & > label {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+
+        color: $darkest-font-color;
+
+        margin-bottom: 0;
+      }
     }
-  }
 
-  & > div.horizontal-line {
-    height: 1px;
-    width: 50px;
+    & > div.horizontal-line {
+      height: 1px;
+      width: 50px;
 
-    background-color: $darkest-font-color;
+      background-color: $darkest-font-color;
 
-    &.disabled {
-      background-color: $disabled-color;
+      &.disabled {
+        background-color: $disabled-color;
+      }
     }
   }
 }

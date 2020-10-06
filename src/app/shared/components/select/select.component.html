@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label [for]="elementId">
+  <label *ngIf="label" [for]="elementId">
     {{ label }}
   </label>
   <select
@@ -8,6 +8,7 @@
     [class.text-muted]="select.value === ''"
     [id]="elementId"
     [value]="value"
+    [disabled]="isDisabled"
     (change)="onChangeValue(select.value)"
     (blur)="onBlur()"
   >

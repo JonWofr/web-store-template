@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-shipment-progress-level',
+  selector: 'checkout-shipment-progress-level',
   templateUrl: './shipment-progress-level.component.html',
-  styleUrls: ['./shipment-progress-level.component.scss']
+  styleUrls: ['./shipment-progress-level.component.scss'],
 })
 export class ShipmentProgressLevelComponent implements OnInit {
+  @Output() clickContinueButton = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

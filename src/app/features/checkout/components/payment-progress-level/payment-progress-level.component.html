@@ -1,3 +1,46 @@
 <h1>
-  Zahlung
+  Bezahlungsart
 </h1>
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="clickContinueButton.emit(formGroup?.value)"
+>
+  <div class="payment-method-radio-buttons-container">
+    <div class="payment-method-radio-button-container">
+      <checkout-payment-method-radio-button
+        value="paypal"
+        logoUrl="assets/images/paypal-logo.png"
+        formControlName="paymentMethod"
+      >
+      </checkout-payment-method-radio-button>
+    </div>
+    <div class="payment-method-radio-button-container">
+      <checkout-payment-method-radio-button
+        value="sepa"
+        logoUrl="assets/images/sepa-logo.png"
+        formControlName="paymentMethod"
+      >
+      </checkout-payment-method-radio-button>
+    </div>
+    <div class="payment-method-radio-button-container">
+      <checkout-payment-method-radio-button
+        value="sofort"
+        logoUrl="assets/images/sofort-logo.png"
+        formControlName="paymentMethod"
+      >
+      </checkout-payment-method-radio-button>
+    </div>
+    <div class="payment-method-radio-button-container">
+      <checkout-payment-method-radio-button
+        value="card"
+        logoUrl="assets/images/card-logo.png"
+        formControlName="paymentMethod"
+      >
+      </checkout-payment-method-radio-button>
+    </div>
+  </div>
+
+  <shared-button type="submit" [isDisabled]="!formGroup?.valid">
+    Weiter
+  </shared-button>
+</form>
