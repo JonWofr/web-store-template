@@ -1,0 +1,120 @@
+@import "src/styles/colors.scss";
+@import "src/styles/variables.scss";
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+div.banner-top {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7b7b7b;
+  position: relative;
+  overflow: hidden;
+
+  div#triangle-bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 150vh 0 0 100vw;
+    border-color: transparent transparent transparent $light-font-color;
+  }
+
+  div.code-wrapper {
+    margin-top: 10vh;
+    background-color: #201f1f;
+    max-width: 775px;
+    padding: 1.7rem;
+    code {
+      color: whitesmoke;
+      font-size: 2rem;
+      .hyperlink {
+        color: $secondary-color;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  div.androids {
+    display: flex;
+    width: 100vw;
+    div.android-container {
+      position: fixed;
+      z-index: 100;
+      width: 50vw;
+      height: 50vh;
+      bottom: 0;
+
+      img {
+        position: absolute;
+        bottom: -10%;
+        &.a-left {
+          right: 5%;
+          height: 90%;
+        }
+
+        &.a-right {
+          left: 5%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+div.banner-bottom {
+  width: 100%;
+  background-color: $light-font-color;
+}
+
+img.arrow-down {
+  width: 5rem;
+  position: fixed;
+  bottom: 0.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  &.animate__upDown {
+    animation-name: upDownAnimation;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+  }
+}
+
+div.wave {
+  transform-origin: 50% 100%;
+  width: 100%;
+  margin-bottom: -2px;
+  z-index: 2;
+}
+
+@keyframes upDownAnimation {
+  0% {
+    bottom: 0.7rem;
+  }
+
+  50% {
+    bottom: 0.3rem;
+  }
+
+  100% {
+    bottom: 0.7rem;
+  }
+}
+@media only screen and (min-width: $sm-breakpoint) {
+  div.android-container {
+    height: 65vh !important;
+  }
+  div.code-wrapper {
+    margin-top: 20vh !important;
+  }
+}
