@@ -1,0 +1,103 @@
+<div class="banner-top">
+  <div id="triangle-bottomleft"></div>
+  <div class="code-wrapper rellax" data-rellax-speed="4">
+    <code
+      ># Hello World! <br />
+      # Check out our <a class="hyperlink">T-Shirts</a>! <br />
+      <br />
+      # Get a discount by solving <a class="hyperlink">this</a> code!
+    </code>
+  </div>
+  <div class="androids">
+    <div class="android-container left">
+      <img class="a-left" src="/assets/images/android_left.png" alt="" />
+    </div>
+    <div class="android-container right">
+      <img class="a-right" src="/assets/images/android_right.png" alt="" />
+    </div>
+  </div>
+</div>
+
+<div class="banner-bottom">
+  <h1 style="text-align: center; color: white;">Angesagte T-Shirts</h1>
+  <div class="container">
+    <div class="row justify-content-between">
+      <app-product
+        class="product col-lg-4"
+        [product]="product1"
+        [backgroundColorHeader]="backgroundColor"
+        darkmode="true"
+      ></app-product>
+      <app-product
+        class="product col-lg-4"
+        [product]="product1"
+        [backgroundColorHeader]="backgroundColor"
+        darkmode="true"
+      ></app-product>
+      <app-product
+        class="product col-lg-4"
+        [product]="product1"
+        [backgroundColorHeader]="backgroundColor"
+        darkmode="true"
+      ></app-product>
+    </div>
+    <div class="row justify-content-between">
+      <app-product
+        class="product col-lg-4"
+        [product]="product1"
+        [backgroundColorHeader]="backgroundColor"
+        darkmode="true"
+      ></app-product>
+      <app-product
+        class="product col-lg-4"
+        [product]="product1"
+        [backgroundColorHeader]="backgroundColor"
+        darkmode="true"
+      ></app-product>
+      <app-product
+        class="product col-lg-4"
+        [product]="product1"
+        [backgroundColorHeader]="backgroundColor"
+        darkmode="true"
+      ></app-product>
+    </div>
+  </div>
+  <div
+    id="wave"
+    class="wave"
+    data-from='{"scaleY": "1"}'
+    data-to='{"scaleY": "0"}'
+    data-dur=".95"
+    data-mobile-dur=".72"
+    [style.transform]="transform"
+  >
+    <svg
+      preserveAspectRatio="xMaxYMin slice"
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 1440 270"
+      style="enable-background: new 0 0 1440 270;"
+      xml:space="preserve"
+    >
+      <style type="text/css">
+        .hero-wave {
+          fill: #edf2f4;
+        }
+      </style>
+      <path
+        vector-effect="non-scaling-stroke"
+        class="hero-wave"
+        d="M860.8,73.7C1110.2-1,1303.3-18.9,1440,19.9v249.5H0V89.3C324.5,153.6,611.4,148.4,860.8,73.7z"
+      ></path>
+    </svg>
+  </div>
+</div>
+<img
+  class="arrow-down animate__upDown"
+  src="/assets/icons/arrow-down.svg"
+  alt=""
+/>

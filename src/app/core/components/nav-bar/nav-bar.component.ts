@@ -55,7 +55,7 @@ export class NavBarComponent implements OnInit {
       },
       options
     );
-    document.querySelectorAll('.top-part-banner').forEach((value) => {
+    document.querySelectorAll('.banner-top').forEach((value) => {
       observer.observe(value);
     });
   }
