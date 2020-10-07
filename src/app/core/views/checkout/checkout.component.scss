@@ -1,8 +1,35 @@
+@import "../../../../styles/variables.scss";
 :host {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  div.swiper-container {
+    margin-top: 3rem;
+  }
 
-  & > div.checkout-progress-indicator-container {
+  div.swiper-slide > div {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: $sm-breakpoint) {
+  :host div.swiper-slide > div {
+    width: 540px;
+  }
+}
+@media only screen and (min-width: $md-breakpoint) {
+  :host div.swiper-slide > div {
+    width: 720px;
+  }
+}
+@media only screen and (min-width: $lg-breakpoint) {
+  :host div.swiper-slide > div {
+    width: 960px;
+  }
+}
+@media only screen and (min-width: $xl-breakpoint) {
+  :host div.swiper-slide > div {
+    width: 1140px;
   }
 }

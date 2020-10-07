@@ -1,15 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { PaymentInformation } from '@features/checkout/models/payment-information.model';
 
 @Component({
-  selector: 'app-payment-progress-level',
+  selector: 'checkout-payment-progress-level',
   templateUrl: './payment-progress-level.component.html',
-  styleUrls: ['./payment-progress-level.component.scss']
+  styleUrls: ['./payment-progress-level.component.scss'],
 })
 export class PaymentProgressLevelComponent implements OnInit {
+  @Input() paymentInformation?: PaymentInformation;
+  @Output() clickContinueButton = new EventEmitter<void>();
 
-  constructor() { }
+  formGroup?: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      paymentMethod: [
+        this.paymentInformation?.paymentMethod,
+        Validators.compose([Validators.required]),
+      ],
+    });
   }
-
 }

@@ -8,17 +8,12 @@
     flex: 1;
 
     &.with-margin-top {
-      margin-top: 3.5rem;
+      margin-top: 3.75rem;
     }
-    & > div.container {
+
+    & > div.with-vertical-padding {
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
-  }
-
-  .full-width {
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
   }
 }

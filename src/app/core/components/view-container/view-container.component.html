@@ -1,7 +1,7 @@
-<main [class.with-margin-top]="!shouldBeFullscreen">
+<main [class.with-margin-top]="!shouldNavBarOverlap">
   <div
-    [class.container]="!shouldBeFullscreen"
-    [class.full-width]="shouldBeFullWidth"
+    [class.container]="!hasFullWidth"
+    [class.with-vertical-padding]="!hasFullHeight"
   >
     <ng-content></ng-content>
   </div>

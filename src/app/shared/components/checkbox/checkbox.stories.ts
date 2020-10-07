@@ -63,3 +63,37 @@ export const withHint = () => ({
     hint: 'Du kannst ruhig ehrlich sein',
   },
 });
+
+export const disabled = () => ({
+  component: CheckboxComponent,
+  template: `
+          <form [formGroup]="formGroup">
+              <shared-checkbox [formControlName]="formControlName" [label]="label" [isDisabled]="isDisabled">
+              </shared-checkbox>
+          </form>
+      `,
+  props: {
+    formGroup: new FormGroup({
+      isBored: new FormControl(true),
+    }),
+    formControlName: 'isBored',
+    label: 'Ist dir langweilig?',
+    isDisabled: true,
+  },
+});
+
+export const withoutLabel = () => ({
+  component: CheckboxComponent,
+  template: `
+          <form [formGroup]="formGroup">
+              <shared-checkbox [formControlName]="formControlName">
+              </shared-checkbox>
+          </form>
+      `,
+  props: {
+    formGroup: new FormGroup({
+      isBored: new FormControl(),
+    }),
+    formControlName: 'isBored',
+  },
+});

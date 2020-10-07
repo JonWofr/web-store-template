@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: 0.5rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    font-size: 1.4rem;
+
+    margin-bottom: 1rem;
+  }
+
+  div.payment-method-radio-button-container {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+  }
+}

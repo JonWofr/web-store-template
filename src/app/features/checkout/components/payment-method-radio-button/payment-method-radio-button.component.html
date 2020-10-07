@@ -1,0 +1,15 @@
+<input
+  #input
+  type="radio"
+  class="hidden"
+  [id]="elementId"
+  [value]="value"
+  [checked]="isChecked"
+  [disabled]="isDisabled"
+  [name]="name"
+  (change)="onChangeValue(input.value)"
+  (blur)="onBlur()"
+/>
+<label [for]="elementId">
+  <img class="payment-method-logo" [src]="logoUrl" alt="" />
+</label>

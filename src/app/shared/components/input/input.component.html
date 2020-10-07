@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label [for]="elementId">
+  <label *ngIf="label" [for]="elementId">
     {{ label }}
   </label>
   <input
@@ -9,6 +9,7 @@
     [type]="type"
     [placeholder]="placeholder"
     [value]="value"
+    [disabled]="isDisabled"
     (input)="onChangeValue(input.value)"
     (blur)="onBlur()"
   />
