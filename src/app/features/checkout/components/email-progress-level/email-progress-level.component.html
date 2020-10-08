@@ -2,8 +2,9 @@
   Gastbestellung
 </h1>
 <form
-  [formGroup]="formGroup"
-  (ngSubmit)="clickContinueButton.emit(formGroup?.value)"
+  *ngIf="emailInformationFormGroup"
+  [formGroup]="emailInformationFormGroup"
+  (ngSubmit)="clickContinueButton.emit(emailInformationFormGroup?.value)"
 >
   <shared-input
     formControlName="email"
@@ -14,12 +15,17 @@
   ></shared-input>
   <ng-container
     *ngIf="
-      !formGroup?.controls.email.valid && formGroup?.controls.email.touched
+      !emailInformationFormGroup?.controls.email.valid &&
+      emailInformationFormGroup?.controls.email.touched
     "
   >
     <div
       class="alert alert-warning"
-      *ngFor="let errorKey of Object.keys(formGroup?.controls.email.errors)"
+      *ngFor="
+        let errorKey of Object.keys(
+          emailInformationFormGroup?.controls.email.errors
+        )
+      "
       [ngSwitch]="errorKey"
     >
       <ng-container *ngSwitchCase="'required'">
@@ -33,7 +39,7 @@
       </ng-container>
     </div>
   </ng-container>
-  <shared-button type="submit" [isDisabled]="!formGroup?.valid">
+  <shared-button type="submit" [isDisabled]="!emailInformationFormGroup?.valid">
     Weiter
   </shared-button>
 </form>

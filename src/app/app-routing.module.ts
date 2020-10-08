@@ -9,13 +9,8 @@ import { AboutComponent } from './core/views/about/about.component';
 import { ProductsComponent } from './core/views/products/products.component';
 import { ShoppingCartComponent } from './core/views/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from './core/views/profile/profile.component';
-import { CheckoutComponent } from './core/views/checkout/checkout.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-  },
   {
     path: 'products/:id',
     component: ProductDetailComponent,
@@ -42,7 +37,15 @@ const routes: Routes = [
   },
   {
     path: 'checkout',
-    component: CheckoutComponent,
+    loadChildren: () =>
+      import('./features/checkout/checkout.module').then(
+        (m) => m.CheckoutModule
+      ),
+  },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
   },
 ];
 

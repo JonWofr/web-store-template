@@ -129,7 +129,10 @@
 </shared-checkbox>
 
 <div
-  *ngIf="billingAddressInformationFormGroup"
+  *ngIf="
+    shippingAddressMatchingBillingAddressFormControl?.value === false &&
+    billingAddressInformationFormGroup
+  "
   class="address-information-form-container"
   [formGroup]="billingAddressInformationFormGroup"
 >
@@ -249,14 +252,19 @@
   <div class="payment-method-radio-button-container">
     <checkout-payment-method-radio-button
       formControlName="paymentMethod"
-      [value]="paymentInformationFormGroup.value.paymentMethod"
+      [value]="paymentInformationFormGroup?.value.paymentMethod"
       [logoUrl]="paymentMethodRadioButtonLogoUrl"
       [isDisabled]="true"
     >
     </checkout-payment-method-radio-button>
   </div>
 </div>
-
-<shared-button (click)="onClickPurchaseButton()">
-  Kaufen
-</shared-button>
+<checkout-payment-button
+  *ngIf="paymentInformationFormGroup"
+  [selectedPaymentMethod]="paymentInformationFormGroup?.value.paymentMethod"
+  [createOrder]="createOrderInterceptor"
+  [onApprove]="paypalService.onApprove"
+  [onCancel]="paypalService.onCancel"
+  [onError]="paypalService.onError"
+>
+</checkout-payment-button>

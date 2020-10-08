@@ -2,8 +2,9 @@
   Bezahlungsart
 </h1>
 <form
-  [formGroup]="formGroup"
-  (ngSubmit)="clickContinueButton.emit(formGroup?.value)"
+  *ngIf="paymentInformationFormGroup"
+  [formGroup]="paymentInformationFormGroup"
+  (ngSubmit)="clickContinueButton.emit(paymentInformationFormGroup?.value)"
 >
   <div class="payment-method-radio-buttons-container">
     <div class="payment-method-radio-button-container">
@@ -40,7 +41,10 @@
     </div>
   </div>
 
-  <shared-button type="submit" [isDisabled]="!formGroup?.valid">
+  <shared-button
+    type="submit"
+    [isDisabled]="!paymentInformationFormGroup?.valid"
+  >
     Weiter
   </shared-button>
 </form>

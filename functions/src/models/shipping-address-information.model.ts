@@ -1,4 +1,4 @@
-export interface BillingAddressInformation {
+export interface ShippingAddressInformation {
   name: {
     title: string;
     firstName: string;
@@ -6,7 +6,7 @@ export interface BillingAddressInformation {
   };
   address: {
     street: string;
-    houseNumber: string;
+    houseNumber: number;
     addition?: string;
     city: string;
     postCode: string;

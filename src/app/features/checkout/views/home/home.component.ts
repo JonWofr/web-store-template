@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ProgressLevel } from '@features/checkout/enums/progress-level.enum';
-import { AddressInformation } from '@features/checkout/models/address-information.model';
-import { EmailInformation } from '@features/checkout/models/email-information.model';
-import { PaymentInformation } from '@features/checkout/models/payment-information.model';
+import { ProgressLevel } from '../../enums/progress-level.enum';
+import { AddressInformation } from '../../models/address-information.model';
+import { EmailInformation } from '../../models/email-information.model';
+import { PaymentInformation } from '../../models/payment-information.model';
 import Swiper from 'swiper';
 
 @Component({
-  selector: 'app-checkout',
-  templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss'],
+  selector: 'checkout-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
-export class CheckoutComponent implements OnInit {
+export class HomeComponent implements OnInit {
   get currentProgressLevel(): ProgressLevel {
     return this._currentProgressLevel;
   }
@@ -27,6 +27,8 @@ export class CheckoutComponent implements OnInit {
   emailInformation?: EmailInformation;
   addressInformation?: AddressInformation;
   paymentInformation?: PaymentInformation;
+
+  isShippingAddressMatchingBillingAddress: boolean = true;
 
   ProgressLevel = ProgressLevel;
 
@@ -74,5 +76,11 @@ export class CheckoutComponent implements OnInit {
   increaseProgressLevel(newProgressLevel: ProgressLevel): void {
     this.currentProgressLevel = newProgressLevel;
     this.swiper?.slideNext();
+  }
+
+  onChangeShippingAddressMatchingBillingAddressCheckbox(
+    isShippingAddressMatchingBillingAddress: boolean
+  ): void {
+    this.isShippingAddressMatchingBillingAddress = isShippingAddressMatchingBillingAddress;
   }
 }

@@ -10,10 +10,9 @@ import { InputType } from '@shared/enums/input-type.enum';
   styleUrls: ['./email-progress-level.component.scss'],
 })
 export class EmailProgressLevelComponent implements OnInit {
-  @Input() emailInformation?: EmailInformation;
   @Output() clickContinueButton = new EventEmitter<EmailInformation>();
 
-  formGroup?: FormGroup;
+  emailInformationFormGroup?: FormGroup;
 
   InputType = InputType;
   Object = Object;
@@ -22,9 +21,9 @@ export class EmailProgressLevelComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.formGroup = this.formBuilder.group({
+    this.emailInformationFormGroup = this.formBuilder.group({
       email: [
-        this.emailInformation?.email,
+        null,
         Validators.compose([Validators.required, Validators.email]),
       ],
     });

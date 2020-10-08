@@ -1,7 +1,8 @@
 <form (ngSubmit)="onSubmit()">
   <div
+    *ngIf="shippingAddressInformationFormGroup"
     class="address-information-form-container"
-    [formGroup]="shippingAddressInformation"
+    [formGroup]="shippingAddressInformationFormGroup"
   >
     <h2>
       Lieferadresse
@@ -21,15 +22,18 @@
         ></shared-select>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.name.controls.title.valid &&
-            shippingAddressInformation?.controls.name.controls.title.touched
+            !shippingAddressInformationFormGroup?.controls.name.controls.title
+              .valid &&
+            shippingAddressInformationFormGroup?.controls.name.controls.title
+              .touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.name.controls.title.errors
+                shippingAddressInformationFormGroup?.controls.name.controls
+                  .title.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -52,17 +56,18 @@
         ></shared-input>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.name.controls.firstName
-              .valid &&
-            shippingAddressInformation?.controls.name.controls.firstName.touched
+            !shippingAddressInformationFormGroup?.controls.name.controls
+              .firstName.valid &&
+            shippingAddressInformationFormGroup?.controls.name.controls
+              .firstName.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.name.controls.firstName
-                  .errors
+                shippingAddressInformationFormGroup?.controls.name.controls
+                  .firstName.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -85,17 +90,18 @@
         ></shared-input>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.name.controls.lastName
-              .valid &&
-            shippingAddressInformation?.controls.name.controls.lastName.touched
+            !shippingAddressInformationFormGroup?.controls.name.controls
+              .lastName.valid &&
+            shippingAddressInformationFormGroup?.controls.name.controls.lastName
+              .touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.name.controls.lastName
-                  .errors
+                shippingAddressInformationFormGroup?.controls.name.controls
+                  .lastName.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -126,17 +132,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.address.controls.street
-              .valid &&
-            shippingAddressInformation?.controls.address.controls.street.touched
+            !shippingAddressInformationFormGroup?.controls.address.controls
+              .street.valid &&
+            shippingAddressInformationFormGroup?.controls.address.controls
+              .street.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.address.controls.street
-                  .errors
+                shippingAddressInformationFormGroup?.controls.address.controls
+                  .street.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -163,17 +170,17 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.address.controls.houseNumber
-              .valid &&
-            shippingAddressInformation?.controls.address.controls.houseNumber
-              .touched
+            !shippingAddressInformationFormGroup?.controls.address.controls
+              .houseNumber.valid &&
+            shippingAddressInformationFormGroup?.controls.address.controls
+              .houseNumber.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.address.controls
+                shippingAddressInformationFormGroup?.controls.address.controls
                   .houseNumber.errors
               )
             "
@@ -206,18 +213,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.address.controls.addition
-              .valid &&
-            shippingAddressInformation?.controls.address.controls.addition
-              .touched
+            !shippingAddressInformationFormGroup?.controls.address.controls
+              .addition.valid &&
+            shippingAddressInformationFormGroup?.controls.address.controls
+              .addition.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.address.controls.addition
-                  .errors
+                shippingAddressInformationFormGroup?.controls.address.controls
+                  .addition.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -243,18 +250,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.address.controls.postCode
-              .valid &&
-            shippingAddressInformation?.controls.address.controls.postCode
-              .touched
+            !shippingAddressInformationFormGroup?.controls.address.controls
+              .postCode.valid &&
+            shippingAddressInformationFormGroup?.controls.address.controls
+              .postCode.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.address.controls.postCode
-                  .errors
+                shippingAddressInformationFormGroup?.controls.address.controls
+                  .postCode.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -287,16 +294,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.address.controls.city.valid &&
-            shippingAddressInformation?.controls.address.controls.city.touched
+            !shippingAddressInformationFormGroup?.controls.address.controls.city
+              .valid &&
+            shippingAddressInformationFormGroup?.controls.address.controls.city
+              .touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.address.controls.city
-                  .errors
+                shippingAddressInformationFormGroup?.controls.address.controls
+                  .city.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -323,18 +332,18 @@
         </shared-select>
         <ng-container
           *ngIf="
-            !shippingAddressInformation?.controls.address.controls.country
-              .valid &&
-            shippingAddressInformation?.controls.address.controls.country
-              .touched
+            !shippingAddressInformationFormGroup?.controls.address.controls
+              .country.valid &&
+            shippingAddressInformationFormGroup?.controls.address.controls
+              .country.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                shippingAddressInformation?.controls.address.controls.country
-                  .errors
+                shippingAddressInformationFormGroup?.controls.address.controls
+                  .country.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -352,15 +361,19 @@
   </div>
 
   <shared-checkbox
+    *ngIf="shippingAddressMatchingBillingAddressCheckboxFormControl"
     label="Rechnungsadresse gleich Lieferadresse"
-    [formControl]="shippingAddressMatchingBillingAddressCheckbox"
+    [formControl]="shippingAddressMatchingBillingAddressCheckboxFormControl"
   >
   </shared-checkbox>
 
   <div
-    *ngIf="billingAddressInformation"
+    *ngIf="
+      shippingAddressMatchingBillingAddressCheckboxFormControl?.value ===
+        false && billingAddressInformationFormGroup
+    "
     class="address-information-form-container"
-    [formGroup]="billingAddressInformation"
+    [formGroup]="billingAddressInformationFormGroup"
   >
     <h2>
       Rechnungsadresse
@@ -380,15 +393,18 @@
         ></shared-select>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.name.controls.title.valid &&
-            billingAddressInformation?.controls.name.controls.title.touched
+            !billingAddressInformationFormGroup?.controls.name.controls.title
+              .valid &&
+            billingAddressInformationFormGroup?.controls.name.controls.title
+              .touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.name.controls.title.errors
+                billingAddressInformationFormGroup?.controls.name.controls.title
+                  .errors
               )
             "
             [ngSwitch]="errorKey"
@@ -411,17 +427,18 @@
         ></shared-input>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.name.controls.firstName
-              .valid &&
-            billingAddressInformation?.controls.name.controls.firstName.touched
+            !billingAddressInformationFormGroup?.controls.name.controls
+              .firstName.valid &&
+            billingAddressInformationFormGroup?.controls.name.controls.firstName
+              .touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.name.controls.firstName
-                  .errors
+                billingAddressInformationFormGroup?.controls.name.controls
+                  .firstName.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -444,16 +461,18 @@
         ></shared-input>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.name.controls.lastName.valid &&
-            billingAddressInformation?.controls.name.controls.lastName.touched
+            !billingAddressInformationFormGroup?.controls.name.controls.lastName
+              .valid &&
+            billingAddressInformationFormGroup?.controls.name.controls.lastName
+              .touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.name.controls.lastName
-                  .errors
+                billingAddressInformationFormGroup?.controls.name.controls
+                  .lastName.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -484,17 +503,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.address.controls.street
-              .valid &&
-            billingAddressInformation?.controls.address.controls.street.touched
+            !billingAddressInformationFormGroup?.controls.address.controls
+              .street.valid &&
+            billingAddressInformationFormGroup?.controls.address.controls.street
+              .touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.address.controls.street
-                  .errors
+                billingAddressInformationFormGroup?.controls.address.controls
+                  .street.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -521,18 +541,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.address.controls.houseNumber
-              .valid &&
-            billingAddressInformation?.controls.address.controls.houseNumber
-              .touched
+            !billingAddressInformationFormGroup?.controls.address.controls
+              .houseNumber.valid &&
+            billingAddressInformationFormGroup?.controls.address.controls
+              .houseNumber.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.address.controls.houseNumber
-                  .errors
+                billingAddressInformationFormGroup?.controls.address.controls
+                  .houseNumber.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -564,18 +584,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.address.controls.addition
-              .valid &&
-            billingAddressInformation?.controls.address.controls.addition
-              .touched
+            !billingAddressInformationFormGroup?.controls.address.controls
+              .addition.valid &&
+            billingAddressInformationFormGroup?.controls.address.controls
+              .addition.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.address.controls.addition
-                  .errors
+                billingAddressInformationFormGroup?.controls.address.controls
+                  .addition.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -601,18 +621,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.address.controls.postCode
-              .valid &&
-            billingAddressInformation?.controls.address.controls.postCode
-              .touched
+            !billingAddressInformationFormGroup?.controls.address.controls
+              .postCode.valid &&
+            billingAddressInformationFormGroup?.controls.address.controls
+              .postCode.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.address.controls.postCode
-                  .errors
+                billingAddressInformationFormGroup?.controls.address.controls
+                  .postCode.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -645,15 +665,18 @@
         </shared-input>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.address.controls.city.valid &&
-            billingAddressInformation?.controls.address.controls.city.touched
+            !billingAddressInformationFormGroup?.controls.address.controls.city
+              .valid &&
+            billingAddressInformationFormGroup?.controls.address.controls.city
+              .touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.address.controls.city.errors
+                billingAddressInformationFormGroup?.controls.address.controls
+                  .city.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -680,17 +703,18 @@
         </shared-select>
         <ng-container
           *ngIf="
-            !billingAddressInformation?.controls.address.controls.country
-              .valid &&
-            billingAddressInformation?.controls.address.controls.country.touched
+            !billingAddressInformationFormGroup?.controls.address.controls
+              .country.valid &&
+            billingAddressInformationFormGroup?.controls.address.controls
+              .country.touched
           "
         >
           <div
             class="alert alert-warning"
             *ngFor="
               let errorKey of Object.keys(
-                billingAddressInformation?.controls.address.controls.country
-                  .errors
+                billingAddressInformationFormGroup?.controls.address.controls
+                  .country.errors
               )
             "
             [ngSwitch]="errorKey"
@@ -710,10 +734,13 @@
   <shared-button
     type="submit"
     [isDisabled]="
-      !shippingAddressInformation?.valid ||
-      (shippingAddressInformation?.valid &&
-        billingAddressInformation &&
-        !billingAddressInformation?.valid)
+      (shippingAddressMatchingBillingAddressCheckboxFormControl?.value ===
+        true &&
+        !shippingAddressInformationFormGroup?.valid) ||
+      (shippingAddressMatchingBillingAddressCheckboxFormControl?.value ===
+        false &&
+        (!shippingAddressInformationFormGroup?.valid ||
+          !billingAddressInformationFormGroup?.valid))
     "
   >
     Weiter

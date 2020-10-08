@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "typeRoots": [
+      "node_modules/@types",
+      "src/local-types"
+    ] /* 
+    "paths": {
+      "@paypal/checkout-server-sdk": [
+        "src/local-types/paypal__checkout-server-sdk"
+      ]
+    } */
+  },
+  "compileOnSave": true,
+  "include": ["src"],
+  "exclude": ["src/local-types"]
+}

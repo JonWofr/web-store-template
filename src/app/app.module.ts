@@ -11,11 +11,9 @@ import { HomeModule } from '@features/home/home.module';
 import { ProductModule } from '@features/products/products.module';
 import { SharedModule } from '@shared/shared.module';
 import { LayoutModule } from '@angular/cdk/layout';
-import { CheckoutModule } from '@features/checkout/checkout.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { CheckoutComponent } from '@core/views/checkout/checkout.component';
 import { NavBarComponent } from '@core/components/nav-bar/nav-bar.component';
 import { HomeComponent } from '@core/views/home/home.component';
 import { AboutComponent } from '@core/views/about/about.component';
@@ -51,7 +49,6 @@ registerLocaleData(localeDe);
     SizeSelectorComponent,
     PriceBuyBarComponent,
     SwiperSlideProductImagesComponent,
-    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +59,6 @@ registerLocaleData(localeDe);
     ProductModule,
     SwiperConfigModule,
     LayoutModule,
-    CheckoutModule,
   ],
   exports: [
     AppComponent,

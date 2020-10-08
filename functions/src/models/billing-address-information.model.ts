@@ -6,7 +6,7 @@ export interface BillingAddressInformation {
   };
   address: {
     street: string;
-    houseNumber: string;
+    houseNumber: number;
     addition?: string;
     city: string;
     postCode: string;

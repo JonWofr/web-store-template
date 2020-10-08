@@ -1,0 +1,61 @@
+<checkout-progress-indicator
+  [currentProgressLevel]="currentProgressLevel"
+  [highestReachedProgressLevel]="highestReachedProgressLevel"
+  (clickProgressLevelButton)="
+    onClickProgressIndicatorProgressLevelButton($event)
+  "
+>
+</checkout-progress-indicator>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div>
+        <checkout-email-progress-level
+          (clickContinueButton)="
+            onClickEmailProgressLevelContinueButton($event)
+          "
+        ></checkout-email-progress-level>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div>
+        <checkout-address-progress-level
+          (changeShippingAddressMatchingBillingAddressCheckbox)="
+            onChangeShippingAddressMatchingBillingAddressCheckbox($event)
+          "
+          (clickContinueButton)="
+            onClickAddressProgressLevelContinueButton($event)
+          "
+        ></checkout-address-progress-level>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div>
+        <checkout-shipment-progress-level
+          (clickContinueButton)="onClickShipmentProgressLevelContinueButton()"
+        ></checkout-shipment-progress-level>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div>
+        <checkout-payment-progress-level
+          (clickContinueButton)="
+            onClickPaymentProgressLevelContinueButton($event)
+          "
+        ></checkout-payment-progress-level>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div>
+        <checkout-overview-progress-level
+          [isShippingAddressMatchingBillingAddress]="
+            isShippingAddressMatchingBillingAddress
+          "
+          [emailInformation]="emailInformation"
+          [addressInformation]="addressInformation"
+          [paymentInformation]="paymentInformation"
+        ></checkout-overview-progress-level>
+      </div>
+    </div>
+  </div>
+</div>

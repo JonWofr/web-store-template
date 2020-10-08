@@ -6,7 +6,7 @@ export interface ShippingAddressInformation {
   };
   address: {
     street: string;
-    houseNumber: number;
+    houseNumber: string;
     addition?: string;
     city: string;
     postCode: string;

@@ -1,0 +1,20 @@
+<div
+  #paypalButtonContainer
+  [class.visible]="selectedPaymentMethod === PaymentMethod.Paypal"
+  class="payment-button-container"
+></div>
+<div
+  #sepaButtonContainer
+  [class.visible]="selectedPaymentMethod === PaymentMethod.Sepa"
+  class="payment-button-container"
+></div>
+<div
+  #sofortButtonContainer
+  [class.visible]="selectedPaymentMethod === PaymentMethod.Sofort"
+  class="payment-button-container"
+></div>
+<div
+  #cardButtonContainer
+  [class.visible]="selectedPaymentMethod === PaymentMethod.Card"
+  class="payment-button-container"
+></div>

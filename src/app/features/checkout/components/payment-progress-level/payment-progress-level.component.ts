@@ -21,19 +21,15 @@ import { PaymentInformation } from '@features/checkout/models/payment-informatio
   styleUrls: ['./payment-progress-level.component.scss'],
 })
 export class PaymentProgressLevelComponent implements OnInit {
-  @Input() paymentInformation?: PaymentInformation;
   @Output() clickContinueButton = new EventEmitter<void>();
 
-  formGroup?: FormGroup;
+  paymentInformationFormGroup?: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.formGroup = this.formBuilder.group({
-      paymentMethod: [
-        this.paymentInformation?.paymentMethod,
-        Validators.compose([Validators.required]),
-      ],
+    this.paymentInformationFormGroup = this.formBuilder.group({
+      paymentMethod: [null, Validators.compose([Validators.required])],
     });
   }
 }

@@ -1,0 +1,9 @@
+:host {
+  & > div.payment-button-container {
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+}

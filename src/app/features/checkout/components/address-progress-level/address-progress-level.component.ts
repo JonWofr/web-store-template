@@ -26,37 +26,16 @@ import { Subscription } from 'rxjs';
   templateUrl: './address-progress-level.component.html',
   styleUrls: ['./address-progress-level.component.scss'],
 })
-export class AddressProgressLevelComponent implements OnDestroy {
-  @Input() set addressInformation(
-    addressInformation: AddressInformation | undefined
-  ) {
-    this.shippingAddressInformation = this.createAddressInformationFormGroup(
-      addressInformation?.shippingAddressInformation
-    );
-    if (this.addressInformation?.billingAddressInformation) {
-      this.billingAddressInformation = this.createAddressInformationFormGroup(
-        addressInformation?.billingAddressInformation
-      );
-    }
-
-    this.shippingAddressMatchingBillingAddressCheckbox = new FormControl(
-      addressInformation?.billingAddressInformation ? false : true
-    );
-    this.shippingAddressMatchingBillingAddressCheckbox?.valueChanges.subscribe(
-      (isChecked: boolean) => {
-        if (isChecked) {
-          this.billingAddressInformation = undefined;
-        } else {
-          this.billingAddressInformation = this.createAddressInformationFormGroup();
-        }
-      }
-    );
-  }
+export class AddressProgressLevelComponent implements OnInit, OnDestroy {
+  @Output()
+  changeShippingAddressMatchingBillingAddressCheckbox = new EventEmitter<
+    boolean
+  >();
   @Output() clickContinueButton = new EventEmitter<AddressInformation>();
 
-  shippingAddressInformation?: FormGroup;
-  shippingAddressMatchingBillingAddressCheckbox?: FormControl;
-  billingAddressInformation?: FormGroup;
+  shippingAddressInformationFormGroup?: FormGroup;
+  shippingAddressMatchingBillingAddressCheckboxFormControl?: FormControl;
+  billingAddressInformationFormGroup?: FormGroup;
 
   titleSelectOptions: SelectOption[] = [
     { label: 'Herr', value: 'Herr' },
@@ -75,39 +54,44 @@ export class AddressProgressLevelComponent implements OnDestroy {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  createAddressInformationFormGroup(
-    addressInformation?: ShippingAddressInformation | BillingAddressInformation
-  ): FormGroup {
+  ngOnInit(): void {
+    this.shippingAddressInformationFormGroup = this.createAddressInformationFormGroup();
+    this.billingAddressInformationFormGroup = this.createAddressInformationFormGroup();
+
+    this.shippingAddressMatchingBillingAddressCheckboxFormControl = new FormControl(
+      true
+    );
+    this.shippingAddressMatchingBillingAddressCheckboxFormControl?.valueChanges.subscribe(
+      (isChecked: boolean) => {
+        this.changeShippingAddressMatchingBillingAddressCheckbox.emit(
+          isChecked
+        );
+      }
+    );
+  }
+
+  createAddressInformationFormGroup(): FormGroup {
     return this.formBuilder.group({
       name: this.formBuilder.group({
-        title: [
-          addressInformation?.name.title,
-          Validators.compose([Validators.required]),
-        ],
-        firstName: [
-          addressInformation?.name.firstName,
-          Validators.compose([Validators.required]),
-        ],
-        lastName: [
-          addressInformation?.name.lastName,
-          Validators.compose([Validators.required]),
-        ],
+        title: [null, Validators.compose([Validators.required])],
+        firstName: [null, Validators.compose([Validators.required])],
+        lastName: [null, Validators.compose([Validators.required])],
       }),
       address: this.formBuilder.group({
         street: [
-          addressInformation?.address.street,
+          null,
           Validators.compose([
             Validators.required,
             Validators.pattern(/[^0-9]+/),
           ]),
         ],
         houseNumber: [
-          addressInformation?.address.houseNumber.toString(),
+          null,
           Validators.compose([Validators.required, Validators.min(1)]),
         ],
-        addition: [addressInformation?.address.addition],
+        addition: [null],
         postCode: [
-          addressInformation?.address.postCode.toString(),
+          null,
           Validators.compose([
             Validators.required,
             Validators.min(1),
@@ -116,24 +100,25 @@ export class AddressProgressLevelComponent implements OnDestroy {
           ]),
         ],
         city: [
-          addressInformation?.address.city,
+          null,
           Validators.compose([
             Validators.required,
             Validators.pattern(/[^0-9]+/),
           ]),
         ],
-        country: [
-          addressInformation?.address.country,
-          Validators.compose([Validators.required]),
-        ],
+        country: [null, Validators.compose([Validators.required])],
       }),
     });
   }
 
   onSubmit(): void {
     const addressInformation = {
-      shippingAddressInformation: this.shippingAddressInformation?.value,
-      billingAddressInformation: this.billingAddressInformation?.value,
+      shippingAddressInformation: this.shippingAddressInformationFormGroup
+        ?.value,
+      billingAddressInformation: this
+        .shippingAddressMatchingBillingAddressCheckboxFormControl
+        ? this.shippingAddressInformationFormGroup?.value
+        : this.billingAddressInformationFormGroup?.value,
     };
     this.clickContinueButton.emit(addressInformation);
   }

@@ -1,0 +1,12 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'checkout-payment-failure',
+  templateUrl: './payment-failure.component.html',
+  styleUrls: ['./payment-failure.component.scss'],
+})
+export class PaymentFailureComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+}
